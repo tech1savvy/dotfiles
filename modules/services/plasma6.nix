@@ -23,8 +23,8 @@
   # services.xserver.libinput.enable = true;
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "tech1savvy";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "tech1savvy";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
