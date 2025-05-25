@@ -19,17 +19,21 @@
     ./modules/nixpkgs
     ./modules/version-control/git.nix
     ./modules/nh.nix
+
     ./modules/development/terminal.nix
     ./modules/development/neovim.nix
-    ./modules/music.nix  
+
+    ./modules/music.nix
+
     ./modules/authentication/gnome-keyring.nix
+
     ./modules/containerisation/distrobox.nix
+
     ./modules/file-manager.nix
 
-    # services
     ./modules/containerisation/docker.nix  
     ./modules/virtualisation/kvm.nix
-    ./modules/gaming/sunshine.nix
+
     ./modules/keyboard/remap.nix
 
     # environment
@@ -38,6 +42,7 @@
 
     # gaming
     ./modules/gaming
+    ./modules/gaming/sunshine.nix
     ./modules/gaming/emulation.nix
   ];
 
