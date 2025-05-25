@@ -4,8 +4,6 @@
     ./networking.nix
     ./bluetooth.nix
 
-    ./current-config.nix
-
     ./language.nix
     ./time-zone.nix
     ./audio.nix

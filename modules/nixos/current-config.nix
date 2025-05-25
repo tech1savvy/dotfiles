@@ -1,3 +1,0 @@
-{
-  system.copySystemConfiguration = true;
-}
