@@ -1,0 +1,13 @@
+# Ignore editor and OS files
+*.swp
+*.swo
+*.bak
+.DS_Store
+
+# Ignore result symlinks from nix-build
+result
+result-*
+
+# Ignore logs or local secrets (if any)
+*.log
+secrets.nix
