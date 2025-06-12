@@ -1,0 +1,32 @@
+window {
+    margin: 0px;
+    background-color: #1d2021; /* Gruvbox dark */
+}
+
+#input {
+    margin: 0px;
+    border: none;
+    background-color: #282828;
+    color: #ebdbb2;
+    font-family: "monospace";
+    font-size: 16px;
+    display: none;
+}
+
+
+#entry {
+    background-color: #1d2021;
+    color: #ebdbb2;
+    border: none;
+    padding: 2px 8px;
+}
+
+#entry:selected {
+    background-color: #458588;
+    color: #ebdbb2;
+}
+
+/* Remove search bar icon | source: https://github.com/synaptiko/.files/blob/master/wofi/style.css */
+#input image:first-child {
+	margin-left: -100px;
+}

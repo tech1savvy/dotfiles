@@ -1,0 +1,43 @@
+[pyprland]
+plugins = [
+  "scratchpads",
+  "expose"
+]
+
+# Dropdown terminal
+[scratchpads.term]
+command = "kitty --class kitty-scratch"
+class = "kitty-scratch"
+size = "75% 60%"
+animation = "fromTop"
+unfocus = "hide"
+
+[scratchpads.music]
+command = "spotify"
+class = "spotify"
+size = "70% 80%"
+animation = "fromRight"
+unfocus = "hide"
+
+[scratchpads.btop]
+command = "kitty --class kitty-btop -e btop --force-utf"
+class = "kitty-btop"
+size = "70% 80%"
+animation = "fromTop"
+unfocus = "hide"
+
+[scratchpads.superproductivity]
+command = "super-productivity"
+class = "superProductivity"
+position = "0% 3%"
+size = "100% 97%"
+animation = "fromTop"
+unfocus = "hide"
+
+[scratchpads.obsidian]
+command = "obsidian"
+class = "obsidian"
+position = "0% 3%"
+size = "100% 97%"
+animation = "fromTop"
+unfocus = "hide"

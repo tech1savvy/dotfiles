@@ -1,0 +1,6 @@
+mode = drun
+prompt =
+allow_images = false
+height = 10%
+width = 30%
+lines=1
