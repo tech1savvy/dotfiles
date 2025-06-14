@@ -13,7 +13,8 @@
 
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "hyprland/submap"
         // "sway/mode",
         // "sway/scratchpad",
         // "custom/media"
@@ -57,6 +58,13 @@
             "default": " "
         }
     },
+
+    "hyprland/submap": {
+        "format": "{}",
+        "tooltip": false
+    },
+
+
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },

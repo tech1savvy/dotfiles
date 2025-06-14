@@ -5,10 +5,10 @@
 
 [general]
 home_row_keys=
-modes=floating
+modes=floating,click
 
 [mode_tile]
-label_color=#fffd
+label_color=#fff
 label_select_color=#fd0d
 unselectable_bg_color=#2226
 selectable_bg_color=#0304
@@ -18,7 +18,7 @@ label_symbols=abcdefghijklmnopqrstuvwxyz
 
 [mode_floating]
 source=detect
-label_color=#fffd
+label_color=#fff
 label_select_color=#fd0d
 unselectable_bg_color=#2226
 selectable_bg_color=#1718

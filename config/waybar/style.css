@@ -98,3 +98,10 @@ tooltip {
     box-shadow: 0 0 0 0.5px #ffcc00;
     color: #ffcc00;
 }
+
+#submap {
+    background: rgba(40, 40, 40, 0.95);
+    color: #a8ff60;
+    font-style: italic;
+    padding: 0 20px;
+}
