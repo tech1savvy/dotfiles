@@ -10,11 +10,16 @@
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
   in {
     enable = true;
-    theme = spicePkgs.themes.dribbblish;
-    colorScheme = "gruvbox-material-dark";
+    # theme = spicePkgs.themes.dribbblish;
+    # colorScheme = "gruvbox-material-dark";
     
     enabledExtensions = with spicePkgs.extensions; [
-      fullAppDisplayMod
+      # keyboardShortcut # bindings: https://spicetify.app/docs/advanced-usage/extensions/#keyboard-shortcut
+      shuffle # un-biased shuffle
+      beautifulLyrics
+      fullAppDisplay
+      # simpleBeautifulLyrics
+      adblock
     ];
   };
 }
