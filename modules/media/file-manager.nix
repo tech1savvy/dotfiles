@@ -1,7 +1,9 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     # file manager
-    dolphin
-    ark
+    kdePackages.dolphin
+    kdePackages.ark
+
+    xfce.thunar
   ];
 }
