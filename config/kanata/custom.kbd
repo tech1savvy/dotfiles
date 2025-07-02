@@ -1,0 +1,352 @@
+(defsrc
+  ;; FN ROW
+  esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 ins prnt del
+  ;; NUMBER ROW
+  grv 1 2 3 4 5 6 7 8 9 0 - = bspc
+  ;; TOP ROW
+  tab q w e r t y u i o p [ ] \
+  ;; HOME ROW
+  caps a s d f g h j k l ; ' ret
+  ;; BOTTOM ROW
+  lsft z x c v b n m , . / rsft
+  ;; MODIFIERS
+  lctl lmet lalt spc ralt rctl
+  ;; ARROW KEYS
+  left down right up
+  ;; NUMPAD
+  nlck kp/ kp* kp-
+  kp7 kp8 kp9 kp+
+  kp4 kp5 kp6
+  kp1 kp2 kp3 kprt
+  kp0 kp.
+)
+(defvar
+  chord-time 30
+  tap-time-quick 100
+  tap-time 150
+  tap-time-slow 200
+  hold-time 200
+  hold-time-slow 300
+  oneshot-timeout 1000
+)
+(defchords special $chord-time
+
+  (q  ) q
+  (q w) S-tab
+  (w  ) w
+  (w e) tab
+  (e  ) e
+  (r  ) r
+  (t  ) t
+  (y  ) y
+  (u  ) u
+  (u i) del
+  (i  ) i
+  (i o) bspc
+  (o  ) o
+  (o p) C-bspc
+  (p  ) p
+
+  (a  ) a
+  (s  ) s
+  (s d) esc
+  (d  ) d
+  (d f) home
+  (f  ) f
+  (g  ) g
+  (h  ) h
+  (j  ) j
+  (j k) end
+  (k  ) k
+  (k l) ret
+  (l  ) l
+  (;  ) ;
+
+  (z) z
+  (x) x
+  (c) c
+  (v) v
+  (b) b
+  (n) n
+  (m) m
+  (,) ,
+  (.) .
+  (/) /
+
+)
+(defalias
+
+  ;; LAYER ALIASES & MODS
+  hold-lmod (layer-while-held lmod1)
+  oneshot-lmod (one-shot $oneshot-timeout @hold-lmod)
+  toggle-lmod (layer-switch lmod1)
+
+  lmod (
+    tap-dance $tap-time(
+      (tap-hold $tap-time $hold-time
+        @oneshot-lmod
+        @hold-lmod
+      )
+      @toggle-lmod
+    )
+  )
+
+  hold-rmod (layer-while-held rmod1)
+  oneshot-rmod (one-shot $oneshot-timeout @hold-rmod)
+  toggle-rmod (layer-switch rmod1)
+
+  rmod (
+    tap-dance $tap-time(
+      (tap-hold $tap-time $hold-time
+        @oneshot-rmod
+        @hold-rmod
+      )
+      @toggle-rmod
+    )
+  )
+
+  hold-plain (layer-while-held plain)
+  oneshot-plain (one-shot $oneshot-timeout @hold-plain)
+  toggle-plain (layer-switch plain)
+
+  plain (
+    tap-dance $tap-time(
+      (tap-hold $tap-time $hold-time
+        @oneshot-plain
+        @hold-plain
+      )
+      XX
+      @toggle-plain
+    )
+  )
+
+  base (layer-switch base)
+
+  met (
+    tap-dance $tap-time(
+      lmet
+      lmet
+      @base
+    )
+  )
+
+  caps (
+    tap-hold $tap-time $hold-time
+      @base
+      esc ;; toggle-mouse
+  )
+
+  mod (layer-while-held mod)
+  spc (tap-hold $tap-time $hold-time spc @mod)
+
+  ;; HOME ROW MODIFIERS
+
+  lmet (multi lmet )
+  lalt (tap-hold $tap-time $hold-time s lalt)
+  lsft (tap-hold $tap-time $hold-time d lsft)
+  lctl (tap-hold $tap-time $hold-time f rctl)
+
+  rctl (tap-hold $tap-time $hold-time j rctl)
+  rsft (tap-hold $tap-time $hold-time k rsft)
+  ralt (tap-hold $tap-time $hold-time l ralt)
+  rmet (tap-hold $tap-time $hold-time ; rmet)
+
+  ;; SPECIAL KEY CHORDS
+
+  q (chord special q)
+  w (chord special w)
+  e (chord special e)
+  r (chord special r)
+  t (chord special t)
+  y (chord special y)
+  u (chord special u)
+  i (chord special i)
+  o (chord special o)
+  p (chord special p)
+
+  a (chord special a)
+  s (chord special s)
+  d (chord special d)
+  f (chord special f)
+  g (chord special g)
+  h (chord special h)
+  j (chord special j)
+  k (chord special k)
+  l (chord special l)
+  ; (chord special ;)
+
+  z (chord special z)
+  x (chord special x)
+  c (chord special c)
+  v (chord special v)
+  b (chord special b)
+  n (chord special n)
+  m (chord special m)
+  , (chord special ,)
+  . (chord special .)
+  / (chord special /)
+
+  ;; SYMBOLS
+  ~ S-`
+  ! S-1
+  @ S-2
+  # S-3
+  $ S-4
+  % S-5
+  ^ S-6
+  & S-7
+  * S-8
+  lbrc S-9
+  rbrc S-0
+  _ S--
+  + S-=
+
+  { S-[
+  } S-]
+
+  < S-,
+  > S-.
+  ? S-/
+
+  '' S-'
+
+  ;; SHORTCUTS
+  zoom-in (multi lctl -)
+  zoom-out (multi lctl =)
+
+  fwrd (multi lctl [)
+  bwrd (multi lctl ])
+
+  cut C-x
+  copy (tap-dance $tap-time(C-c C-S-c))
+  paste (tap-dance $tap-time(C-v C-S-v))
+
+  ;; NUMPAD MACROS
+  push-to-talk ()
+)
+(deflayer base
+  XX  XX XX XX XX XX XX XX XX XX XX  XX  XX  XX  prnt XX ;; FN ROW
+  XX  M-1 M-2 M-3 M-4 M-5 M-6 M-7 M-8 M-9 M-0 @zoom-in @zoom-out XX ;; NUMBER ROW
+  XX  @q @w @e @r @t @y @u @i @o @p XX XX XX ;; TOP ROW
+  @caps @a @s @d @f @g @h @j @k @l @; XX XX ;; HOME ROW
+  XX   @z @x @c @v @b @n @m @, @. @/ XX ;; BOTTOM ROW
+  XX   @plain @lmod @spc @rmod XX ;; MODIFIERS
+  XX   XX   XX    XX ;; ARROW KEYS
+  XX   XX  XX  XX ;; NUMPAD
+  XX  XX  XX  XX
+  XX  XX  XX
+  XX  XX  XX  XX
+  XX  XX
+)
+(deflayer mod
+  XX  XX XX XX XX XX XX XX XX XX XX  XX  XX  XX  XX   XX ;; FN ROW
+  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
+  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; TOP ROW
+  XX   @lmet @lalt @lsft @lctl XX XX @rctl @rsft @ralt @rmet XX XX ;; HOME ROW
+  XX   XX XX XX XX XX XX XX XX XX XX XX ;; BOTTOM ROW
+  XX   XX   XX   XX  XX   XX ;; MODIFIERS
+  XX   XX   XX    XX ;; ARROW KEYS
+  XX   XX  XX  XX ;; NUMPAD
+  XX  XX  XX  XX
+  XX  XX  XX
+  XX  XX  XX  XX
+  XX  XX
+)
+(deflayer mod-left
+  XX  XX XX XX XX XX XX XX XX XX XX  XX  XX  XX  XX   XX ;; FN ROW
+  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
+  XX  XX XX XX XX XX @y @u @i @o @p XX XX XX ;; TOP ROW
+  XX   lmet lalt lsft lctl @g @h @j @k @l @; XX XX ;; HOME ROW
+  XX   XX XX XX XX XX @n @m @, @. @/ XX ;; BOTTOM ROW
+  XX   XX   XX   spc XX   XX ;; MODIFIERS
+  XX   XX   XX    XX ;; ARROW KEYS
+  XX   XX  XX  XX ;; NUMPAD
+  XX  XX  XX  XX
+  XX  XX  XX
+  XX  XX  XX  XX
+  XX  XX
+)
+(deflayer mod-right
+  XX  XX XX XX XX XX XX XX XX XX XX  XX  XX  XX  XX   XX ;; FN ROW
+  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
+  XX  @q @w @e @r @t XX XX XX XX XX XX XX XX ;; TOP ROW
+  XX   @a @s @d @f @g XX lmet lalt lsft lctl XX XX ;; HOME ROW
+  XX   @z @x @c @v @b XX XX XX XX XX XX ;; BOTTOM ROW
+  XX   XX   XX   spc XX   XX ;; MODIFIERS
+  XX   XX   XX    XX ;; ARROW KEYS
+  XX   XX  XX  XX ;; NUMPAD
+  XX  XX  XX  XX
+  XX  XX  XX
+  XX  XX  XX  XX
+  XX  XX
+)
+(deflayer lmod1 ;; Navigation Layer
+  XX  XX XX XX XX XX XX XX XX XX XX  XX  XX  XX  XX   XX ;; FN ROW
+  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
+  XX  XX XX XX XX XX XX XX home pgup pgdn end XX XX ;; TOP ROW
+  XX   lmet lalt lsft lctl XX left down up right XX XX XX ;; HOME ROW
+  XX   XX XX XX XX XX @fwrd @bwrd XX XX XX XX ;; BOTTOM ROW
+  XX   XX   XX   spc XX   XX ;; MODIFIERS
+  XX   XX   XX    XX ;; ARROW KEYS
+  XX   XX  XX  XX ;; NUMPAD
+  XX  XX  XX  XX
+  XX  XX  XX
+  XX  XX  XX  XX
+  XX  XX
+)
+(deflayer lmod2 ;; Symbol Layer
+  XX  XX XX XX XX XX XX XX XX XX XX  XX  XX  XX  XX   XX ;; FN ROW
+  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
+  XX  XX XX XX XX XX X-X X-X X-X X-X XX XX XX XX ;; TOP ROW
+  XX   XX XX XX XX XX X-X X-X X-X X-X XX XX XX ;; HOME ROW
+  XX   XX XX XX XX XX X-X X-X X-X X-X XX XX ;; BOTTOM ROW
+  XX   XX   XX   XX  XX   XX ;; MODIFIERS
+  XX   XX   XX    XX ;; ARROW KEYS
+  XX   XX  XX  XX ;; NUMPAD
+  XX  XX  XX  XX
+  XX  XX  XX
+  XX  XX  XX  XX
+  XX  XX
+)
+(deflayer rmod1 ;; Number Layer
+  XX  XX XX XX XX XX XX XX XX XX XX  XX  XX  XX  XX   XX ;; FN ROW
+  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
+  XX  XX 7 8 9 XX XX XX XX XX XX XX XX XX ;; TOP ROW
+  XX   0 1 2 3 XX XX rctl rsft ralt rmet XX XX ;; HOME ROW
+  XX   XX 4 5 6 XX XX XX XX XX XX XX ;; BOTTOM ROW
+  XX   XX   XX   spc XX   XX ;; MODIFIERS
+  XX   XX   XX    XX ;; ARROW KEYS
+  XX   XX  XX  XX ;; NUMPAD
+  XX  XX  XX  XX
+  XX  XX  XX
+  XX  XX  XX  XX
+  XX  XX
+)
+(deflayer rmod2 ;; Symbol Layer
+  XX  XX XX XX XX XX XX XX XX XX XX  XX  XX  XX  XX   XX ;; FN ROW
+  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
+  XX  X-X X-X X-X X-X XX XX XX XX XX XX XX XX XX ;; TOP ROW
+  XX   X-X X-X X-X X-X XX XX XX XX XX XX XX XX ;; HOME ROW
+  XX   X-X X-X X-X X-X XX XX XX XX XX XX XX ;; BOTTOM ROW
+  XX   XX   XX   spc XX   XX ;; MODIFIERS
+  XX   XX   XX    XX ;; ARROW KEYS
+  XX   XX  XX  XX ;; NUMPAD
+  XX  XX  XX  XX
+  XX  XX  XX
+  XX  XX  XX  XX
+  XX  XX
+)
+(deflayer plain
+  esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 ins prnt del ;; FN ROW
+  grv 1 2 3 4 5 6 7 8 9 0 - = bspc ;; NUMBER ROW
+  tab q w e r t y u i o p [ ] \ ;; TOP ROW
+  caps a s d f g h j k l ; ' ret ;; HOME ROW
+  lsft z x c v b n m , . / rsft ;; BOTTOM ROW
+  lctl @met lalt spc ralt rctl ;; MODIFIERS
+  left down right up ;; ARROW KEYS
+  nlck kp/ kp* kp- ;; NUMPAD
+  kp7 kp8 kp9 kp+
+  kp4 kp5 kp6
+  kp1 kp2 kp3 kprt
+  kp0 kp.
+)
