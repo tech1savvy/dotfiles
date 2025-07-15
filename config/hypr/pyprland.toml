@@ -6,7 +6,7 @@ plugins = [
 
 # Dropdown terminal
 [scratchpads.term]
-command = "kitty -o background_opacity=0.5y --class kitty-scratch"
+command = "kitty -o background_opacity=0.5 --class kitty-scratch"
 class = "kitty-scratch"
 size = "65% 20%"
 animation = "fromTop"
@@ -29,14 +29,6 @@ unfocus = "hide"
 [scratchpads.superproductivity]
 command = "super-productivity"
 class = "superProductivity"
-position = "0% 3%"
-size = "100% 97%"
-animation = "fromTop"
-unfocus = "hide"
-
-[scratchpads.obsidian]
-command = "obsidian"
-class = "obsidian"
 position = "0% 3%"
 size = "100% 97%"
 animation = "fromTop"

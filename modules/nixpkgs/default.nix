@@ -17,12 +17,6 @@
     librewolf
     motrix
 
-    vscode
-    firefox-devedition
-    postman
-
-    obsidian
-    dropbox
     libreoffice
 
     discord
@@ -42,6 +36,9 @@
 
     # VPN
     tailscale
-  ];
 
+    qutebrowser
+
+    rofi-wayland
+  ];
 }

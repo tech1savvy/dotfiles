@@ -5,9 +5,14 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
+
+    # notes
     obsidian
 
-    logseq
+    # journal
+
+    # tasks
+    super-productivity
   ];
 
 }

@@ -14,7 +14,7 @@
   ];
 
   fonts.packages = with pkgs; [
-    nerdfonts # icon support
+    nerd-fonts.jetbrains-mono # icon support
     noto-fonts-emoji # emoji support
   ];
 }

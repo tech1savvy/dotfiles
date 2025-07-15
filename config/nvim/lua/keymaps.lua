@@ -51,4 +51,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- [[ Insert Mode Keymaps ]]
+vim.keymap.set("i", "<C-BS>", "<C-W>", { noremap = true, silent = true }) -- Map <C-BS> to delete the word before rather than terminal default <C-W>
+
+
 -- vim: ts=2 sts=2 sw=2 et

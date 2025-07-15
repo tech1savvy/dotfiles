@@ -1,6 +1,13 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    ./modules
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "tech1savvy";
@@ -49,6 +56,66 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    ".config/hypr" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/hypr";
+      recursive = true;
+    };
+
+    ".config/yazi" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/yazi";
+      recursive = true;
+    };
+
+    ".config/btop" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/btop";
+      recursive = true;
+    };
+
+    ".config/kitty" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/kitty";
+      recursive = true;
+    };
+
+    ".config/rofi" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/rofi";
+      recursive = true;
+    };
+
+    ".config/waybar" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/waybar";
+      recursive = true;
+    };
+
+    ".config/wofi" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/wofi";
+      recursive = true;
+    };
+
+    ".config/wl-kbptr" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/wl-kbptr";
+      recursive = true;
+    };
+
+    ".config/nvim" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/nvim";
+      recursive = true;
+    };
+
+    ".config/lazydocker" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/lazydocker";
+      recursive = true;
+    };
+
+    ".config/lazygit" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/lazygit";
+      recursive = true;
+    };
+
+    ".config/mouseless" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/mouseless";
+      recursive = true;
+    };
   };
 
   # Home Manager can also manage your environment variables through

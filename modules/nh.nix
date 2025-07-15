@@ -9,6 +9,6 @@
   ];
 
   environment.sessionVariables = {
-    FLAKE = "\${HOME}/dotfiles";
+    NH_FLAKE = "\${HOME}/dotfiles";
   };
 }

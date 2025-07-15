@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   # Enable Hyprland Wayland compositor
@@ -87,12 +88,21 @@
     hyprpaper
 
     # gui-config editor
-    hyprgui
+    # hyprgui
+
+    # music player control
+    playerctl
+
+    # pyprland
+    pyprland
+
+    wl-kbptr
+    wlrctl # for mouse movements
   ];
 
   fonts.packages = with pkgs; [
     font-awesome # default for waybar
-    nerdfonts # for swaync
+    nerd-fonts.noto # for swaync
   ];
 
   xdg.portal.enable = true;

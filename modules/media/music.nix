@@ -9,17 +9,29 @@
   programs.spicetify = let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
   in {
-    enable = true;
-    # theme = spicePkgs.themes.dribbblish;
-    # colorScheme = "gruvbox-material-dark";
+    enable = false;
+    theme = spicePkgs.themes.dribbblish;
+    colorScheme = "gruvbox-material-dark";
     
     enabledExtensions = with spicePkgs.extensions; [
       # keyboardShortcut # bindings: https://spicetify.app/docs/advanced-usage/extensions/#keyboard-shortcut
-      shuffle # un-biased shuffle
-      beautifulLyrics
-      fullAppDisplay
-      # simpleBeautifulLyrics
+      # fullAppDisplay
+      fullAppDisplayMod
       adblock
     ];
+
+    # enabledCustomApps =  [
+    #   ({
+    #     src = pkgs.fetchFromGitHub {
+    #       owner = "Konsl";
+    #       repo = "spicetify-visualizer";
+    #       rev = "dist";
+    #       hash = "sha256-+QzNtKYpaW0EWpP6FULLFK3MOGj5r548pK2i8p5nZ0c=";
+    #     };
+
+    #     # The actual file name of the customApp usually ends with .js
+    #     name = "index.js";
+    #   })
+    # ];
   };
 }

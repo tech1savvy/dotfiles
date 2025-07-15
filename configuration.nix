@@ -12,38 +12,55 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    # mandatory configs
+    # system modules
     ./modules/nixos
+
+    # system utils
+    ./modules/utils/zram.nix
 
     # packages
     ./modules/nixpkgs
     ./modules/version-control/git.nix
     ./modules/nh.nix
 
+    ./modules/fonts.nix
+
+    ./modules/development/web.nix
     ./modules/development/terminal.nix
     ./modules/development/neovim.nix
 
-    ./modules/music.nix
+    # media
+    ./modules/media/video.nix
+    ./modules/media/music.nix
+    ./modules/media/image.nix
+    ./modules/media/document.nix
+    ./modules/media/file-manager.nix
 
     ./modules/authentication/gnome-keyring.nix
 
     ./modules/containerisation/distrobox.nix
 
-    ./modules/file-manager.nix
-
-    ./modules/containerisation/docker.nix  
+    ./modules/containerisation/docker.nix
     ./modules/virtualisation/kvm.nix
 
-    ./modules/keyboard/remap.nix
+    # peripherals
+    ./modules/peripherals/kanata.nix
 
     # environment
     # ./modules/environment/plasma6.nix
     ./modules/environment/hyprland.nix
+    # ./modules/environment/dwm.nix
+    # ./modules/environment/i3wm.nix
 
     # gaming
     ./modules/gaming
     ./modules/gaming/sunshine.nix
     ./modules/gaming/emulation.nix
+
+    # productivity
+    ./modules/productivity.nix
+
+    ./modules/cloud.nix
   ];
 
   # able to read windows drives
