@@ -185,8 +185,8 @@
   grv 1 2 3 4 5 6 7 8 9 0 - = bspc ;; NUMBER ROW
   tab q @w-tab @e-tab r t y u @i-bspc @o-bspc p [ ] \ ;; TOP ROW
   @mouseless a @s-esc @d-esc f g h j @k-ret @l-ret ; ' ret ;; HOME ROW
-  lsft z x c v b n m , . / rsft ;; BOTTOM ROW
-  lctl lmet @lmod @mod @rmod rctl ;; MODIFIERS
+  @sft z x c v b n m , . / @sft ;; BOTTOM ROW
+  @ctl @met @lmod @mod @rmod @ctl ;; MODIFIERS
   left down right up ;; ARROW KEYS
 )
 ;; ==================
