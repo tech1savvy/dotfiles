@@ -1,4 +1,31 @@
+(defcfg
+  linux-dev (
+    "/dev/input/by-path/pci-0000:00:14.3-platform-VPC2004:00-event"
+    "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
+    "/dev/input/by-path/pci-0000:05:00.3-usb-0:4:1.0-event"
+    "/dev/input/by-path/pci-0000:05:00.3-usb-0:4:1.0-event-kbd"
+    "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:4:1.0-event"
+    "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:4:1.0-event-kbd"
+    "/dev/input/by-path/pci-0000:05:00.4-usbj-0:3:1.0-event-kbd"
+    "/dev/input/by-path/pci-0000:05:00.4-usbv2-0:3:1.0-event-kbd"
+    ;; FullsizeThirdUSBboard
+    "/dev/input/by-path/pci-0000:05:00.3-usb-0:2.2:1.0-event-kbd"
+    "/dev/input/by-path/pci-0000:05:00.3-usb-0:2.2:1.1-event"
+    "/dev/input/by-path/pci-0000:05:00.3-usb-0:2.2:1.1-event-mouse"
+    "/dev/input/by-path/pci-0000:05:00.3-usb-0:2.2:1.1-mouse"
+    "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:2.2:1.0-event-kbd"
+    "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:2.2:1.1-event"
+    "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:2.2:1.1-event-mouse"
+    "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:2.2:1.1-mouse"
+    ;; Kanata
+    "/run/kanata-leftUSBKeyboard/leftUSBKeyboard"
+    "/run/kanata-rightUSBKeyboard/rightUSBKeyboard"
+  )
+  process-unmapped-keys yes
+  danger-enable-cmd yes
+)
 (defsrc
+  esc
   grv 1 2 3 4 5 6 7 8 9 0 - = bspc  ;; NUMBER ROW
   tab q w e r t y u i o p [ ] \  ;; TOP ROW
   caps a s d f g h j k l ; ' ret ;; HOME ROW
@@ -6,39 +33,45 @@
   lctl lmet lalt spc ralt rctl ;; MODIFIERS
   left down right up ;; ARROW KEYS
 )
+(defoverrides
+  (sft bspc) (del)
+)
 (defvar
   chord-time 30
   oneshot-time 1000
   oneshot-time-quick 200
+  tap-time-quick 100
   tap-time 150
+  tap-time-slow 200
+  hold-time-quick 150
   hold-time 200
 )
 (defchords base-chords $chord-time
 
   (w  ) w
-  (w e) tab
+  (w e) (tap-hold $tap-time $hold-time tab @lmod1)
   (e  ) e
 
   (i  ) i
-  (i o) bspc
+  (i o) (tap-hold $tap-time $hold-time bspc @rmod1)
   (o  ) o
 
   (s  ) s
-  (s d) esc
+  (s d) (tap-hold $tap-time $hold-time esc @sft) 
   (d  ) d
 
   (k  ) k
-  (k l) ret
+  (k l) (tap-hold $tap-time $hold-time ret @sft)
   (l  ) l
 )
 (defchords mod-chords $chord-time
 
   (w  ) @close
-  (w e) @stab 
+  (w e) @stab
   (e  ) e
 
-  (i  ) M-g
-  (i o) del
+  (i  ) @mwu
+  (i o) @cbspc
   (o  ) end
 
   (up  ) up
@@ -47,6 +80,65 @@
 )
 (defalias
 
+  ;; MOD CHORDS
+
+  ;; m-q (chord mod-chords q)
+  ;; m-w (chord mod-chords w)
+  ;; m-e (chord mod-chords e)
+  ;; m-r (chord mod-chords r)
+  ;; m-t (chord mod-chords t)
+  ;; m-y (chord mod-chords y)
+  ;; m-u (chord mod-chords u)
+  ;; m-i (chord mod-chords i)
+  ;; m-o (chord mod-chords o)
+  ;; m-p (chord mod-chords p)
+
+  ;; m-a (chord mod-chords a)
+  ;; m-s (chord mod-chords s)
+  ;; m-d (chord mod-chords d)
+  ;; m-f (chord mod-chords f)
+  ;; m-g (chord mod-chords g)
+  ;; m-h (chord mod-chords h)
+  ;; m-j (chord mod-chords j)
+  ;; m-k (chord mod-chords k)
+  ;; m-l (chord mod-chords l)
+  ;; m-; (chord mod-chords ;)
+
+  ;; m-z od-chords z)
+  ;; m-x (chord mod-chords x)
+  ;; m-c (chord mod-chords c)
+  ;; m-v (chord mod-chords v)
+  ;; m-b (chord mod-chords b)
+  ;; m-n (chord mod-chords n)
+  ;; m-m (chord mod-chords m)
+  ;; m-, (chord mod-chords ,)
+  ;; m-. (chord mod-chords .)
+  ;; m-/ (chord mod-chords /)
+
+  ;; SPECIAL KEYS - BASE CHORDS
+
+  w-tab   (chord base-chords w)
+  e-tab   (chord base-chords e)
+
+  i-bspc  (chord base-chords i)
+  o-bspc  (chord base-chords o)
+
+  s-esc   (chord base-chords s)
+  d-esc   (chord base-chords d)
+
+  k-ret   (chord base-chords k)
+  l-ret   (chord base-chords l)
+
+ ;; SPECIAL KEYS - MOD CHORDS
+  close-stab   (chord mod-chords w)
+  e-stab   (chord mod-chords e)
+
+  mwu-cbspc  (chord mod-chords i)
+  end-cbspc  (chord mod-chords o)
+
+  up-sret   (chord mod-chords up)
+  right-sret   (chord mod-chords right)
+
   ;; STICKY MODIFIERS
   met (one-shot $oneshot-time met) 
   alt (one-shot $oneshot-time alt) 
@@ -54,19 +146,24 @@
   sft (one-shot $oneshot-time sft)
 
   base (layer-switch base)
+  __ (one-shot $oneshot-time (layer-while-held XX))
+
+  mod1base (tap-hold $tap-time $hold-time (layer-switch base) (layer-while-held mod2))
 
   mod (tap-hold $tap-time $hold-time spc (layer-while-held mod))
-  lmod (tap-hold $tap-time $hold-time 
-        (one-shot $oneshot-time (layer-while-held lmod))
-        (layer-while-held lsftd)
-  )
-  rmod (tap-hold $tap-time $hold-time 
-        (one-shot $oneshot-time (layer-while-held rmod))
-        (layer-while-held rsftd)
-  )
 
-  lsftd (one-shot $oneshot-time (layer-while-held lsftd))
-  rsftd (one-shot $oneshot-time (layer-while-held rsftd))
+  ;; mod (tap-dance $tap-time-slow (
+  ;;   (tap-hold $tap-time $hold-time (layer-switch mod1) (layer-while-held mod))
+  ;;   (tap-hold $tap-time-quick $hold-time spc (layer-while-held mod2))
+  ;; ))
+
+  lmod (tap-hold $tap-time $hold-time (layer-switch lmod1) (one-shot $oneshot-time (layer-while-held lmod1)))
+  rmod (tap-hold $tap-time $hold-time (layer-switch rmod2) (one-shot $oneshot-time (layer-while-held rmod1)))
+
+  lmod1 (one-shot $oneshot-time (layer-while-held lmod1))
+  rmod1 (one-shot $oneshot-time (layer-while-held rmod1))
+  lmod2 (one-shot $oneshot-time (layer-while-held lmod2))
+  rmod2 (one-shot $oneshot-time (layer-while-held rmod2))
 
   mouseless (one-shot $oneshot-time (layer-while-held mouseless))
   tmouseless (layer-switch mouseless)
@@ -78,29 +175,29 @@
 
   ;; Symbols
 
-  ` `
   ~ S-`
+  ` (tap-hold $tap-time $hold-time-quick ` @~)
   ! S-1
   @ S-2
   # S-3
-  $ S-4
+  & S-7
+  $ (tap-hold $tap-time $hold-time-quick S-4 @&)
   % S-5
   ^ S-6
-  & S-7
   * S-8
-  lbrc S-9
   rbrc S-0
+  lbrc (tap-hold $tap-time $hold-time S-9 @rbrc)
 
   - -
   = =
   _ S--
   + S-=
 
-  [ [
   ] ]
+  [ (tap-hold $tap-time $hold-time-quick [ ])
 
-  { S-[
   } S-]
+  { (tap-hold $tap-time $hold-time-quick S-[ S-])
 
   | S-\
 
@@ -113,6 +210,7 @@
   ? S-/
 
   '' S-'
+  ' (tap-hold $tap-time $hold-time-quick ' @'')
   : S-;
 
   ;; MOUSE
@@ -136,36 +234,12 @@
   fst (movemouse-speed 200)
   slw (movemouse-speed 1)
 
-  ;; SPECIAL KEYS - BASE CHORDS
-
-  w-tab   (chord base-chords w)
-  e-tab   (chord base-chords e)
-
-  i-bspc  (chord base-chords i)
-  o-bspc  (chord base-chords o)
-
-  s-esc   (chord base-chords s)
-  d-esc   (chord base-chords d)
-
-  k-ret   (chord base-chords k)
-  l-ret   (chord base-chords l)
-
- ;; SPECIAL KEYS - MOD CHORDS
-  close-stab   (chord mod-chords w)
-  e-stab   (chord mod-chords e)
-
-  grid-del  (chord mod-chords i)
-  end-del  (chord mod-chords o)
-
-  up-sret   (chord mod-chords up)
-  right-sret   (chord mod-chords right)
-
   ;; SHORTCUTS
   zoom-in (multi lctl -)
   zoom-out (multi lctl =)
 
-  close C-w
-  kill M-q
+  close (tap-dance $tap-time (M-w C-w))
+  kill (tap-dance $tap-time (esc M-q))
 
   cut C-x
   copy C-c
@@ -182,72 +256,81 @@
   wrkspc-r M-right
 )
 (deflayer base
-  grv 1 2 3 4 5 6 7 8 9 0 - = bspc ;; NUMBER ROW
-  tab q @w-tab @e-tab r t y u @i-bspc @o-bspc p [ ] \ ;; TOP ROW
-  @mouseless a @s-esc @d-esc f g h j @k-ret @l-ret ; ' ret ;; HOME ROW
-  @sft z x c v b n m , . / @sft ;; BOTTOM ROW
-  @ctl @met @lmod @mod @rmod @ctl ;; MODIFIERS
-  left down right up ;; ARROW KEYS
+  lrld
+  grv M-1 M-2 M-3 M-4 M-5 M-6 M-7 M-8 M-9 M-0 - = @__ ;; NUMBER ROW
+  @__ q @w-tab @e-tab r t  y u @i-bspc @o-bspc p [ ] \ ;; TOP ROW
+  @mouseless a @s-esc @d-esc f g  h j @k-ret @l-ret ; ' ret ;; HOME ROW
+  z    x c v b @__ n m , . / rsft ;; BOTTOM ROW
+  @__  @__  @sft @mod @sft @__ ;; MODIFIERS
+  @__  @__  @__   @__ ;; ARROW KEYS
 )
 ;; ==================
 ;; EXTEND LAYER
 (deflayer mod
+  esc
   grv M-1 M-2 M-3 M-4 M-5 M-6 M-7 M-8 M-9 M-0 @zoom-in @zoom-out bspc ;; NUMBER ROW
-  tab @kill @close-stab @e-stab r t @redo u @grid-del @end-del p [ ] \ ;; TOP ROW
-  @tmouseless @met @alt @sft @ctl g left down @up-sret @right-sret ; ' ret ;; HOME ROW
-  lsft @undo @cut @copy @paste b n home , . / rsft ;; BOTTOM ROW
-  XX   XX   XX   @mod XX   XX ;; MODIFIERS
+  tab @kill @close-stab @e-stab @stab t  @redo @mwd @mwu-cbspc @end-cbspc p [ ] \ ;; TOP ROW
+  @tmouseless @alt @met @sft @ctl M-g left down @up-sret @right-sret ; ' ret ;; HOME ROW
+  @undo @cut @copy @paste b @__ M-n home , . / lsft ;; BOTTOM ROW
+  @__  @__  @__  @mod @__  @__ ;; MODIFIERS
   @wrkspc-l @wrkspc-d @wrkspc-r @wrkspc-u ;; ARROW KEYS
 )
-(deflayer lmod
-  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
-  XX  XX XX XX XX XX 6 7 8 9 0 XX XX XX ;; TOP ROW
-  XX   XX XX XX XX XX @\ @lbrc @{ @[ @: XX XX ;; HOME ROW
-  XX   XX XX XX XX XX @` @rbrc @} @] / XX ;; BOTTOM ROW
-  XX   XX   XX   spc XX   XX ;; MODIFIERS
-  XX   XX   XX    XX ;; ARROW KEYS
+(deflayer mod1
+  @__ 
+  @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ ;; NUMBER ROW
+  @__ 1 2 3 4 5 6 7 8 9 0 @__ @__ @__ ;; TOP ROW
+  @__ @< @/ @= @> @~ @` @lbrc @{ @[ @' @__ @__ ;; HOME ROW
+  @! @@ @- @+ @$ @__ @^ @& @* @$ @\ @__ ;; BOTTOM ROW
+  @__ @__ @__ @mod1base @__ @__ ;; MODIFIERS
+  @__ @__ @__ @__ ;; ARROW KEYS
 )
-(deflayer rmod
-  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
-  XX  1 2 3 4 5 XX XX XX XX XX XX XX XX ;; TOP ROW
-  XX   a s @< @> @/ XX XX XX XX XX XX XX ;; HOME ROW
-  XX   z x @- @= @~ XX XX XX XX XX XX ;; BOTTOM ROW
-  XX   XX   XX   spc XX   XX ;; MODIFIERS
-  XX   XX   XX    XX ;; ARROW KEYS
+(deflayer mod2
+  @__
+  @__   @__   @__   @__   @__   @__   @__   @__   @__   @__   @__   @__   @__   @__   ;; NUMBER ROW
+  @__   @!    @@    @#    @$    @%    @^    @&    @*    @__   @__   @__   @__   @__   ;; TOP ROW
+  @__   a     s     @<    @>    @/    @__   @rbrc @}    @]    @:    @__   @__          ;; HOME ROW
+  z     x     @_    @+    b     @__   @__   @__   @__   @__   @__   @__                ;; BOTTOM ROW
+  @__   @__   @__   spc   @__   @__                                           ;; MODIFIERS
+  @__   @__   @__   @__                                                   ;; ARROW KEYS
 )
 (deflayer lmod1
-  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
-  XX  XX XX XX XX XX 6 7 8 9 0 XX XX XX ;; TOP ROW
-  XX   XX XX XX XX XX @\ @lbrc @{ @[ ; XX XX ;; HOME ROW
-  XX   XX XX XX XX XX @` XX XX XX XX XX ;; BOTTOM ROW
-  XX   XX   XX   spc XX   XX ;; MODIFIERS
-  XX   XX   XX    XX ;; ARROW KEYS
+  esc
+  @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ ;; NUMBER ROW
+  @__ @__ @__ @__ @__ @__ 6 7 8 9 0 @__ @__ @__ ;; TOP ROW
+  @__  @__ @__ @__ @__ @__ @` @lbrc @{ @[ @' @__ @__ ;; HOME ROW
+  @__ @__ @__ @__ @__ @__ @^ @& @* @$ @\ @__ ;; BOTTOM ROW
+  @__  @__  @__  @lmod2 @__  @__ ;; MODIFIERS
+  @__  @__  @__   @__ ;; ARROW KEYS
 )
 (deflayer lmod2
-  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
-  XX  XX XX XX XX XX @^ @& @* XX XX XX XX XX ;; TOP ROW
-  XX   XX XX XX XX XX XX @rbrc @} @] @: XX XX ;; HOME ROW
-  XX   XX XX XX XX XX XX XX XX XX XX XX ;; BOTTOM ROW
-  XX   XX   XX   spc XX   XX ;; MODIFIERS
-  XX   XX   XX    XX ;; ARROW KEYS
+  esc
+  @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ ;; NUMBER ROW
+  @__ @__ @__ @__ @__ @__ @^ @& @* @__ @__ @__ @__ @__ ;; TOP ROW
+  @__  @__ @__ @__ @__ @__ @__ @rbrc @} @] @: @__ @__ ;; HOME ROW
+  @__  @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ ;; BOTTOM ROW
+  @__  @__  @__  spc @__  @__ ;; MODIFIERS
+  @__  @__  @__   @__ ;; ARROW KEYS
 )
 (deflayer rmod1
-  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
-  XX  1 2 3 4 5 XX XX XX XX XX XX XX XX ;; TOP ROW
-  XX   XX XX @< @> @/ XX XX XX XX XX XX XX ;; HOME ROW
-  XX   XX XX @- @= XX XX XX XX XX XX XX ;; BOTTOM ROW
-  XX   XX   XX   spc XX   XX ;; MODIFIERS
-  XX   XX   XX    XX ;; ARROW KEYS
+  esc
+  @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ ;; NUMBER ROW
+  @__ 1 2 3 4 5 @__ @__ @__ @__ @__ @__ @__ @__ ;; TOP ROW
+  @__ @< @/ @= @> @~  @__ @__ @__ @__ @__ @__ @__ ;; HOME ROW
+    @! @@ @- @+ @$ @__ @__ @__ @__ @__ @__ @__ ;; BOTTOM ROW
+  @__  @__  @__  @rmod2 @__  @__ ;; MODIFIERS
+  @__  @__  @__   @__ ;; ARROW KEYS
 )
 (deflayer rmod2
-  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX ;; NUMBER ROW
-  XX  @! @@ @# @$ @% XX XX XX XX XX XX XX XX ;; TOP ROW
-  XX   a s @< @> @/ XX XX XX XX XX XX XX ;; HOME ROW
-  XX   z x @+ @- b XX XX XX XX XX XX ;; BOTTOM ROW
-  XX   XX   XX   spc XX   XX ;; MODIFIERS
-  XX   XX   XX    XX ;; ARROW KEYS
+  esc
+  @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ ;; NUMBER ROW
+  @__ @! @@ @# @$ @% @__ @__ @__ @__ @__ @__ @__ @__ ;; TOP ROW
+  @__  a s @< @> @/ @__ @__ @__ @__ @__ @__ @__ ;; HOME ROW
+   z x @_ @+ b @__ @__ @__ @__ @__ @__ @__ ;; BOTTOM ROW
+  @__  @__  @__  spc @__  @__ ;; MODIFIERS
+  @__  @__  @__   @__ ;; ARROW KEYS
 )
 (deflayer mouseless
+  esc
   grv 1 2 3 4 5 6 7 8 9 0 - = bspc ;; NUMBER ROW
   tab @fst mbck mfwd r t @mwl @mwd @mwu @mwr p [ ] \ ;; TOP ROW
   caps mrgt mmid mlft f g @mml @mmd @mmu @mmr ; ' ret ;; HOME ROW
@@ -255,19 +338,14 @@
   lctl lmet lalt @base ralt rctl ;; MODIFIERS
   left down right up ;; ARROW KEYS
 )
-(deflayer lsftd
-  XX  XX XX XX XX XX @^ @& @* @lbrc @rbrc @_ @+ XX ;; NUMBER ROW
-  XX  q w e r t S-y S-u S-i S-o S-p @{ @} @| ;; TOP ROW
-  XX   a s d f g S-h S-j S-k S-l S-; @'' XX ;; HOME ROW
-  XX   z x c v b S-n S-m S-, S-. S-/ XX ;; BOTTOM ROW
-  XX   XX   XX   spc caps XX ;; MODIFIERS
-  XX   XX   XX    XX ;; ARROW KEYS
-)
-(deflayer rsftd
-  @~  @! @@ @# @$ @% XX XX XX XX XX XX XX XX ;; NUMBER ROW
-  XX  S-q S-w S-e S-r S-t y u i o p XX XX XX ;; TOP ROW
-  XX   S-a S-s S-d S-f S-g h j k l ; XX XX ;; HOME ROW
-  XX   S-z S-x S-c S-v S-b n m , . / XX ;; BOTTOM ROW
-  XX   XX   caps spc XX   XX ;; MODIFIERS
+(deflayer XX
+  XX
+  XX  XX XX XX XX XX XX XX XX XX XX XX XX XX
+  XX ;; NUMBER ROW
+XX XX XX XX XX XX XX XX XX XX XX XX XX
+  XX ;; TOP ROW
+XX XX XX XX XX XX XX XX XX XX XX XX ;; HOME ROW
+  XX   XX XX XX XX XX XX XX XX XX XX XX ;; BOTTOM ROW
+  XX   XX   XX   XX  XX   XX ;; MODIFIERS
   XX   XX   XX    XX ;; ARROW KEYS
 )
