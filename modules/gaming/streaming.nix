@@ -6,7 +6,7 @@
   # Enable the Sunshine service
   services.sunshine = {
     enable = true;
-    autoStart = true; # Start automatically with graphical session
+    autoStart = false; # Start automatically with graphical session
     capSysAdmin = true; # Needed for Wayland; omit if using Xorg
     openFirewall = true; # Open necessary ports automatically
 
