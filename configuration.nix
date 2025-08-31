@@ -1,13 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -25,7 +19,7 @@
 
     ./modules/fonts.nix
 
-    ./modules/development/web.nix
+    ./modules/development
     ./modules/development/terminal.nix
     ./modules/development/neovim.nix
 
@@ -45,7 +39,8 @@
 
     # peripherals
     ./modules/peripherals/kanata.nix
-
+    # ./modules/peripherals/interception-tools.nix
+    #
     # environment
     # ./modules/environment/plasma6.nix
     ./modules/environment/hyprland.nix
@@ -54,7 +49,7 @@
 
     # gaming
     ./modules/gaming
-    ./modules/gaming/sunshine.nix
+    ./modules/gaming/streaming.nix
     ./modules/gaming/emulation.nix
 
     # productivity

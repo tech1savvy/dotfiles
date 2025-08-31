@@ -6,6 +6,8 @@
     nvd
 
     alejandra # format nix files
+
+    nix-tree # TUI for pkg depencies
   ];
 
   environment.sessionVariables = {

@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -22,7 +17,6 @@
     discord
 
     lazydocker
-    neofetch
 
     brightnessctl
     btop
@@ -34,11 +28,17 @@
 
     google-chrome
 
-    # VPN
-    tailscale
-
     qutebrowser
 
     rofi-wayland
+
+    kdePackages.kdeconnect-kde
+    signal-desktop
+    localsend
+
+    openvpn
+    update-resolv-conf
+
+    anki
   ];
 }

@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -14,48 +13,33 @@
     package = pkgs.kanata-with-cmd;
     keyboards = {
       internalKeyboard = {
-        devices = [
-          "/dev/input/by-path/pci-0000:00:14.3-platform-VPC2004:00-event"
-          "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
-          "/dev/input/by-path/pci-0000:05:00.3-usb-0:4:1.0-event"
-          "/dev/input/by-path/pci-0000:05:00.3-usb-0:4:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:4:1.0-event"
-          "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:4:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:05:00.4-usbj-0:3:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:05:00.4-usbv2-0:3:1.0-event-kbd"
-        ];
-        extraDefCfg = "
-          process-unmapped-keys yes
-          danger-enable-cmd yes
-          ";
-        config = builtins.readFile /home/tech1savvy/dotfiles/config/kanata/internalKeyboard.kbd;
+        configFile = "/home/tech1savvy/dotfiles/config/kanata/internalKeyboard.kbd";
+        port = 6666;
       };
-      rightUSBboard = {
-        devices = [
-          "/dev/input/by-path/pci-0000:05:00.3-usb-0:2.3:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:05:00.3-usb-0:2.3:1.1-event"
-          "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:2.3:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:2.3:1.1-event"
-        ];
-        extraDefCfg = "
-          process-unmapped-keys yes
-          danger-enable-cmd yes
-          ";
-        config = builtins.readFile /home/tech1savvy/dotfiles/config/kanata/RightUSBboard.kbd;
+      rightUSBKeyboard = {
+        configFile = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
+        port = 7777;
       };
-      leftUSBboard = {
-        devices = [
-          "/dev/input/by-path/pci-0000:05:00.3-usb-0:2.1:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:05:00.3-usb-0:2.1:1.1-event"
-          "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:2.1:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:2.1:1.1-event"
-        ];
-        extraDefCfg = "
-          process-unmapped-keys yes
-          danger-enable-cmd yes
-          ";
-        config = builtins.readFile /home/tech1savvy/dotfiles/config/kanata/LeftUSBboard.kbd;
+      leftUSBKeyboard = {
+        configFile = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
+        port = 5555;
       };
     };
+  };
+
+  # Allow the service to access config files stored in home dir
+  systemd.services.kanata-internalKeyboard.serviceConfig = {
+    ProtectHome = lib.mkForce "tmpfs";
+    BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/internalKeyboard.kbd";
+
+    After = ["kanata-rightUSBKeyboard.service" "kanata-leftUSBKeyboard"];
+  };
+  systemd.services.kanata-rightUSBKeyboard.serviceConfig = {
+    ProtectHome = lib.mkForce "tmpfs";
+    BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
+  };
+  systemd.services.kanata-leftUSBKeyboard.serviceConfig = {
+    ProtectHome = lib.mkForce "tmpfs";
+    BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
   };
 }

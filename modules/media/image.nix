@@ -1,5 +1,5 @@
- {pkgs, ...}: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-     vimiv-qt
+    vimiv-qt
   ];
 }

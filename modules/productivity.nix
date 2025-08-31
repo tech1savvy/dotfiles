@@ -5,7 +5,6 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-
     # notes
     obsidian
 
@@ -14,5 +13,4 @@
     # tasks
     super-productivity
   ];
-
 }

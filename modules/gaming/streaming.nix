@@ -1,8 +1,12 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    moonlight-qt
+  ];
+
+  services.tailscale = {
+    enable = true;
+  };
+
   # Enable the Sunshine service
   services.sunshine = {
     enable = true;

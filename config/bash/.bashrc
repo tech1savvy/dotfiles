@@ -1,8 +1,20 @@
 PS1="\[\e[34m\]\W\[\e[0m\]\[\e[31m\]\$\[\e[0m\]"
 
+# enable vim mode
+set -o vi
+
+HISTSIZE=1000     # history in memory
+HISTFILESIZE=1000 # history stored in file
+
+shopt -s histappend # Ensure Bash appends history to the history file instead of overwriting it on shell exit, preserving history across sessions
+
 # default editor
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+# Point env vars to new global node npm-packages dir
+export PATH=$PATH:$HOME/.npm-packages/bin
+export NODE_PATH=$HOME/.npm-packages/lib/node_modules
 
 # Change TERM to xterm for SSH Connections
 alias ssh="export TERM=xterm && ssh"
@@ -38,6 +50,7 @@ alias ld="lazydocker"
 
 alias mps="mpv --input-ipc-server=/tmp/mpvsocket"
 alias d='z'
+alias di='zi'
 alias cd='z'
 
 # List Directory contents
@@ -89,6 +102,8 @@ ghrc() {
 # node
 alias nrd="npm run dev"
 
+alias tm="tmux"
+
 # django
 alias py="python"
 alias dj="django-admin"
@@ -111,6 +126,15 @@ alias nc="nh clean"
 alias nca="nh clean all"
 
 alias nsp="nix-shell -p"
+alias nspf="export NIXPKGS_ALLOW_UNFREE=1 && nix-shell -p"
+
+ntd() {
+  nix-tree --derivation "nixpkgs#$1"
+}
+
+# Hardware
+alias bu="brightnessctl s 1%+"
+alias bd="brightnessctl s 1%-"
 
 eval "$(thefuck --alias)"
 eval "$(zoxide init bash)"

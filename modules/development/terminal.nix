@@ -1,5 +1,8 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    # essesntial terminal tools
+    wget # download files from the web
+
     kitty # terminal emulator
 
     bat # quick file reader
@@ -22,5 +25,14 @@
     thefuck # command line tool to correct mistakes
 
     bonk # combines touch and mkdir
+
+    # modern alternatives
+    duf # df
+    eza # ls
+    bat-extras.batman
+    fastfetch # neofetch
+    curlie # curl
+
+    glow # md file
   ];
 }

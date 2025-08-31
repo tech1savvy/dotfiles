@@ -102,6 +102,11 @@
       recursive = true;
     };
 
+    ".config/kickstart.nvim" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/kickstart.nvim";
+      recursive = true;
+    };
+
     ".config/lazydocker" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/lazydocker";
       recursive = true;
@@ -115,6 +120,26 @@
     ".config/mouseless" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/mouseless";
       recursive = true;
+    };
+
+    ".config/mimeapps.list" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/mimeapps.list";
+    };
+
+    ".config/fastfetch" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/fastfetch";
+    };
+
+    ".config/zathura" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/zathura";
+    };
+
+    ".npmrc" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/npm/.npmrc";
+    };
+
+    ".bashrc" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/bash/.bashrc";
     };
   };
 

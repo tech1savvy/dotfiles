@@ -1,9 +1,4 @@
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
   # Enable Docker service
   virtualisation.docker.enable = true;
 

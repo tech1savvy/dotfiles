@@ -1,7 +1,10 @@
-{inputs, pkgs, ...}: {
-
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
-    spotify
+    # spotify
   ];
 
   # Spicetify is a tool to customize Spotify client
@@ -9,12 +12,12 @@
   programs.spicetify = let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
   in {
-    enable = false;
-    theme = spicePkgs.themes.dribbblish;
-    colorScheme = "gruvbox-material-dark";
-    
+    enable = true;
+    theme = spicePkgs.themes.text;
+    colorScheme = "Nord";
+
     enabledExtensions = with spicePkgs.extensions; [
-      # keyboardShortcut # bindings: https://spicetify.app/docs/advanced-usage/extensions/#keyboard-shortcut
+      keyboardShortcut # bindings: https://spicetify.app/docs/advanced-usage/extensions/#keyboard-shortcut
       # fullAppDisplay
       fullAppDisplayMod
       adblock

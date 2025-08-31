@@ -5,5 +5,10 @@
     kdePackages.ark
 
     xfce.thunar
+
+    yazi
+    xdg-desktop-portal-termfilechooser
+
+    jmtpfs # mount phone
   ];
 }

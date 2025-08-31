@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   home.pointerCursor = {
     name = "Breeze";
     package = pkgs.kdePackages.breeze;
@@ -6,4 +6,6 @@
     gtk.enable = true;
     x11.enable = true;
   };
+
+  # didn't work
 }

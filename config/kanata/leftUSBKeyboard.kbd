@@ -1,0 +1,27 @@
+(defcfg
+  linux-dev (
+    "/dev/input/by-path/pci-0000:05:00.3-usb-0:2.1:1.0-event-kbd"
+    "/dev/input/by-path/pci-0000:05:00.3-usb-0:2.1:1.1-event"
+    "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:2.1:1.0-event-kbd"
+    "/dev/input/by-path/pci-0000:05:00.3-usbv2-0:2.1:1.1-event"
+  )
+  process-unmapped-keys yes
+  danger-enable-cmd yes
+)
+
+(defsrc
+  esc f1 f2 f3 f4 f5
+  grv 1 2 3 4 5 6
+  tab q w e r t
+  caps a s d f g
+  lsft z x c v b
+  lctl lalt spc
+)
+(deflayer base
+  esc f1 f2 f3 f4 f5
+  grv 1 2 3 4 5 6
+  tab q w e r t
+  caps a s d f g
+  lsft z x c v b
+  lctl lalt spc
+)

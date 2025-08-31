@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   # Server Port: 25565
   services.minecraft-server = {
     enable = true;
@@ -16,6 +15,5 @@
 
   # configure the Minecraft server
 
-
-  networking.firewall.allowedTCPPorts = [ 25565 ];
+  networking.firewall.allowedTCPPorts = [25565];
 }

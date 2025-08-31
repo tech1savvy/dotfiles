@@ -1,7 +1,7 @@
 {
   config,
   pkgs,
-  inputs,
+  lib,
   ...
 }: {
   # Enable Hyprland Wayland compositor
@@ -16,7 +16,7 @@
   services.greetd.settings.default_session = {
     command = "uwsm start hyprland-uwsm.desktop";
     user = "tech1savvy";
-};
+  };
 
   environment.sessionVariables = {
     # If your cursor becomes invisible
@@ -24,6 +24,17 @@
     # Hint electron apps to use wayland
     NIXOS_OZONE_WL = "1";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
+
+    # hyprland plugins
+    # thread: https://discourse.nixos.org/t/installing-hyprlands-plugins-package-without-home-manager/65971
+    HYPR_PLUGIN_DIR = pkgs.symlinkJoin {
+      name = "hyprland-plugins";
+      paths = with  pkgs.hyprlandPlugins ;[
+        # hyprwinwrap
+        # hyprscrolling
+        #...plugins
+      ];
+    };
   };
 
   hardware = {
@@ -98,6 +109,8 @@
 
     wl-kbptr
     wlrctl # for mouse movements
+
+    rofimoji # for emjoi suppot
   ];
 
   fonts.packages = with pkgs; [

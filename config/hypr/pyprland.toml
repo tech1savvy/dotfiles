@@ -1,8 +1,5 @@
 [pyprland]
-plugins = [
-  "scratchpads",
-  "expose"
-]
+plugins = ["scratchpads", "expose"]
 
 # Dropdown terminal
 [scratchpads.term]
@@ -20,7 +17,7 @@ animation = "fromRight"
 unfocus = "hide"
 
 [scratchpads.btop]
-command = "kitty --class kitty-btop -e btop --force-utf"
+command = "kitty --class kitty-btop btop --force-utf"
 class = "kitty-btop"
 size = "70% 80%"
 animation = "fromTop"
@@ -31,5 +28,20 @@ command = "super-productivity"
 class = "superProductivity"
 position = "0% 3%"
 size = "100% 97%"
+animation = "fromTop"
+unfocus = "hide"
+
+[scratchpads.qutebrowser]
+command = "qutebrowser"
+class = "org.qutebrowser.qutebrowser"
+position = "0% 3%"
+size = "100% 97%"
+animation = "fromTop"
+unfocus = "hide"
+
+[scratchpads.writer]
+command = "kitty -o background_opacity=0.8 --class kitty-writer --directory ~/notes nvim"
+class = "kitty-writer"
+size = "70% 80%"
 animation = "fromTop"
 unfocus = "hide"

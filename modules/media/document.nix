@@ -1,5 +1,5 @@
- {pkgs, ...}: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-     zathura # pdf viewer
+    zathura # pdf viewer
   ];
 }

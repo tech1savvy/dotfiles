@@ -1,10 +1,10 @@
 {
   services.glance = {
-    enable = true;
-    settings = {
-      server = {
-        port = 8888;
-      };
-    };
+    enable = false;
+    # settings = {
+    #   server = {
+    #     port = 8888;
+    #   };
+    # };
   };
 }
