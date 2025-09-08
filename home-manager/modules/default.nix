@@ -6,5 +6,6 @@
     ./glance.nix
     ./firefox.nix
     ./fish.nix
+    ./text-expander/espanso.nix
   ];
 }
