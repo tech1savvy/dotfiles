@@ -7,5 +7,6 @@
     ./firefox.nix
     ./fish.nix
     ./text-expander/espanso.nix
+    ./gemini.nix
   ];
 }
