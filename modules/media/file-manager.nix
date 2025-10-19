@@ -1,14 +1,15 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     # file manager
-    kdePackages.dolphin
-    kdePackages.ark
-
     xfce.thunar
+
+    zip
 
     yazi
     xdg-desktop-portal-termfilechooser
 
     jmtpfs # mount phone
+
+    glib # for gio trash
   ];
 }
