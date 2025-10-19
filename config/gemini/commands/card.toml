@@ -1,0 +1,181 @@
+description = "Create flashcards"
+prompt = """
+Create flashcards for given text or topic based on the following sytle guide:
+
+# Anki Flashcard Note-Taking Style Guide
+
+## Overview
+
+This document outlines the standardized approach for creating Anki flashcards using markdown files. Each `.md` file represents a single Anki card with a specific structure for question, answer, and extra content.
+
+## File Structure
+
+### Basic Format
+
+Each markdown file follows this structure:
+
+```
+---
+id: [unique_identifier] # usually matches filename or concept
+forward:
+  - "[next-card-in-topic-alignment](path/to/related_card.md)"  # Optional
+backward:
+  - "[prev-card-in-topic-alignment](path/to/related_card.md)"  # Optional
+---
+
+[QUESTION CONTENT]
+
+---
+
+[ANSWER CONTENT]
+
+---
+
+[EXTRA CONTENT]  # Optional
+```
+
+### Three-Section Structure
+
+1. **Question Section**: Content before the first `---`
+2. **Answer Section**: Content between first and second `---`
+3. **Extra Section**: Content after the second `---` (optional)
+
+## Key Principles
+
+### 1. Atomic Design
+
+- Each card focuses on a single, specific concept
+- Break complex topics into multiple focused cards
+- Avoid cramming multiple unrelated concepts into one card
+
+### 2. Multiline Support
+
+- All sections support multiline content
+- Use proper markdown formatting for code blocks, lists, and emphasis
+- Maintain readability with appropriate spacing
+
+### 3. Frontmatter Metadata
+
+- **id**: Unique identifier for the card (usually matches filename or concept)
+- **forward**: Links to related cards for context and navigation
+- **backward**: Links to related cards for context and navigation
+
+## Content Guidelines
+
+### Question Format
+
+- Use clear, specific questions
+- Prefer "What is..." or "How to..." formats
+- Include context when necessary
+- Keep questions concise but complete
+
+### Answer Format
+
+- Provide direct, actionable answers
+- Use bullet points for multiple concepts
+- Include code examples when relevant
+- Reference file paths and configurations
+
+### Extra Format (Optional)
+
+- Additional context, examples, or notes
+- Clarifications or important details
+- Related information that might be helpful
+- Not part of the core answer but valuable for understanding
+
+## Folder Organization
+
+### Topic-Based Structure
+
+```
+topic/
+├── define.md          # Basic definition/concept
+├── creation.md        # How to create/setup
+├── register.md        # How to register/configure
+├── start.md          # How to start/run
+└── [other_actions].md # Other specific actions
+```
+
+### Naming Conventions
+
+- Use descriptive, action-oriented filenames
+- Common patterns: `define.md`, `creation.md`, `register.md`, `start.md`
+- Keep filenames lowercase with hyphens for spaces
+
+## Examples
+
+### Simple Definition Card
+
+```markdown
+---
+id: define
+---
+
+What is Django?
+
+---
+
+- Django is a Python based web framework.
+```
+
+### Complex Card with Extra
+
+```markdown
+---
+id: define
+forward:
+  - "[creation](cards/django/apps/creation.md)"
+---
+
+What are django apps? How they are different form django project?
+
+---
+
+- Django apps are self-contained, modular components or packages within a Django project that encapsulate a specific functionality or feature.
+- For example, an app could handle user authentication, blog posts, a product catalog, or payments.
+
+---
+
+- An app typically contains its own models, views, templates, URL configurations, static files, and tests.
+- This modular design helps in organizing, maintaining, and scaling the codebase efficiently.
+```
+
+### Command Card
+
+````markdown
+---
+id: creation
+forward:
+  - "[register](cards/django/apps/register.md)"
+---
+
+What is the cmd to create a django app?
+
+---
+
+```sh
+django-admin startapp <app_name> <app_dir>
+```
+
+---
+
+- If you specify the directory, it must already exist, as the command will not create the directory for you.
+- If you don't specify the directory, the app will be created in the current working directory with the app name as sub-directory.
+````
+
+## Best Practices
+
+1. **Consistency**: Follow the same structure across all cards
+2. **Clarity**: Write questions and answers that are clear and unambiguous
+3. **Completeness**: Ensure each card can stand alone without external context
+4. **Progression**: Use forward links to create logical learning paths
+5. **Specificity**: Focus on one concept per card for better retention
+6. **Practicality**: Include real-world examples and code snippets when relevant
+
+## Preferences
+- Flashcards will be goal-oriented → phrased like “Which option to use to achieve [goal]?”.
+- Explanations will be short and simple → no long paragraphs, just concise notes.
+- Flashcard answers will include syntax + key concepts only, without tool-specific noise.
+- No repetition of field options directly in the questions.
+- Do not edit the noteId frontmatter of the card
+"""
