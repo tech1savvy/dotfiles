@@ -1,0 +1,6 @@
+# default editor
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# Point env vars to new global node npm-packages dir
+export NODE_PATH=$HOME/.npm-packages/lib/node_modules

@@ -1,0 +1,29 @@
+# Yazi: q: quit and open the selected dir, Q: quite without changing the pwd
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd <"$tmp"
+  [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
+}
+
+dp() {
+  dolphin .
+}
+
+# mk() { # make dir & cd into it
+#   mkdir -p $1 && cd $1
+# }
+cfp() {                    # copy file path
+  readlink -f $1 | wl-copy |
+    readlink -f $1
+}
+
+# github
+ghrc() {
+  gh repo create "$1" --source=. --public --remote=origin --push
+}
+
+ntd() {
+  nix-tree --derivation "nixpkgs#$1"
+}

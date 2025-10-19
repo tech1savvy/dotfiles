@@ -1,0 +1,7 @@
+# enable vim mode
+set -o vi
+
+HISTSIZE=10000     # history in memory
+HISTFILESIZE=10000 # history stored in file
+
+shopt -s histappend # Ensure Bash appends history to the history file instead of overwriting it on shell exit, preserving history across sessions

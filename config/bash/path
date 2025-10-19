@@ -1,0 +1,9 @@
+# Point env vars to new global node npm-packages dir
+export PATH=$PATH:$HOME/.npm-packages/bin
+
+# pipx pkgs
+export PATH="$PATH:$HOME/.local/bin"
+# cargo pkgs
+export PATH="$PATH:$HOME/.cargo/bin"
+# custom scripts
+export PATH="$PATH:$HOME/bin"
