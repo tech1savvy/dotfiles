@@ -8,8 +8,6 @@ alias ....="cd ../../.."
 alias ssh="export TERM=xterm && ssh"
 
 alias vi='nvim'
-alias knv='NVIM_APPNAME=kickstart nvim'
-
 
 # btop utf-8 locale
 alias btop="btop --force-utf"
