@@ -3,7 +3,7 @@ plugins = ["scratchpads", "expose"]
 
 # Dropdown terminal
 [scratchpads.term]
-command = "kitty -o background_opacity=0.5 --class kitty-scratch"
+command = "kitty --class kitty-scratch"
 class = "kitty-scratch"
 size = "65% 20%"
 animation = "fromTop"
