@@ -34,3 +34,23 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Custom rendering for strikethrough text
 vim.api.nvim_set_hl(0, "@markup.strikethrough", { fg = "#6495ED", bg = "#2C3E50" })
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    local default_handler = vim.lsp.handlers["textDocument/publishDiagnostics"]
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = function(err, method, result, client_id, bufnr, config)
+      if result and result.diagnostics then
+        local idx = 1
+        while idx <= #result.diagnostics do
+          if tostring(result.diagnostics[idx].code) == "80001" then
+            table.remove(result.diagnostics, idx)
+          else
+            idx = idx + 1
+          end
+        end
+      end
+      default_handler(err, method, result, client_id, bufnr, config)
+    end
+    print("Custom diagnostics handler loaded")
+  end,
+})

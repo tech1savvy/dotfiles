@@ -1,3 +1,6 @@
+if false then
+  return {}
+end
 return {
   "johmsalas/text-case.nvim",
   dependencies = { "nvim-telescope/telescope.nvim" },

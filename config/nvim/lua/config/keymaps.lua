@@ -10,7 +10,8 @@ local function closeAllBuffers()
   end
 end
 
-vim.keymap.set("n", "<leader>ba", closeAllBuffers, { silent = true, desc = "Close all buffers" })
+-- vim.keymap.set("n", "<leader>ba", closeAllBuffers, { silent = true, desc = "Close all buffers" })
+vim.keymap.set("n", "<leader>ba", "<cmd>%bd<CR>", { silent = true, desc = "Close all buffers" })
 
 -- Insert '---' line after the current line
 local function AddHorizontalRule(position)

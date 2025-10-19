@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 return {
   "bkad/CamelCaseMotion",
   -- handles snake_case too
@@ -19,3 +22,4 @@ return {
     ]])
   end,
 }
+
