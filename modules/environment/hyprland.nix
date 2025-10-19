@@ -14,7 +14,7 @@
   # Enable Display Manager
   services.greetd.enable = true;
   services.greetd.settings.default_session = {
-    command = "uwsm start hyprland-uwsm.desktop";
+    command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd 'uwsm start hyprland-uwsm.desktop'";
     user = "tech1savvy";
   };
 
@@ -29,9 +29,10 @@
     # thread: https://discourse.nixos.org/t/installing-hyprlands-plugins-package-without-home-manager/65971
     HYPR_PLUGIN_DIR = pkgs.symlinkJoin {
       name = "hyprland-plugins";
-      paths = with  pkgs.hyprlandPlugins ;[
-        # hyprwinwrap
-        # hyprscrolling
+      paths = with pkgs.hyprlandPlugins; [
+        hyprwinwrap
+        hyprscrolling
+        hy3
         #...plugins
       ];
     };
