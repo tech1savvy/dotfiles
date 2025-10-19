@@ -102,8 +102,8 @@
       recursive = true;
     };
 
-    ".config/kickstart.nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/kickstart.nvim";
+    ".config/kickstart" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/kickstart";
       recursive = true;
     };
 
@@ -139,7 +139,12 @@
     };
 
     ".bashrc" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/bash/.bashrc";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/.bashrc";
+    };
+
+    "/bash" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/bash";
+      recursive = true;
     };
   };
 
