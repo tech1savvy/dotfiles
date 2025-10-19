@@ -1,0 +1,52 @@
+matches:
+  # Basic friendly greeting example
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # Python & Django related aliases
+  - trigger: "pym" # shorthand to run python manage.py
+    replace: "python manage.py"
+    word: true
+  - trigger: "dj" # django admin commands
+    replace: "django-admin"
+    word: true
+  - trigger: "venv" # create python virtual environment
+    replace: "python -m venv"
+    word: true
+  - trigger: "vact" # activate virtual environment
+    replace: "source .venv/bin/activate"
+    word: true
+  - trigger: "dact" # deactivate virtual environment
+    replace: "deactivate"
+    word: true
+
+  # Shell utilities and navigation shortcuts
+  - trigger: "lg" # lazygit command
+    replace: "lazygit"
+    word: true
+  - trigger: "ld" # lazydocker command
+    replace: "lazydocker"
+    word: true
+
+  # Node.js / NPM commands
+  - trigger: "nrd" # run npm dev script
+    replace: "npm run dev"
+    word: true
+
+  # Date example (dynamic with variables)
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  # Execute shell command and print output (example)
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
