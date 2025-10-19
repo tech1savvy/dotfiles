@@ -34,5 +34,8 @@
     curlie # curl
 
     glow # md file
+
+    bluetui
+    impala
   ];
 }
