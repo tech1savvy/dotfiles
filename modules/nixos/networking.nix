@@ -1,14 +1,29 @@
-{
+{lib, ...}: {
   networking = {
-    hostName = "nixos";# Define your hostname.
-    # Pick only one of the below networking options.
-    networkmanager.enable = true;# Enable NetworkManager
-    wireless.enable = false; # Disable wpa_supplicant
+    hostName = "nixos";
 
-    # virtul machines
+    networkmanager = {
+      enable = true;
+      # wifi.backend = "iwd"; # stops connecting to wifi
+      wifi.powersave = true;
+    };
+
+    wireless.iwd.settings = {
+      Network = {
+        EnableIPv6 = true;
+      };
+      Settings = {
+        AutoConnect = true;
+      };
+    };
+
     hosts = {
-      "192.168.122.157" = ["puppet-master"];
+      # virtul machines
+      "192.168.122.157" = ["puppet-master" "puppet-server"];
       "192.168.122.134" = ["puppet-agent"];
     };
   };
+
+  # stop networkmanager from starting early at boot
+  systemd.services.NetworkManager-wait-online.wantedBy = lib.mkForce [];
 }
