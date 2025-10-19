@@ -2,19 +2,25 @@
 application/octet-stream=org.kde.kate.desktop;
 application/pdf=librewolf.desktop;draw.desktop;zathura.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-3.desktop;libreoffice-2.desktop;libreoffice.desktop;
-image/png=vimiv-3.desktop;vimiv-2.desktop;
 x-scheme-handler/http=librewolf.desktop;
 x-scheme-handler/https=librewolf.desktop;
 text/plain=writer.desktop;
 video/mp4=vlc.desktop;umpv.desktop;
 text/html=org.pwmt.zathura-cb.desktop;
-image/jpeg=vimiv.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=writer.desktop;
+text/markdown=librewolf.desktop;nvim.desktop;
 
 [Default Applications]
 application/octet-stream=org.kde.kate.desktop;
 application/pdf=zathura.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-3.desktop;
-image/png=vimiv-3.desktop;
+
+; image files
+image/png=vimiv.desktop;
+image/jpeg=vimiv.desktop;
+
+; video files
+
 text/html=librewolf.desktop
 x-scheme-handler/about=librewolf.desktop
 x-scheme-handler/figma=figma-linux.desktop
