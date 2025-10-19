@@ -1,11 +1,11 @@
-{
+{config, ...}: {
   home.file = {
-    ".config/.gemini/GEMINI.md" = {
+    ".gemini/GEMINI.md" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/gemini/GEMINI.md";
     };
   };
   home.file = {
-    ".config/.gemini/commands" = {
+    ".gemini/commands" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/gemini/commands";
       recursive = true;
     };
