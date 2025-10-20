@@ -19,7 +19,6 @@
     lazydocker
 
     brightnessctl
-    btop
 
     ungoogled-chromium
 
