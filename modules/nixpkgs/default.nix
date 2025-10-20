@@ -40,5 +40,6 @@
     update-resolv-conf
 
     anki
+    rustdesk
   ];
 }
