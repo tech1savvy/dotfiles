@@ -1,0 +1,5 @@
+{
+  programs.inori = {
+    enable = true;
+  };
+}
