@@ -11,3 +11,6 @@ result-*
 # Ignore logs or local secrets (if any)
 *.log
 secrets.nix
+
+# Plain Text Secrets
+secrets/
