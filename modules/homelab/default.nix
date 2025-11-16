@@ -1,13 +1,14 @@
 {
   imports = [
-    ./torrent
-
-    ./jellyfin.nix
-    ./immich.nix
-    ./animanga
+    # ./torrent
+    # ./jellyfin.nix
+    # ./animanga
 
     # ./firefly-iii.nix
-    ./actual.nix
+    # ./actual.nix
+
+    ./immich.nix
+    ./paperless.nix
 
     # ./microbin.nix
   ];

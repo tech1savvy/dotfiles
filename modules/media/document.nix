@@ -1,6 +1,14 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    zathura # pdf viewer
+    # Viewer
+    zathura
+    # Utilities
+    densify
+    # pdfarranger
+    ocamlPackages.cpdf
+    # Latex
+    texliveFull
+
   ];
   services.calibre-server = {
     enable = false;

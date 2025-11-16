@@ -8,6 +8,9 @@
     alejandra # format nix files
 
     nix-tree # TUI for pkg depencies
+
+    # NOTE: home-manager option availabe
+    nix-index
   ];
 
   environment.sessionVariables = {

@@ -16,6 +16,11 @@
     cbfmt
     marksman
     icu.dev # marksman dep
+
+    nil # nix lsp
+    nixpkgs-fmt # nix formatter
+    ansible-language-server # ansible lsp
+
   ];
 
   fonts.packages = with pkgs; [

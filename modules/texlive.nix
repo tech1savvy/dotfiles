@@ -1,0 +1,26 @@
+{pkgs,...}:{
+  environment.systemPackages = with pkgs.texlivePackages; [
+    geometry
+    titlesec
+    tabularx
+    array
+    xcolor
+    enumitem
+    fontawesome5
+    amsmath
+    hyperref
+    eso-pic
+    calc
+    bookmark
+    lastpage
+    changepage
+    paracol
+    ifthen
+    needspace
+    iftex
+    fontenc
+    inputenc
+    lmodern
+    sourcesanspro
+  ];
+}

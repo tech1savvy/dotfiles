@@ -33,6 +33,7 @@
         hyprwinwrap
         hyprscrolling
         hy3
+        hyprexpo
         #...plugins
       ];
     };
@@ -63,11 +64,7 @@
     libnotify # capture notifications and send to daemon
     # gvfs # opening links or files from notifications
 
-    # hyprland's default terminal
     kitty
-
-    # app launcher
-    wofi
 
     # network gui
     networkmanagerapplet
@@ -111,7 +108,6 @@
     wl-kbptr
     wlrctl # for mouse movements
 
-    rofimoji # for emjoi suppot
   ];
 
   fonts.packages = with pkgs; [

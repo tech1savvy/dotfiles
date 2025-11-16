@@ -1,7 +1,10 @@
 {pkgs,...}:{
 
   environment.systemPackages = with pkgs; [
-    ansible-core
+    ansible
     molecule
+    vagrant
+
+    ansible-lint
    ];
 }

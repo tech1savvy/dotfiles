@@ -6,7 +6,7 @@
 }: {
   # Server Port: 25565
   services.minecraft-server = {
-    enable = true;
+    enable = false;
     eula = true; # Accepts the Minecraft EULA
   };
 

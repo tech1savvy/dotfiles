@@ -3,7 +3,6 @@
     # essesntial terminal tools
     wget # download files from the web
 
-    kitty # terminal emulator
 
     bat # quick file reader
     lazygit # source: https://www.youtube.com/shorts/gim-riPYhVA
@@ -22,7 +21,6 @@
 
     zoxide # smart cd tool
 
-    thefuck # command line tool to correct mistakes
 
     bonk # combines touch and mkdir
 
@@ -37,5 +35,17 @@
 
     bluetui
     impala
+
+    # ascii art
+    cmatrix
+    cbonsai
+    asciiquarium
+    pipes
+
+    tldr # better manpages
+    thokr # typing test 
+
+    lnav # log file viewer
+
   ];
 }

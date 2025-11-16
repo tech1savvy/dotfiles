@@ -4,7 +4,12 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
+    # Players
     # spotify
+    termusic
+    # Downloader
+    spotdl
+
   ];
 
   # Spicetify is a tool to customize Spotify client
@@ -12,9 +17,9 @@
   programs.spicetify = let
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
   in {
-    enable = true;
+    enable = false;
     theme = spicePkgs.themes.text;
-    colorScheme = "Nord";
+    colorScheme = "Gruvbox";
 
     enabledExtensions = with spicePkgs.extensions; [
       keyboardShortcut # bindings: https://spicetify.app/docs/advanced-usage/extensions/#keyboard-shortcut

@@ -22,6 +22,10 @@
       "192.168.122.157" = ["puppet-master" "puppet-server"];
       "192.168.122.134" = ["puppet-agent"];
     };
+
+    firewall = {
+      enable = false;
+    };
   };
 
   # stop networkmanager from starting early at boot

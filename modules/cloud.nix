@@ -1,7 +1,11 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    dropbox
+    rclone
+    rclone-browser
+    inotify-tools
 
-    # kio-gdrive # GDrive integration for Dolphin
+    dropbox
   ];
+
+  environment.variables.TERMINAL = "kitty"; # for rclone-browser
 }

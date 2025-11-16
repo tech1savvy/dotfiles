@@ -22,7 +22,10 @@
     php
 
     # SQL Dashboard
-    # beekeeper-studio
+    dbgate
+    jetbrains.datagrip
+    # java driver for postgresql
+    postgresql_jdbc
 
     awscli2 # cmd: aws
     terraform # infrastucture as code
@@ -56,6 +59,10 @@
 
     # java
     jdk
+
+    act # Github Actions Locally
+
+    clang # gcc compiler frontend
   ];
 
   # mongoDB community edition
@@ -76,6 +83,7 @@
   # postgresql
   services.postgresql = {
     enable = true;
+
     # default user: $ sudo -u postgres psql
     # active user(our-case its tech1savvy): $ psql
     # ensureUsers = [
@@ -90,4 +98,10 @@
     # ensureDatabases = [ "tech1savvy" ];
   };
   systemd.services.postgresql.wantedBy = pkgs.lib.mkForce []; # make the service do not auto-start
+
+  services.pgadmin = {
+    enable = false;
+    initialEmail = "tech1savvy";
+    initialPasswordFile = "/home/tech1savvy/pgadmin-password.txt";
+  };
 }
