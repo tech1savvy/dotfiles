@@ -21,15 +21,15 @@ matches:
     word: true
 
   # Shell utilities and navigation shortcuts
-  - trigger: "lg" # lazygit command
+  - trigger: ":lg" # lazygit command
     replace: "lazygit"
     word: true
-  - trigger: "ld" # lazydocker command
+  - trigger: ":ld" # lazydocker command
     replace: "lazydocker"
     word: true
 
   # Node.js / NPM commands
-  - trigger: "nrd" # run npm dev script
+  - trigger: ":nrd" # run npm dev script
     replace: "npm run dev"
     word: true
 
