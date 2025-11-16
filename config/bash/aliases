@@ -26,7 +26,7 @@ alias mps="mpv --input-ipc-server=/tmp/mpvsocket"
 # List Directory contents
 alias l="eza -lah --icons --git"
 alias ls="eza"
-alias tree="eza -lh --tree --icons --git --git-ignore"
+alias tree="eza -h --tree --icons --git --git-ignore"
 
 # Utilities
 alias cat="bat"
