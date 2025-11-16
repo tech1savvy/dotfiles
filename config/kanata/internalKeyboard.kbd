@@ -60,13 +60,6 @@
   (s d) (tap-hold $tap-time $hold-time esc @sft) 
   (d  ) d
 
-  (3) M-3
-  (3 4) (tap-hold $tap-time $hold-time esc @sft)
-  (4) M-4
-  (7) M-7
-  (7 8) (tap-hold $tap-time $hold-time ret @sft)
-  (8) M-8
-
   (k  ) k
   (k l) (tap-hold $tap-time $hold-time ret @sft)
   (l  ) l
@@ -137,12 +130,6 @@
 
   k-ret   (chord base-chords k)
   l-ret   (chord base-chords l)
-
-  b-3 (chord base-chords 3)
-  b-4 (chord base-chords 4)
-  b-7 (chord base-chords 7)
-  b-8 (chord base-chords 8)
-
 
  ;; SPECIAL KEYS - MOD CHORDS
   close-stab   (chord mod-chords w)
@@ -276,7 +263,7 @@
 )
 (deflayer base
   lrld
-  grv M-1 M-2 @b-3 @b-4 M-5 M-6 @b-7 @b-8 M-9 M-0 - = @__ ;; NUMBER ROW
+  grv 1 2 3 4 5 6 7 8 9 0 - = @__ ;; NUMBER ROW
   @__ q @w-tab @e-tab r t  y u @i-bspc @o-bspc p [ ] \ ;; TOP ROW
   @mouseless a @s-esc @d-esc f g  h j @k-ret @l-ret ; ' ret ;; HOME ROW
   z    x c v b @__ n m , . / rsft ;; BOTTOM ROW
@@ -289,8 +276,8 @@
   esc
   grv M-1 M-2 M-3 M-4 M-5 M-6 M-7 M-8 M-9 M-0 @zoom-in @zoom-out bspc ;; NUMBER ROW
   tab @kill @close-stab @e-stab @stab M-ret  M-y @mwd @mwu-cbspc @end-cbspc p [ ] \ ;; TOP ROW
-  @tmouseless @alt @met @sft @ctl M-g left down @up-sret @right-sret ; ' ret ;; HOME ROW
-  @undo @cut @copy @paste b @__ M-n @wrkspc-u @tab-l @tab-r @wrkspc-l lsft ;; BOTTOM ROW
+  @tmouseless @alt @met @sft @ctl M-g left down @up-sret @right-sret @wrkspc-l ' ret ;; HOME ROW
+  @undo @cut @copy @paste b @__ M-n @wrkspc-u @tab-l @tab-r @__ lsft ;; BOTTOM ROW
   @__  @__  @__  @mod @__  @__ ;; MODIFIERS
   @__  @__  @__   @__ ;; ARROW KEYS
 )
