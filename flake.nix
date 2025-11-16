@@ -12,6 +12,16 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    yt-x = {
+      url = "github:Benexl/yt-x";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -20,6 +30,8 @@
     home-manager,
     nixos-hardware,
     spicetify-nix,
+    yt-x,
+    stylix,
     ...
   } @ inputs: {
     # use "nixos", or your hostname as the name of the configuration
@@ -31,6 +43,7 @@
         home-manager.nixosModules.default
         nixos-hardware.nixosModules.lenovo-legion-16ach6h
         spicetify-nix.nixosModules.default
+        stylix.nixosModules.stylix
       ];
     };
   };
