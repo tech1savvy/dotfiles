@@ -1,5 +1,8 @@
 {
   programs.inori = {
-    enable = true;
-  };
+    enable = false;
+
+    settings = {
+      qwerty_keybindings = true;
+    };
 }

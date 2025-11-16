@@ -17,6 +17,7 @@ in {
       tmuxPlugins.tmux-which-key # not working
       tmuxPlugins.resurrect
       tmuxPlugins.continuum
+      tmuxPlugins.tmux-sessionx
     ];
   };
 }

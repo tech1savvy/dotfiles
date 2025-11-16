@@ -1,3 +1,12 @@
-{
-  programs.bat.enable = true;
+{pkgs,...}:{
+  programs.bat = {
+    enable = true;
+
+    extraPackages = with pkgs.bat-extras; [ 
+      batdiff
+      batman
+      batgrep
+      batwatch
+    ];
+  };
 }

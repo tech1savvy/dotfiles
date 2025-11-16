@@ -1,6 +1,6 @@
 {
   services.hyprpaper = {
-    enable = false;
+    enable = true;
 
     settings = {
       ipc = "off";
@@ -12,7 +12,7 @@
       ];
 
       wallpaper = [
-        "~/Wallpapers/flower.jpg"
+        ",~/Wallpapers/flower.jpg"
       ];
     };
   };

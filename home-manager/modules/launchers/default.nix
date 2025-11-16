@@ -2,7 +2,8 @@
   imports = [
     ./rofi
     ./wofi
-    ./bemenu
-    ./fuzzel
+    # ./bemenu
+    # ./fuzzel
+    ./tofi
   ];
 }
