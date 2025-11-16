@@ -27,3 +27,22 @@ ghrc() {
 ntd() {
   nix-tree --derivation "nixpkgs#$1"
 }
+
+
+freezer() {
+  if [ -z "$1" ]; then
+    echo "Usage: freezer <code_file>"
+    return 1
+  fi
+
+  local codefile="$1"
+
+  if [ ! -f "$codefile" ]; then
+    echo "Error: File '$codefile' does not exist."
+    return 1
+  fi
+
+  local output="${codefile}.png"
+
+  command freeze "$codefile" -o "$output"
+}
