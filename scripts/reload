@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "missing application name as argument"
+fi
+
+program="$1"
+
+if [ "$program" == "kanata" ]; then
+  reload-kanata.sh
+elif [ "$program" == "waybar" ]; then
+  reload-waybar.sh
+elif [ "$program" == "hyprpaper" ]; then
+  reload-hyprpaper.sh
+fi
