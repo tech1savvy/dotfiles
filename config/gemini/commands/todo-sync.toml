@@ -1,0 +1,6 @@
+description = "Sync TODO comments to /specs/tasks.md"
+prompt = """
+Sync TODO comments in all files to /specs/tasks.md under appropriate categories.
+- Do not delete them from source.
+- Both copies should co-exists with same state of task status.
+"""

@@ -1,0 +1,4 @@
+description = "Make a checklist"
+prompt = """
+Fix redundancy in the specified file:
+"""

@@ -1,0 +1,4 @@
+description = "Make a checklist"
+prompt = """
+Append the /specs/tasks.md with the checklist of what do to achieve the given objective:
+"""
