@@ -14,5 +14,8 @@
 
     # devops
     ./prometheus
+    # ./grafana
+
+    ./cloud/storage.nix
   ];
 }

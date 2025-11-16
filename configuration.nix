@@ -40,6 +40,7 @@
 
     ./modules/containerisation/docker.nix
     ./modules/virtualisation/kvm.nix
+    ./modules/virtualisation/virtualbox
 
     # peripherals
     ./modules/peripherals/kanata.nix
@@ -59,7 +60,6 @@
     # productivity
     ./modules/productivity.nix
 
-    ./modules/cloud.nix
   ];
 
   # able to read windows drives
