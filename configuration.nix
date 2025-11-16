@@ -3,6 +3,9 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {inputs, ...}: {
   imports = [
+
+    ./modules
+
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
@@ -31,7 +34,7 @@
     ./modules/media/document.nix
     ./modules/media/file-manager.nix
 
-    ./modules/authentication/gnome-keyring.nix
+    # ./modules/authentication/gnome-keyring.nix
 
     ./modules/containerisation/distrobox.nix
 
