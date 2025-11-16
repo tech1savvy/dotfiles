@@ -14,6 +14,7 @@ in {
     # stable packages here
     # unstable.kiro # from unstable channel
     unstable.rustc
+    unstable.spotdl
   ];
   # rest of your config...
 }

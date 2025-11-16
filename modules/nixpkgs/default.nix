@@ -21,7 +21,6 @@
 
     discord
 
-    lazydocker
 
     brightnessctl
 
@@ -34,9 +33,6 @@
 
     qutebrowser
 
-    rofi-wayland
-
-    kdePackages.kdeconnect-kde
     signal-desktop
     localsend
 
@@ -48,5 +44,10 @@
 
     opencommit
     gemini-cli
+
+    jellyfin-web
+    v4l-utils # Used For Things Like OBS Virtual Camera
   ];
+
+  programs.kdeconnect.enable = true;
 }
