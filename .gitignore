@@ -5,7 +5,7 @@
 .DS_Store
 
 # Ignore result symlinks from nix-build
-result/
+result
 result-*
 
 # Ignore logs or local secrets (if any)
