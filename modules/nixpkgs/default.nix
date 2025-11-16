@@ -45,5 +45,8 @@
 
     anki
     rustdesk
+
+    opencommit
+    gemini-cli
   ];
 }
