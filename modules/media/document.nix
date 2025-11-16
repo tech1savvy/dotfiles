@@ -1,14 +1,11 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    # Viewer
-    zathura
-    # Utilities
-    densify
-    # pdfarranger
-    ocamlPackages.cpdf
-    # Latex
+    zathura # pdf viewer
+    poppler-utils # merge, break pdfs
+    densify # compress pdfs
+    ocamlPackages.cpdf # simplfied cli wrapper for ghostscript
+    # latex compiler headears
     texliveFull
-
   ];
   services.calibre-server = {
     enable = false;

@@ -4,12 +4,8 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    # Players
     # spotify
     termusic
-    # Downloader
-    spotdl
-
   ];
 
   # Spicetify is a tool to customize Spotify client
@@ -26,6 +22,25 @@
       # fullAppDisplay
       fullAppDisplayMod
       adblock
+      hidePodcasts
+      autoVolume
+
+      # unpacked
+      ({
+        # The source of the extension
+        # make sure you're using the correct branch
+        # It could also be a sub-directory of the repo
+        #
+        # https://github.com/adventuretc/Spicetify-HideImages-Extension
+        src = pkgs.fetchFromGitHub {
+          owner = "adventuretc";
+          repo = "Spicetify-HideImages-Extension";
+          rev = "main";
+          hash = "sha256-Xm/1cJkcEZCq0EUIIoWF0mKg6Btyhv0C7Z22KyIUhVE=";
+        };
+        # The actual file name of the extension usually ends with .js
+        name = "HideImages.js";
+      })
     ];
 
     # enabledCustomApps =  [

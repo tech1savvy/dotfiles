@@ -5,7 +5,6 @@
 
     zip
 
-    yazi
     xdg-desktop-portal-termfilechooser
 
     jmtpfs # mount phone
