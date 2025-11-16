@@ -1,4 +1,0 @@
-# default dark theme by inverting colors
-set recolor true
-# make it yank text to clipboard rather middle-mouse-button register
-set selection-clipboard clipboard
