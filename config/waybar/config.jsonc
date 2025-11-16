@@ -12,17 +12,8 @@
   "margin-left": 0,
 
   // Choose the order of the modules
-  "modules-left": [
-    "hyprland/workspaces"
-    // "hyprland/submap",
-    // "sway/mode",
-    // "sway/scratchpad",
-    // "custom/media"
-  ],
-  "modules-center": [
-    // "sway/window"
-    "hyprland/window",
-  ],
+  "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+  "modules-center": [],
   "modules-right": [
     "mpd",
     // "idle_inhibitor",
@@ -230,21 +221,21 @@
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
+    "format-wifi": "{essid} ({signalStrength}%)  ",
+    "format-ethernet": "{ipaddr}/{cidr}  ",
+    "tooltip-format": "{ifname} via {gwaddr}  ",
+    "format-linked": "{ifname} (No IP)  ",
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon}  {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon}  {format_source}",
+    "format-bluetooth-muted": "🔇 {icon}  {format_source}",
+    "format-muted": "{volume}% 🔇 {format_source}",
+    "format-source": "  {volume}% ",
+    "format-source-muted": " ",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -274,7 +265,7 @@
     "menu": "on-click",
     "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
     "menu-actions": {
-      "shutdown": "shutdown now",
+      "shutdown": "shutdown",
       "reboot": "reboot",
       "suspend": "systemctl suspend",
       "hibernate": "systemctl hibernate",
