@@ -57,6 +57,10 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
+    ".config/waybar" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/waybar";
+      recursive = true;
+    };
 
     ".config/wl-kbptr" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/wl-kbptr";

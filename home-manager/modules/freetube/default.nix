@@ -1,6 +1,6 @@
 {
   programs.freetube = {
-    enable = true;
+    enable = false;
 
     settings = {
       defaultQuality = "1080";

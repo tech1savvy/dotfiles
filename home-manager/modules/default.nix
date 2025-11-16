@@ -12,6 +12,10 @@
     ./text-expander/espanso.nix
     ./gemini.nix
 
+    ./scripts.nix
+    ./eza.nix
+    ./kitty.nix
+
     ./hyprland
     ./hyprpolkitagent
     ./hyprpaper
@@ -21,6 +25,8 @@
     # ./hyprpanel
 
     ./kdeconnect
+
+    ./zoxide
 
     ./btop.nix
     ./htop.nix

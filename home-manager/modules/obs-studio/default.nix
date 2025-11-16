@@ -13,7 +13,7 @@
     ];
   };
 
-  home.packages = with pkgs; [
-    v4l-utils # Used For Things Like OBS Virtual Camera
-  ];
+  # home.packages = with pkgs; [
+  #   v4l-utils # Used For Things Like OBS Virtual Camera
+  # ];
 }
