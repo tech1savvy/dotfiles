@@ -5,6 +5,5 @@
     seamless = true;
     dragAndDrop = true;
     clipboard = true;
-    headless = true;
   };
 }
