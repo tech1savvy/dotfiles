@@ -10,8 +10,8 @@ animation = "fromTop"
 unfocus = "hide"
 
 [scratchpads.music]
-command = "spotify"
-class = "spotify"
+command = "kitty --class termusic termusic"
+class = "termusic"
 size = "70% 80%"
 animation = "fromRight"
 unfocus = "hide"
@@ -34,8 +34,8 @@ unfocus = "hide"
 [scratchpads.qutebrowser]
 command = "qutebrowser"
 class = "org.qutebrowser.qutebrowser"
-position = "0% 3%"
-size = "100% 97%"
+position = "0% 5%"
+size = "100% 95%"
 animation = "fromTop"
 unfocus = "hide"
 
