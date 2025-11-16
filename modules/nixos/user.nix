@@ -12,6 +12,7 @@
       "wheel"
       "input"
       "uinput"
+      "media"
     ];
     packages = with pkgs; [
     ];
