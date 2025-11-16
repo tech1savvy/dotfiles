@@ -97,7 +97,6 @@
     # ];
     # ensureDatabases = [ "tech1savvy" ];
   };
-  systemd.services.postgresql.wantedBy = pkgs.lib.mkForce []; # make the service do not auto-start
 
   services.pgadmin = {
     enable = false;
