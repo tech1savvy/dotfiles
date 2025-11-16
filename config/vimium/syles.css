@@ -1,0 +1,18 @@
+div > .vimiumHintMarker {
+  /* linkhint boxes */
+  background: SteelBlue;
+  border: 1px solid Black;
+}
+
+div > .vimiumHintMarker span {
+  /* linkhint text */
+  color: Black;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: none;
+}
+
+div > .vimiumHintMarker > .matchingCharacter {
+  /* linkhint text match */
+  color: DarkGray;
+}
