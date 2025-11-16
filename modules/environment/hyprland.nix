@@ -64,7 +64,6 @@
     libnotify # capture notifications and send to daemon
     # gvfs # opening links or files from notifications
 
-    kitty
 
     # network gui
     networkmanagerapplet

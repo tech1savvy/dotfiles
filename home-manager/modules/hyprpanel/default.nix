@@ -2,12 +2,12 @@
   programs.hyprpanel = {
     enable = false;
 
-    dontAssertNotificationDaemons = false; # hyprpanle built-in notification daemon is buggy
+    dontAssertNotificationDaemons = true; # hyprpanle built-in notification daemon is buggy
     systemd.enable = true;
 
     settings = {
       bar.battery.label = true;
-      bar.bluetooth.label = false;
+      bar.bluetooth.label = true;
       bar.clock.format = "%H:%M:%S";
       bar.layouts = {
         "*" = {
@@ -16,7 +16,7 @@
             "workspaces"
             "media"
           ];
-          middle = [ "windowtitle" ];
+          middle = ["windowtitle"];
           right = [
             "volume"
             "network"
