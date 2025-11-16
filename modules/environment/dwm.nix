@@ -1,36 +1,74 @@
-# dwm.nix
-{ config, pkgs, ... }:
-
-let
-  dwmCustom = pkgs.dwm.overrideAttrs (oldAttrs: {
+{
+  config,
+  pkgs,
+  ...
+}: let
+  tech1savvyDwm = pkgs.stdenv.mkDerivation {
+    pname = "dwm-tech1savvy";
+    version = "2025-05-26";
     src = pkgs.fetchFromGitHub {
-      owner = "your-github-username";
+      owner = "tech1savvy";
       repo = "dwm";
-      rev = "your-commit-hash";
-      sha256 = "sha256-0000000000000000000000000000000000000000000000000000"; # Use nix-prefetch-url
+      rev = "master"; # Pin to a commit for reproducibility if desired
+      sha256 = "U6e/d6fz+3/5R8jAmlTxk+28nkqgjwKS7jIPW4w3haw="; # Replace after first build
     };
-    patches = [
-      (pkgs.fetchpatch {
-        url = "https://dwm.suckless.org/patches/awesomebar/dwm-awesomebar-6.4.diff";
-        sha256 = "sha256-0000000000000000000000000000000000000000000000000000";
+    buildInputs = [pkgs.xorg.libX11 pkgs.xorg.libXft pkgs.xorg.libXinerama];
+    installPhase = ''
+      make PREFIX=$out install
+    '';
+  };
+
+  # Autostart script for dwm session
+  autostartScript = pkgs.writeShellScript "dwm-autostart.sh" ''
+    #!/bin/sh
+    # Example autostart commands:
+    ${pkgs.feh}/bin/feh --bg-scale /path/to/your/wallpaper.jpg &
+    ${pkgs.dunst}/bin/dunst &
+    # Add your status bar script or other startup commands here, e.g.:
+    # ${pkgs.dwmblocks}/bin/dwmblocks &
+  '';
+
+  # Xsession script that runs autostart then dwm
+  xsessionScript = pkgs.writeShellScript "xsession-dwm-tech1savvy.sh" ''
+    #!/bin/sh
+    ${autostartScript}
+    exec ${tech1savvyDwm}/bin/dwm
+  '';
+in {
+  services.xserver = {
+    enable = true;
+    windowManager.dwm = {
+      enable = true;
+      package = tech1savvyDwm;
+    };
+    displayManager.sessionPackages = [
+      (pkgs.stdenv.mkDerivation {
+        name = "dwm-tech1savvy-session";
+        builder = pkgs.writeScript "builder.sh" ''
+          source $stdenv/setup
+          mkdir -p $out/share/xsessions
+          cat > $out/share/xsessions/dwm-tech1savvy.desktop <<EOF
+          [Desktop Entry]
+          Name=dwm-tech1savvy
+          Comment=tech1savvy's dwm fork
+          Exec=${xsessionScript}
+          Type=Application
+          EOF
+          exit 0
+        '';
+        passthru.providedSessions = ["dwm-tech1savvy"];
       })
     ];
-    configFile = pkgs.writeText "config.h" ''
-      #define MODKEY Mod4
-      #define TERMINAL "alacritty"
-      ${builtins.readFile ./dwm-config.h}  # Your custom config.h
-    '';
-    postPatch = ''
-      cp ${configFile} config.h
-    '';
-  });
-in {
-  services.xserver.windowManager.dwm = {
-    enable = true;
-    package = dwmCustom;
+    displayManager.defaultSession = "none+dwm-tech1savvy";
+    displayManager.startx.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
-    dmenu  # Required for dwm's default dmenu binding
+    dmenu
+    feh
+    dunst
+    # Add other tools you use in your autostart script
   ];
+
+  system.nixos.label = "dwm";
 }
