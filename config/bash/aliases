@@ -29,8 +29,14 @@ alias ls="eza"
 alias tree="eza -h --tree --icons --git --git-ignore"
 
 # Utilities
+# Bat
 alias cat="bat"
 alias man="batman"
+alias diff="batdiff"
+alias grep="batgrep"
+
+alias top="htop"
+
 alias ds="duf / /boot"
 alias curl="curlie"
 
@@ -61,9 +67,6 @@ alias tasker="taskwarrior-tui"
 
 alias psql="sudo -u postgres psql"
 
-# webapps
-alias whatsapp="chromium --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm &"
-
 # node
 alias nrd="npm run dev"
 
@@ -90,6 +93,7 @@ alias nc="nh clean"
 alias nca="nh clean all"
 
 alias nixpkg="nix-shell -p"
+alias set-nix-unfree="export NIXPKGS_ALLOW_UNFREE=1"
 alias nixpkg-unfree="export NIXPKGS_ALLOW_UNFREE=1 && nix-shell -p"
 
 # Hardware
