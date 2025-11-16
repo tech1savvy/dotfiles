@@ -27,6 +27,8 @@
     ./yazi
     ./zathura
 
+    ./qutebrowser
+
     ./launchers
 
 

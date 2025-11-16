@@ -9,13 +9,16 @@
     searchEngines = {
       DEFAULT = "https://duckduckgo.com/?q={}";
       g = "https://www.google.com/search?q={}";
-      nix = "https://search.nixos.org/packages?channel=unstable&query={}";
+      p = "https://www.perplexity.ai/search?q={}";
+      hm = "https://home-manager-options.extranix.com/?query={}+&release=release-25.05";
+      no = "https://search.nixos.org/options?channel=25.05&query={}";
+      np = "https://search.nixos.org/packages?channel=25.05&query={}";
+
     };
 
     # Define bookmarks for quick access
     quickmarks = {
-      nixos = "https://nixos.org/";
-      hm = "https://nix-community.github.io/home-manager/";
+      p = "https://www.perplexity.ai";
     };
 
     # Define custom command aliases
@@ -38,10 +41,8 @@
     };
 
     # Optional greasemonkey scripts for custom JS
-    greasemonkey = [
-      ./userscripts/darkmode.js
-      ./userscripts/fix_youtube_ads.js
-    ];
+    # greasemonkey = [
+    # ];
 
     # Extra config in Python, directly injected into qutebrowser's config.py
     extraConfig = ''
@@ -60,8 +61,8 @@
         right = 4;
       };
       content.javascript.enabled = true;
-      url.start_pages = ["https://nixos.org"];
-      url.default_page = "https://duckduckgo.com";
+      url.start_pages = ["https://www.perplexity.ai"];
+      url.default_page = "https://www.perplexity.ai";
       colors.webpage.darkmode.enabled = true;
     };
 
