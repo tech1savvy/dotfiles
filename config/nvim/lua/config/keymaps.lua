@@ -29,3 +29,11 @@ end, { silent = true, desc = "Add Horizontal Rule below" })
 vim.keymap.set("n", "<leader>mH", function()
   AddHorizontalRule(-1)
 end, { silent = true, desc = "Add Horizontal Rule above" })
+
+-- Ident and Dedent with TAB and BACKSPACE
+-- normal mode
+vim.keymap.set("n", "<Tab>", ">>", { silent = true, desc = "Indent line" })
+vim.keymap.set("n", "<BS>", "<<", { silent = true, desc = "Dedent line" })
+-- visual mode
+vim.keymap.set("v", "<Tab>", ">gv", { silent = true, desc = "Indent selection" })
+vim.keymap.set("v", "<BS>", "<gv", { silent = true, desc = "Dedent selection" })
