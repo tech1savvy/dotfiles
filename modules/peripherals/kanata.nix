@@ -14,15 +14,15 @@
     keyboards = {
       internalKeyboard = {
         configFile = "/home/tech1savvy/dotfiles/config/kanata/internalKeyboard.kbd";
-        port = 6666;
+        # port = 6666;
       };
       rightUSBKeyboard = {
         configFile = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
-        port = 7777;
+        # port = 7777;
       };
       leftUSBKeyboard = {
         configFile = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
-        port = 5555;
+        # port = 5555;
       };
     };
   };
@@ -33,13 +33,19 @@
     BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/internalKeyboard.kbd";
 
     After = ["kanata-rightUSBKeyboard.service" "kanata-leftUSBKeyboard"];
+
+    wantedBy = pkgs.lib.mkForce [];
   };
   systemd.services.kanata-rightUSBKeyboard.serviceConfig = {
     ProtectHome = lib.mkForce "tmpfs";
     BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
+
+    wantedBy = pkgs.lib.mkForce [];
   };
   systemd.services.kanata-leftUSBKeyboard.serviceConfig = {
     ProtectHome = lib.mkForce "tmpfs";
     BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
+
+    wantedBy = pkgs.lib.mkForce [];
   };
 }
