@@ -2,10 +2,19 @@
   networking = {
     hostName = "nixos";
 
+    # nameservers = [
+    #     "127.0.0.1"
+    # ];
+
     networkmanager = {
       enable = true;
       # wifi.backend = "iwd"; # stops connecting to wifi
       wifi.powersave = true;
+
+
+      # insertNameservers = [
+      #   "127.0.0.1"
+      # ];
     };
 
     wireless.iwd.settings = {
@@ -17,6 +26,7 @@
       };
     };
 
+
     hosts = {
       # virtul machines
       "192.168.122.157" = ["puppet-master" "puppet-server"];
@@ -24,6 +34,7 @@
       
       "127.0.0.1:8096" = [ "jellyfin.tech1savvy.com"];
     };
+
     firewall = {
       enable = false;
       allowedTCPPorts = [ 
