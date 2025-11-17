@@ -12,7 +12,9 @@
 
     # ./microbin.nix
 
-    ./adguardhome.nix
+    # ./adguardhome.nix
+
+    ./searx.nix
   ];
 
     users.groups.media = { };
