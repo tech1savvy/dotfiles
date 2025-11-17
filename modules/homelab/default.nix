@@ -11,6 +11,8 @@
     ./paperless.nix
 
     # ./microbin.nix
+
+    ./adguardhome.nix
   ];
 
     users.groups.media = { };
