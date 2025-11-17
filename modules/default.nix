@@ -17,5 +17,7 @@
     # ./grafana
 
     ./cloud/storage.nix
+
+    ./databases
   ];
 }
