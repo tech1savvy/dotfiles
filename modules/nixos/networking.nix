@@ -57,6 +57,17 @@
     };
   };
 
+  networking.stevenblack = {
+    enable = true;
+
+    block = [
+      "fakenews"
+      "gambling"
+      "porn"
+      # "social"
+    ];
+  };
+
 
 
   # stop networkmanager from starting early at boot
