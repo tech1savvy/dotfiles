@@ -9,7 +9,12 @@
     networkmanager = {
       enable = true;
       # wifi.backend = "iwd"; # stops connecting to wifi
-      wifi.powersave = true;
+
+      wifi = {
+        powersave = true;
+        macAddress = "random";
+        scanRandMacAddress = true;
+      };
 
 
       # insertNameservers = [
