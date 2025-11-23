@@ -8,10 +8,4 @@
       enableGnomeKeyring = true;
     };
   };
-
-
-  environment.systemPackages = with pkgs; [
-    # gnome-keyring # authentication system
-    # libsecret # requried library
-  ];
 }
