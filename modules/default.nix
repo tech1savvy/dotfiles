@@ -21,5 +21,6 @@
     ./databases
 
     ./authentication
+    ./obs-studio.nix
   ];
 }

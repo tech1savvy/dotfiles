@@ -50,7 +50,7 @@
 
     ./activitywatch
 
-    ./obs-studio
+    # ./obs-studio
 
 
     ./email-clients/mutt.nix
