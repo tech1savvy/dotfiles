@@ -17,11 +17,13 @@
         # port = 6666;
       };
       rightUSBKeyboard = {
-        configFile = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
+        # configFile = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
+        configFile = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboardInvert.kbd";
         # port = 7777;
       };
       leftUSBKeyboard = {
-        configFile = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
+        # configFile = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
+        configFile = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboardInvert.kbd";
         # port = 5555;
       };
     };
@@ -38,13 +40,15 @@
   };
   systemd.services.kanata-rightUSBKeyboard.serviceConfig = {
     ProtectHome = lib.mkForce "tmpfs";
-    BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
+    # BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
+    BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboardInvert.kbd";
 
     wantedBy = pkgs.lib.mkForce [];
   };
   systemd.services.kanata-leftUSBKeyboard.serviceConfig = {
     ProtectHome = lib.mkForce "tmpfs";
-    BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
+    # BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
+    BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboardInvert.kbd";
 
     wantedBy = pkgs.lib.mkForce [];
   };
