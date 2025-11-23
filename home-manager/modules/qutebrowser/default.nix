@@ -12,6 +12,7 @@
       np = "https://search.nixos.org/packages?channel=25.05&query={}";
       no = "https://search.nixos.org/options?channel=25.05&query={}";
       p = "https://www.perplexity.ai/search?q={}";
+      gpt = "https://chatgpt.com/?q={}&hints=search";
       hm = "https://home-manager-options.extranix.com/?query={}+&release=release-25.05";
     };
 
