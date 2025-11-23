@@ -47,6 +47,8 @@
 
     jellyfin-web
     v4l-utils # Used For Things Like OBS Virtual Camera
+
+    qtscrcpy
   ];
 
   programs.kdeconnect.enable = true;
