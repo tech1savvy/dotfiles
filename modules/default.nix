@@ -19,5 +19,7 @@
     ./cloud/storage.nix
 
     ./databases
+
+    ./authentication
   ];
 }

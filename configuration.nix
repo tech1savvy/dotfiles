@@ -34,8 +34,6 @@
     ./modules/media/document.nix
     ./modules/media/file-manager.nix
 
-    # ./modules/authentication/gnome-keyring.nix
-
     ./modules/containerisation/distrobox.nix
 
     ./modules/containerisation/docker.nix
