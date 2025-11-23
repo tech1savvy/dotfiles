@@ -14,6 +14,8 @@
       "./modules/windowrules.conf"
       "./modules/workspaces.conf"
 
+      "./modules/kbptr.conf"
+
       # plugins
       # "./plugins/hyprwinwrap.conf"
       # "./plugins/hyprscrolling.conf"
