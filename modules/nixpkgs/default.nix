@@ -48,6 +48,8 @@
     jellyfin-web
 
     qtscrcpy
+
+    materialgram
   ];
 
   programs.kdeconnect.enable = true;

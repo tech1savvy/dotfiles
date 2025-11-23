@@ -10,6 +10,11 @@ text/html=org.pwmt.zathura-cb.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=writer.desktop;
 text/markdown=librewolf.desktop;nvim.desktop;
 
+; telegram ~ materialgram
+x-scheme-handler/tg=io.github.kukuruzka165.materialgram.desktop;
+x-scheme-handler/tonsite=io.github.kukuruzka165.materialgram.desktop;
+
+
 [Default Applications]
 application/octet-stream=org.kde.kate.desktop;
 application/pdf=zathura.desktop;
@@ -31,3 +36,7 @@ x-scheme-handler/magnet=motrix.desktop
 x-scheme-handler/mo=motrix.desktop
 x-scheme-handler/motrix=motrix.desktop
 x-scheme-handler/unknown=librewolf.desktop
+
+; telegram ~ materialgram
+x-scheme-handler/tg=io.github.kukuruzka165.materialgram.desktop
+x-scheme-handler/tonsite=io.github.kukuruzka165.materialgram.desktop
