@@ -1,4 +1,4 @@
 
-eval "$(pay-respects bash --alias)"
+# eval "$(pay-respects bash --alias)"
 eval "$(zoxide init bash)"
 eval "$(fzf --bash)"

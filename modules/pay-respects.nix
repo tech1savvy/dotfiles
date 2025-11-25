@@ -1,6 +1,6 @@
 {
   programs.pay-respects = {
-    enable = true;
+    enable = false;
 
     alias = "f";
     aiIntegration = false;
