@@ -46,3 +46,10 @@ freezer() {
 
   command freeze "$codefile" -o "$output"
 }
+
+# overide default
+
+command_not_found_handle() {
+  cowsay -f tux "$@"
+  return 127
+}
