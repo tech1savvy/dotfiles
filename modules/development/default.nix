@@ -1,4 +1,7 @@
 {pkgs, ...}: {
+  imports = [
+    ./dotnet.nix
+  ];
   environment.systemPackages = with pkgs; [
     # api testing
     postman
