@@ -19,7 +19,7 @@ unfocus = "hide"
 [scratchpads.btop]
 command = "kitty --class kitty-btop btop --force-utf"
 class = "kitty-btop"
-size = "70% 80%"
+size = "80% 80%"
 animation = "fromTop"
 unfocus = "hide"
 
