@@ -56,5 +56,6 @@
     ./email-clients/mutt.nix
 
 
+    ./atuin.nix
   ];
 }
