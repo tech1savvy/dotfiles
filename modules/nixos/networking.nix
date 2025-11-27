@@ -16,7 +16,6 @@
         scanRandMacAddress = true;
       };
 
-
       # insertNameservers = [
       #   "127.0.0.1"
       # ];
@@ -31,18 +30,17 @@
       };
     };
 
-
     hosts = {
       # virtul machines
       "192.168.122.157" = ["puppet-master" "puppet-server"];
       "192.168.122.134" = ["puppet-agent"];
-      
-      "127.0.0.1:8096" = [ "jellyfin.tech1savvy.com"];
+
+      "127.0.0.1:8096" = ["jellyfin.tech1savvy.com"];
     };
 
     firewall = {
       enable = false;
-      allowedTCPPorts = [ 
+      allowedTCPPorts = [
         80 # http
         443 # https
 
@@ -50,7 +48,6 @@
         2283 # immich
 
         # moonlight
-        
       ];
 
       allowedUDPPorts = [
@@ -72,8 +69,6 @@
       # "social"
     ];
   };
-
-
 
   # stop networkmanager from starting early at boot
   systemd.services.NetworkManager-wait-online.wantedBy = lib.mkForce [];

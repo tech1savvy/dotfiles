@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:{
+{pkgs, ...}: {
   services.immich = {
     enable = true;
 
@@ -11,7 +8,7 @@
   };
 
   services.postgresql = {
-    extensions = with pkgs.postgresql16Packages; [ 
+    extensions = with pkgs.postgresql16Packages; [
       pgvector
       # BUG: nixos-rebuild: undifned variable
       # vectorchord

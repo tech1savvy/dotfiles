@@ -20,7 +20,6 @@
     nil # nix lsp
     nixpkgs-fmt # nix formatter
     ansible-language-server # ansible lsp
-
   ];
 
   fonts.packages = with pkgs; [

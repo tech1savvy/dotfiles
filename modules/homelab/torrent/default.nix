@@ -10,6 +10,4 @@
 
     ./managers/jellyseer.nix
   ];
-
-
 }

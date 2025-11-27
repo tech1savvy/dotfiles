@@ -1,4 +1,4 @@
-{config,...}:{
+{config, ...}: {
   services.adguardhome = {
     enable = false;
 

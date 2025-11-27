@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   services.interception-tools = {
     enable = true;
 
@@ -24,4 +26,3 @@
         HOLD: KEY_J
   '';
 }
-

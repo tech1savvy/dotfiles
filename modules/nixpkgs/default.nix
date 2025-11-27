@@ -21,7 +21,6 @@
 
     discord
 
-
     brightnessctl
 
     ungoogled-chromium

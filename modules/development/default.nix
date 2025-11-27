@@ -82,5 +82,4 @@
   };
 
   systemd.services.mysql.wantedBy = pkgs.lib.mkForce []; # make the service do not auto-start
-
 }

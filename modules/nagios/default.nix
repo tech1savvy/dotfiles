@@ -1,9 +1,14 @@
-{config,pkgs,package, ...}:{
+{
+  config,
+  pkgs,
+  package,
+  ...
+}: {
   services.nagios = {
     enable = true;
-    objectDefs = 
-      (map (x: "${pkgs.nagios}/etc/objects/${x}.cfg") [ "templates" "timeperiods" "commands" ]) ++
-      [ ./main.cfg ];
+    objectDefs =
+      (map (x: "${pkgs.nagios}/etc/objects/${x}.cfg") ["templates" "timeperiods" "commands"])
+      ++ [./main.cfg];
     # extraConfig = {
     #   # for verbose logs
     #   debug_level = "-1";
@@ -63,7 +68,7 @@
   #
   #             fastcgi_param AUTH_USER       $remote_user;
   #             fastcgi_param REMOTE_USER     $remote_user;
-  #             fastcgi_param SCRIPT_FILENAME ${pkgs.nagios}/share/sbin$fastcgi_script_name;  
+  #             fastcgi_param SCRIPT_FILENAME ${pkgs.nagios}/share/sbin$fastcgi_script_name;
   #
   #             fastcgi_pass unix:${config.services.fcgiwrap.socketAddress};
   #       '';

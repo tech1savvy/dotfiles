@@ -1,6 +1,5 @@
 {
   imports = [
-
     ./stylix.nix
 
     # ./pointer.nix
@@ -37,7 +36,6 @@
 
     ./launchers
 
-
     ./cliphist
 
     ./tmux
@@ -52,9 +50,7 @@
 
     # ./obs-studio
 
-
     ./email-clients/mutt.nix
-
 
     ./atuin.nix
   ];

@@ -1,4 +1,4 @@
-{pkgs,...}:{
+{pkgs, ...}: {
   programs.qutebrowser = {
     enable = true;
 
@@ -43,9 +43,9 @@
     # Optional greasemonkey scripts for custom JS
     greasemonkey = [
       (pkgs.fetchurl {
-          url = "https://cdn.jsdelivr.net/gh/adamlui/youtube-classic/greasemonkey/youtube-classic.user.js";
-          sha256 = "sha256-qXaOoF6zfJM+BM/duTD4fqzMrozn9Xfd9Sdg+KkXPRg=";
-        })
+        url = "https://cdn.jsdelivr.net/gh/adamlui/youtube-classic/greasemonkey/youtube-classic.user.js";
+        sha256 = "sha256-qXaOoF6zfJM+BM/duTD4fqzMrozn9Xfd9Sdg+KkXPRg=";
+      })
     ];
 
     # Extra config in Python, directly injected into qutebrowser's config.py

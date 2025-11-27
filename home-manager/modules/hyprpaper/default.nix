@@ -7,7 +7,7 @@
       splash = false;
       splash_offset = 2.0;
 
-      preload = [ 
+      preload = [
         "~/Wallpapers/flower.jpg"
       ];
 

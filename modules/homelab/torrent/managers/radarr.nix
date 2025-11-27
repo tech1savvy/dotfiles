@@ -3,10 +3,9 @@
     enable = true;
     group = "media";
 
-
     settings = {
       server = {
-      port = 7878;
+        port = 7878;
       };
     };
   };

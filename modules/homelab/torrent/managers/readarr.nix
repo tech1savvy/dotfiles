@@ -5,7 +5,7 @@
 
     settings = {
       server = {
-      port = 8787;
+        port = 8787;
       };
     };
   };

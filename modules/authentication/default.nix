@@ -2,5 +2,4 @@
   imports = [
     ./gnome-keyring.nix
   ];
-
 }

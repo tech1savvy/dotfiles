@@ -2,7 +2,6 @@
   programs.yazi = {
     enable = true;
 
-
     initLua = ./init.lua;
     plugins = {
       git = pkgs.yaziPlugins.git;

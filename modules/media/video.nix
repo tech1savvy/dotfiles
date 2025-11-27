@@ -1,4 +1,8 @@
-{inputs, pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     vlc # GUI media player
     mpv # CLI media player

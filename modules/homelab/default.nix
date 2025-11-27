@@ -17,9 +17,9 @@
     ./searx.nix
   ];
 
-    users.groups.media = { };
+  users.groups.media = {};
 
-    systemd.tmpfiles.rules = [
-      "d /data/media 0770 - media - -"
-    ];
+  systemd.tmpfiles.rules = [
+    "d /data/media 0770 - media - -"
+  ];
 }

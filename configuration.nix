@@ -3,7 +3,6 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {inputs, ...}: {
   imports = [
-
     ./modules
 
     # Include the results of the hardware scan.
@@ -57,7 +56,6 @@
 
     # productivity
     ./modules/productivity.nix
-
   ];
 
   # able to read windows drives

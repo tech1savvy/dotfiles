@@ -64,7 +64,6 @@
     libnotify # capture notifications and send to daemon
     # gvfs # opening links or files from notifications
 
-
     # network gui
     networkmanagerapplet
 
@@ -106,7 +105,6 @@
 
     wl-kbptr
     wlrctl # for mouse movements
-
   ];
 
   fonts.packages = with pkgs; [

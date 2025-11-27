@@ -4,7 +4,6 @@
 
     ./stylix.nix
 
-
     # Window Managers
     ./environment/niri
 

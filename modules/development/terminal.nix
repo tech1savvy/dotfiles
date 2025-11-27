@@ -3,18 +3,13 @@
     # essesntial terminal tools
     wget # download files from the web
 
-
     fzf # source: https://www.youtube.com/shorts/iUHfq_JN4G8
-
-
 
     # json parser
     jq
 
     # comman command line tools bundle
     busybox # tree,
-
-
 
     bonk # combines touch and mkdir
 
@@ -37,7 +32,7 @@
     cowsay
 
     tldr # better manpages
-    thokr # typing test 
+    thokr # typing test
 
     lnav # log file viewer
 

@@ -26,7 +26,7 @@
       autoVolume
 
       # unpacked
-      ({
+      {
         # The source of the extension
         # make sure you're using the correct branch
         # It could also be a sub-directory of the repo
@@ -40,7 +40,7 @@
         };
         # The actual file name of the extension usually ends with .js
         name = "HideImages.js";
-      })
+      }
     ];
 
     # enabledCustomApps =  [
