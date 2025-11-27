@@ -2,7 +2,7 @@
   unstable =
     import (builtins.fetchTarball {
       url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
-      sha256 = "16v3zigdz0308zmmmp6fk57m7y8m981r97a3glgqmr06x4kn447s";
+      sha256 = "1zb5ca8jqavb19j7g06a41jg6bvpr20b9lihvham6qywhgaqprz9";
     }) {
       system = pkgs.system;
       config = {
@@ -11,10 +11,8 @@
     };
 in {
   environment.systemPackages = with pkgs; [
-    # stable packages here
-    # unstable.kiro # from unstable channel
+    # unstable.kiro
     unstable.rustc
     unstable.spotdl
   ];
-  # rest of your config...
 }

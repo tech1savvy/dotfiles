@@ -50,6 +50,8 @@
     qtscrcpy
 
     materialgram
+
+    # sysbench
   ];
 
   programs.kdeconnect.enable = true;
