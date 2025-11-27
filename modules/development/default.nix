@@ -34,8 +34,6 @@
     terraform # infrastucture as code
     aws-nuke
 
-    nginx
-
     web-ext # build, run, and test web extensions
 
     lazysql # https://youtu.be/9RArbqGOvsw

@@ -1,6 +1,7 @@
 {
   imports = [
     ./homelab
+    ./nginx
 
     ./stylix.nix
 
