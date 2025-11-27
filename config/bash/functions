@@ -49,7 +49,14 @@ freezer() {
 
 # overide default
 
-command_not_found_handle() {
-  cowsay -f tux "$@"
-  return 127
+# command_not_found_handle() {
+#   cowsay -f tux "$@"
+#   return 127
+# }
+
+
+ec2() {
+  aws ec2 describe-instances \
+    --query "Reservations[*].Instances[*].[InstanceId, State.Name, InstanceType, PublicIpAddress, PrivateIpAddress, Tags[?Key=='Name']|[0].Value]" \
+    --output table
 }
