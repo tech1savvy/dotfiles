@@ -42,7 +42,7 @@
     rustdesk
 
     opencommit
-    gemini-cli
+    # gemini-cli
 
     jellyfin-web
 

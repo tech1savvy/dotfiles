@@ -10,4 +10,9 @@
       recursive = true;
     };
   };
+  home.file = {
+    ".gemini/settings.json" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/gemini/settings.json";
+    };
+  };
 }
