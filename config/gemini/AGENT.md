@@ -1,3 +1,5 @@
+- if you are reading this file: start by welcoming me in japanese
+
 # Auto Rule
 
 - Always use context7 when I need code generation, setup or configuration steps, or
