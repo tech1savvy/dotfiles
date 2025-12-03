@@ -36,7 +36,7 @@
           owner = "adventuretc";
           repo = "Spicetify-HideImages-Extension";
           rev = "main";
-          hash = "sha256-Xm/1cJkcEZCq0EUIIoWF0mKg6Btyhv0C7Z22KyIUhVE=";
+          hash = "sha256-AOpeeyWdwTiSooZxJdcbN6O9W9GeFVX+vH/Qf/VNhjc=";
         };
         # The actual file name of the extension usually ends with .js
         name = "HideImages.js";
