@@ -5,3 +5,5 @@
 -- Enable cursorline and cursorcolumn globally
 vim.o.cursorline = true
 vim.o.cursorcolumn = true
+
+vim.opt.swapfile = false
