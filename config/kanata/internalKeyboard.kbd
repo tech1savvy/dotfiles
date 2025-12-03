@@ -277,7 +277,7 @@
   grv M-1 M-2 M-3 M-4 M-5 M-6 M-7 M-8 M-9 M-0 @zoom-in @zoom-out bspc ;; NUMBER ROW
   tab @kill @close-stab @e-stab @stab M-ret  M-y @mwd @mwu-cbspc @end-cbspc p [ ] \ ;; TOP ROW
   @tmouseless @alt @met @sft @ctl M-g left down @up-sret @right-sret @wrkspc-l ' ret ;; HOME ROW
-  @undo @cut @copy @paste b @__ M-n @wrkspc-u @tab-l @tab-r @__ lsft ;; BOTTOM ROW
+  @undo @cut @copy @paste b @__ M-n @wrkspc-u @tab-l @tab-r M-/ lsft ;; BOTTOM ROW
   @__  @__  @__  @mod @__  @__ ;; MODIFIERS
   @__  @__  @__   @__ ;; ARROW KEYS
 )
