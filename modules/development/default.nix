@@ -6,6 +6,8 @@
     # api testing
     postman
     posting
+    bruno
+    bruno-cli
 
     # editors
     vscode
