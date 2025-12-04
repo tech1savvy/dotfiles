@@ -28,27 +28,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Niri
-    # niri-flake = {
-    #   url = github:sodiboo/niri-flake;
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # nfsm-flake = {
-    #   url = github:gvolpe/nfsm;
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # niri-scratchpad-flake = {
-    #   #url = git+file:///home/gvolpe/workspace/niri-scratchpad;
-    #   url = github:gvolpe/niri-scratchpad;
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # nsticky-flake = {
-    #   url = github:lonerOrz/nsticky;
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    nfsm = {
+      url = "github:gvolpe/nfsm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    niri-scratchpad = {
+      url = "github:gvolpe/niri-scratchpad";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nsticky = {
+      url = "github:lonerOrz/nsticky";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -59,13 +52,20 @@
     spicetify-nix,
     yt-x,
     stylix,
+    # TODO: remove hhyprland-virtual-desktops flake
     hyprland-virtual-desktops,
+
+    nfsm,
+    niri-scratchpad,
     ...
-  } @ inputs: {
+  } @ inputs: let 
+      system = "x86_64-linux";
+    in {
     # use "nixos", or your hostname as the name of the configuration
     # it's a better practice than "default" shown in the video
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      inherit system;
+      specialArgs = {inherit inputs system;};
       modules = [
         ./configuration.nix
         home-manager.nixosModules.default
