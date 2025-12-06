@@ -22,5 +22,7 @@
 
     ./authentication
     ./obs-studio.nix
+
+    ./quickshell
   ];
 }

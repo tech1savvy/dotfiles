@@ -28,6 +28,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # NIRI
+
     nfsm = {
       url = "github:gvolpe/nfsm";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +44,17 @@
       url = "github:lonerOrz/nsticky";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # QICKSHELL, NOCTALIA-SHELL
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell";  # Use same quickshell version
+    };
   };
 
   outputs = {
@@ -52,7 +65,7 @@
     spicetify-nix,
     yt-x,
     stylix,
-    # TODO: remove hhyprland-virtual-desktops flake
+    # TODO: remove hyprland-virtual-desktops flake
     hyprland-virtual-desktops,
 
     nfsm,

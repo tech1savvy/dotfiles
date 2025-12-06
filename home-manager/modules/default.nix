@@ -53,5 +53,7 @@
     ./email-clients/mutt.nix
 
     ./atuin.nix
+
+    ./vesktop.nix
   ];
 }
