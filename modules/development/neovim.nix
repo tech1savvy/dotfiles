@@ -20,6 +20,8 @@
     nil # nix lsp
     nixpkgs-fmt # nix formatter
     ansible-language-server # ansible lsp
+
+    elinks # depedency for emmanueltouzery/apidocs.nvim
   ];
 
   fonts.packages = with pkgs; [
