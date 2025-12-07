@@ -364,6 +364,26 @@
         "type": "github"
       }
     },
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": [
+          "unstable-nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765077391,
+        "narHash": "sha256-nEI9zFwg9MHbHFcE7H43E0olRKxwrP1W/gQJc9GtlJU=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "rev": "ff6bc083fd034044b22c6b94863f5f23ee881f98",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "type": "github"
+      }
+    },
     "nsticky": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -412,6 +432,26 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "unstable-nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1764663772,
+        "narHash": "sha256-sHqLmm0wAt3PC4vczJeBozI1/f4rv9yp3IjkClHDXDs=",
+        "owner": "outfoxxed",
+        "repo": "quickshell",
+        "rev": "26531fc46ef17e9365b03770edd3fb9206fcb460",
+        "type": "github"
+      },
+      "original": {
+        "owner": "outfoxxed",
+        "repo": "quickshell",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
@@ -420,9 +460,12 @@
         "niri-scratchpad": "niri-scratchpad",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "noctalia": "noctalia",
         "nsticky": "nsticky",
+        "quickshell": "quickshell",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
+        "unstable-nixpkgs": "unstable-nixpkgs",
         "yt-x": "yt-x"
       }
     },
@@ -676,6 +719,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "unstable-nixpkgs": {
+      "locked": {
+        "lastModified": 1764950072,
+        "narHash": "sha256-BmPWzogsG2GsXZtlT+MTcAWeDK5hkbGRZTeZNW42fwA=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "f61125a668a320878494449750330ca58b78c557",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },
