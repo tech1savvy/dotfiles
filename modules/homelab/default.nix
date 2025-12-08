@@ -15,6 +15,8 @@
     # ./adguardhome.nix
 
     ./searx.nix
+
+    # ./matrix
   ];
 
   users.groups.media = {};

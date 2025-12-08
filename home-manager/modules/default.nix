@@ -55,5 +55,7 @@
     ./atuin.nix
 
     ./vesktop.nix
+
+    ./element-desktop.nix
   ];
 }
