@@ -79,6 +79,7 @@
   (up  ) up
   (up right) @sret
   (right  ) right
+
 )
 (defalias
 
@@ -260,6 +261,107 @@
   tab-l M-h
   tab-r M-l
 
+  ;; MOD NUMBER ROW
+  m-1 (tap-hold $tap-time $hold-time 
+    (tap-dance $tap-time
+      (
+       M-1 
+       (multi lmet lctl 1)
+      )
+    ) 
+    (multi lmet lsft 1)
+  )
+
+  m-2 (tap-hold $tap-time $hold-time 
+    (tap-dance $tap-time
+      (
+       M-2 
+       (multi lmet lctl 2)
+      )
+    ) 
+    (multi lmet lsft 2)
+  )
+
+  m-3 (tap-hold $tap-time $hold-time 
+    (tap-dance $tap-time
+      (
+       M-3 
+       (multi lmet lctl 3)
+      )
+    ) 
+    (multi lmet lsft 3)
+  )
+
+  m-4 (tap-hold $tap-time $hold-time 
+    (tap-dance $tap-time
+      (
+       M-4 
+       (multi lmet lctl 4)
+      )
+    ) 
+    (multi lmet lsft 4)
+  )
+
+  m-5 (tap-hold $tap-time $hold-time 
+    (tap-dance $tap-time
+      (
+       M-5 
+       (multi lmet lctl 5)
+      )
+    ) 
+    (multi lmet lsft 5)
+  )
+
+  m-6 (tap-hold $tap-time $hold-time 
+    (tap-dance $tap-time
+      (
+       M-6 
+       (multi lmet lctl 6)
+      )
+    ) 
+    (multi lmet lsft 6)
+  )
+
+  m-7 (tap-hold $tap-time $hold-time 
+    (tap-dance $tap-time
+      (
+       M-7 
+       (multi lmet lctl 7)
+      )
+    ) 
+    (multi lmet lsft 7)
+  )
+
+  m-8 (tap-hold $tap-time $hold-time 
+    (tap-dance $tap-time
+      (
+       M-8 
+       (multi lmet lctl 8)
+      )
+    ) 
+    (multi lmet lsft 8)
+  )
+
+  m-9 (tap-hold $tap-time $hold-time 
+    (tap-dance $tap-time
+      (
+       M-9 
+       (multi lmet lctl 9)
+      )
+    ) 
+    (multi lmet lsft 9)
+  )
+
+  m-0 (tap-hold $tap-time $hold-time 
+    (tap-dance $tap-time
+      (
+       M-0 
+       (multi lmet lctl 0)
+      )
+    ) 
+    (multi lmet lsft 0)
+  )
+
 )
 (deflayer base
   lrld
@@ -274,7 +376,7 @@
 ;; EXTEND LAYER
 (deflayer mod
   esc
-  grv M-1 M-2 M-3 M-4 M-5 M-6 M-7 M-8 M-9 M-0 @zoom-in @zoom-out bspc ;; NUMBER ROW
+  grv @m-1 @m-2 @m-3 @m-4 @m-5 @m-6 @m-7 @m-8 @m-9 @m-0 @zoom-in @zoom-out bspc ;; NUMBER ROW
   tab @kill @close-stab @e-stab @stab M-ret  M-y @mwd @mwu-cbspc @end-cbspc p [ ] \ ;; TOP ROW
   @tmouseless @alt @met @sft @ctl M-g left down @up-sret @right-sret @wrkspc-l ' ret ;; HOME ROW
   @undo @cut @copy @paste b @__ M-n @wrkspc-u @tab-l @tab-r M-/ lsft ;; BOTTOM ROW
