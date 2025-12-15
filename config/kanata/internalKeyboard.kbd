@@ -378,7 +378,7 @@
   esc
   grv @m-1 @m-2 @m-3 @m-4 @m-5 @m-6 @m-7 @m-8 @m-9 @m-0 @zoom-in @zoom-out bspc ;; NUMBER ROW
   tab @kill @close-stab @e-stab @stab M-ret  M-y @mwd @mwu-cbspc @end-cbspc p [ ] \ ;; TOP ROW
-  @tmouseless @alt @met @sft @ctl M-g left down @up-sret @right-sret @wrkspc-l ' ret ;; HOME ROW
+  @tmouseless @alt @met @sft @ctl M-g left down @up-sret @right-sret M-; ' ret ;; HOME ROW
   @undo @cut @copy @paste b @__ M-n @wrkspc-u @tab-l @tab-r M-/ lsft ;; BOTTOM ROW
   @__  @__  @__  @mod @__  @__ ;; MODIFIERS
   @__  @__  @__   @__ ;; ARROW KEYS
