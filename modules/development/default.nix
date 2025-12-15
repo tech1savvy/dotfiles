@@ -75,7 +75,7 @@
     enable = true;
     package = pkgs.mongodb-ce;
   };
-  systemd.services.mongodb.wantedBy = pkgs.lib.mkForce []; # make the service do not auto-start
+  # systemd.services.mongodb.wantedBy = pkgs.lib.mkForce []; # make the service do not auto-start
 
   # mariadb: opensource drop-in repalcment for mysql
   services.mysql = {
