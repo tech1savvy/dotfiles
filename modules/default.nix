@@ -7,6 +7,7 @@
 
     # Window Managers
     ./environment/niri
+    ./environment/cosmic.nix
 
     ./ansible
 
