@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.qutebrowser = {
     enable = true;
 
@@ -9,11 +10,11 @@
     searchEngines = {
       DEFAULT = "https://duckduckgo.com/?q={}";
       g = "https://www.google.com/search?q={}";
-      np = "https://search.nixos.org/packages?channel=25.05&query={}";
-      no = "https://search.nixos.org/options?channel=25.05&query={}";
+      np = "https://search.nixos.org/packages?channel=unstable&query={}";
+      no = "https://search.nixos.org/options?channel=unstable&query={}";
       p = "https://www.perplexity.ai/search?q={}";
       gpt = "https://chatgpt.com/?q={}&hints=search";
-      hmo = "https://home-manager-options.extranix.com/?query={}+&release=release-25.05";
+      hmo = "https://home-manager-options.extranix.com/?query={}+&release=master";
       npm = "https://www.npmjs.com/search?q={}";
     };
 
@@ -66,7 +67,7 @@
       #   right = 4;
       # };
       content.javascript.enabled = true;
-      url.start_pages = ["https://www.perplexity.ai"];
+      url.start_pages = [ "https://www.perplexity.ai" ];
       url.default_page = "https://www.perplexity.ai";
       colors.webpage.darkmode.enabled = true;
     };
