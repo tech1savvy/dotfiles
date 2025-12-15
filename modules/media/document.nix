@@ -6,6 +6,8 @@
     ocamlPackages.cpdf # simplfied cli wrapper for ghostscript
     # latex compiler headears
     texliveFull
+
+    ghostscript
   ];
   services.calibre-server = {
     enable = false;
