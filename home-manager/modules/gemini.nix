@@ -1,7 +1,7 @@
 {config, ...}: {
   home.file = {
-    ".gemini/GEMINI.md" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/gemini/GEMINI.md";
+    ".gemini/AGENT.md" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/gemini/AGENT.md";
     };
   };
   home.file = {
