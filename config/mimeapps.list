@@ -40,3 +40,4 @@ x-scheme-handler/unknown=librewolf.desktop
 ; telegram ~ materialgram
 x-scheme-handler/tg=io.github.kukuruzka165.materialgram.desktop
 x-scheme-handler/tonsite=io.github.kukuruzka165.materialgram.desktop
+x-scheme-handler/discord=vesktop.desktop

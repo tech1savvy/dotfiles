@@ -20,6 +20,10 @@
     libreoffice
 
     discord
+    # webcord
+    # webcord-vencord
+    # legcord
+
 
     brightnessctl
 

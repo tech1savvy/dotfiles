@@ -7,6 +7,7 @@
     vencord = {
       settings = {};
       themes =  {};
+      useSystem = true;
     };
   };
 }

@@ -54,7 +54,7 @@
 
     ./atuin.nix
 
-    ./vesktop.nix
+    # ./vesktop.nix
 
     ./element-desktop.nix
   ];
