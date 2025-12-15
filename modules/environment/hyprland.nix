@@ -30,11 +30,12 @@
     HYPR_PLUGIN_DIR = pkgs.symlinkJoin {
       name = "hyprland-plugins";
       paths = with pkgs.hyprlandPlugins; [
-        hyprwinwrap
+        # hyprwinwrap
         hyprscrolling
         hy3
-        hyprexpo
-        #...plugins
+        # hyprexpo
+        hyprspace
+        hypr-dynamic-cursors
       ];
     };
   };

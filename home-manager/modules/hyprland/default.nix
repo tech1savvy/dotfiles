@@ -5,7 +5,9 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
-
+    plugins = [
+      # inputs.hyprland-virtual-desktops.packages.${pkgs.system}.virtual-desktops
+    ];
     settings = {
       source = [
         "./modules/programs.conf"
@@ -24,7 +26,8 @@
         # "./plugins/hyprwinwrap.conf"
         # "./plugins/hyprscrolling.conf"
         "./plugins/hy3.conf"
-        "./plugins/hyprexpo.conf"
+        # "./plugins/hyprexpo.conf"
+        # "./plugins/virtual-desktops.conf"
       ];
     };
   };
