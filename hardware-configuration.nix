@@ -38,9 +38,18 @@
     ];
   };
 
+  # HIBERNATION
   swapDevices = [
-    {device = "/dev/disk/by-uuid/0cbdeee7-287c-4008-9278-ea803ec8be19";}
+    # {device = "/dev/disk/by-uuid/0cbdeee7-287c-4008-9278-ea803ec8be19";}
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024; # 16GB in MB
+    }
   ];
+
+  boot.kernelParams = ["resume_offset=4136960"];
+  boot.resumeDevice = "/dev/disk/by-uuid/b1eaaa31-6bc5-4c18-a340-269fb4b1edc0";
+  powerManagement.enable = true; # TODO: move to boot.nix
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
