@@ -22,6 +22,8 @@
     ansible-language-server # ansible lsp
 
     elinks # depedency for emmanueltouzery/apidocs.nvim
+
+    ghostscript # to preview pdfs
   ];
 
   fonts.packages = with pkgs; [
