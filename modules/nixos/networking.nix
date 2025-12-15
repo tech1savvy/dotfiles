@@ -11,7 +11,7 @@
       # wifi.backend = "iwd"; # stops connecting to wifi
 
       wifi = {
-        powersave = true;
+        powersave = false;
         macAddress = "random";
         scanRandMacAddress = true;
       };
