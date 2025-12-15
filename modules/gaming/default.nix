@@ -31,7 +31,8 @@
     mangohud
 
     # proton GE
-    protonup
+    # protonup # 'protonup' has been renamed to/replaced by 'protonup-ng'
+    protonup-ng
   ];
 
   # protonup download dir

@@ -2,12 +2,16 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    unstable-nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    warbler-nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager-warbler = {
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "warbler-nixpkgs";
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -20,8 +24,12 @@
     };
 
     stylix = {
-      url = "github:nix-community/stylix/release-25.05";
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix-warbler = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "warbler-nixpkgs";
     };
 
     hyprland-virtual-desktops = {
@@ -49,11 +57,11 @@
     # QICKSHELL, NOCTALIA-SHELL
     quickshell = {
       url = "github:outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "unstable-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "unstable-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.quickshell.follows = "quickshell";  # Use same quickshell version
     };
   };

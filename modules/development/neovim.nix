@@ -19,7 +19,7 @@
 
     nil # nix lsp
     nixpkgs-fmt # nix formatter
-    ansible-language-server # ansible lsp
+    # ansible-language-server # ansible lsp # ansible-language-server was removed, because it was unmaintained in nixpkgs.
 
     elinks # depedency for emmanueltouzery/apidocs.nvim
 
@@ -28,7 +28,8 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono # icon support
-    noto-fonts-emoji # emoji support
+    # noto-fonts-emoji # emoji support #  'noto-fonts-emoji' has been renamed to/replaced by 'noto-fonts-color-emoji'
+    noto-fonts-color-emoji
   ];
 
   # For Mason managed binaries

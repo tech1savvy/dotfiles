@@ -6,7 +6,7 @@
   programs.rofi = {
     enable = true;
 
-    package = pkgs.rofi-wayland;
+    # package = pkgs.rofi-wayland; # 'rofi-wayland' has been merged into 'rofi'
     location = "bottom";
     xoffset = 0;
     yoffset = 0;
@@ -65,7 +65,8 @@
     };
     plugins = with pkgs; [
       rofi-calc
-      rofi-emoji-wayland
+      # rofi-emoji-wayland # 'rofi-emoji-wayland' has been merged into `rofi-emoji as 'rofi-wayland' has been merged into 'rofi'
+      rofi-emoji
       rofi-file-browser
       # rofi-blezz
       rofi-top
