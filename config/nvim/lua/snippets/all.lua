@@ -10,6 +10,6 @@ ls.add_snippets("all", {
     i(1), -- Cursor jumps here after expansion
   }),
   -- Extend for others
-  s("bug", { t("BUG: "), i(1) }),
+  s("fix", { t("FIX: "), i(1) }),
   s("warning", { t("WARN: "), i(1) }),
 })
