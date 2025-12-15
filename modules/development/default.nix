@@ -66,6 +66,8 @@
     act # Github Actions Locally
 
     clang # gcc compiler frontend
+
+    typescript # tsc, tsserver
   ];
 
   # mongoDB community edition
