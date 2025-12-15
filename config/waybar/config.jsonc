@@ -38,7 +38,16 @@
     "warp-on-scroll": false,
     "format": "{name} {icon}",
     "format-icons": {
-      "1": "🏠",
+      "1": "󰅱 ",
+      "2": " ",
+      "3": " ",
+      "9": " ",
+      "10": "󰖟 ",
+
+      "11": " ",
+      "12": " ",
+      "13": "󰤚 ",
+      // TODO: Add icons for all enabled scratchpads
 
       "librewolf": "🌐",
       "discord": "🤖",
