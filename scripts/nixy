@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+subcmd="$1"
+workflow="$2"
+
+if [ "$workflow" == "dev" ]; then
+  bash workflow-dev.sh
+elif [ "$workflow" == "notes" ]; then
+  bash workflow-notes.sh
+fi
