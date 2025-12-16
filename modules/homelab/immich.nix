@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   services.immich = {
     enable = true;
 
@@ -10,15 +11,10 @@
   services.postgresql = {
     extensions = with pkgs.postgresql16Packages; [
       pgvector
-      # BUG: nixos-rebuild: undifned variable
-      # vectorchord
+      vectorchord
     ];
     settings.shared_preload_libraries = [
-      # "vchord"
+      "vchord"
     ];
   };
-
-  environment.systemPackages = with pkgs; [
-    # postgresql16Packages.vectorchord
-  ];
 }
