@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     # essesntial terminal tools
     wget # download files from the web
@@ -37,5 +38,6 @@
     lnav # log file viewer
 
     tmate # terminal screen-sharing and access
+    figlet # ascii print text to terminal
   ];
 }
