@@ -40,3 +40,6 @@ vim.keymap.set("v", "<BS>", "<gv", { silent = true, desc = "Dedent selection" })
 
 -- Leet run
 vim.keymap.set("n", "<leader>cL", "<cmd>Leet run<CR>", { silent = true, desc = "Leet run" })
+
+-- Toggle Neo-tree
+vim.keymap.set("n", "\\\\", "<cmd>Neotree toggle<CR>", { silent = true, desc = "Neotreee toggle" })
