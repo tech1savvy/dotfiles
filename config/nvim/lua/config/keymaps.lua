@@ -37,3 +37,6 @@ vim.keymap.set("n", "<BS>", "<<", { silent = true, desc = "Dedent line" })
 -- visual mode
 vim.keymap.set("v", "<Tab>", ">gv", { silent = true, desc = "Indent selection" })
 vim.keymap.set("v", "<BS>", "<gv", { silent = true, desc = "Dedent selection" })
+
+-- Leet run
+vim.keymap.set("n", "<leader>cL", "<cmd>Leet run<CR>", { silent = true, desc = "Leet run" })
