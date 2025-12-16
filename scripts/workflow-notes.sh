@@ -3,7 +3,7 @@
 PROJECT="FLASHCARDS"
 PROJECT_DIR="$HOME/notes/cards/"
 
-hyprctl dispatch workspace 2
+hyprctl dispatch workspace 23
 
 # Open gemini-cli in project dir
 kitty --title "GEMINI-CLI: $PROJECT" --directory "$PROJECT_DIR" gemini &
