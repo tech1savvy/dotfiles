@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -23,7 +24,6 @@
     # webcord
     # webcord-vencord
     # legcord
-
 
     brightnessctl
 
@@ -55,6 +55,7 @@
     materialgram
 
     # sysbench
+    speedtest-go # internet speed cli
   ];
 
   programs.kdeconnect.enable = true;
