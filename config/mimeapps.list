@@ -19,6 +19,7 @@ x-scheme-handler/tonsite=io.github.kukuruzka165.materialgram.desktop;
 application/octet-stream=org.kde.kate.desktop;
 application/pdf=zathura.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-3.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=writer.desktop;
 
 ; image files
 image/png=vimiv.desktop;
