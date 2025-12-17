@@ -25,5 +25,6 @@
     ./obs-studio.nix
 
     ./quickshell
+    ./droidcam.nix
   ];
 }
