@@ -60,3 +60,8 @@ ec2() {
     --query "Reservations[*].Instances[*].[InstanceId, State.Name, InstanceType, PublicIpAddress, PrivateIpAddress, Tags[?Key=='Name']|[0].Value]" \
     --output table
 }
+
+latex2pdf(){
+  local latex_file="$1"
+  latexmk -pdf -pvc "$latex_file"
+}
