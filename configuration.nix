@@ -16,7 +16,6 @@
 
     # packages
     ./modules/nixpkgs
-    ./modules/nixpkgs/unstable.nix
     ./modules/version-control/git.nix
     ./modules/nh.nix
 

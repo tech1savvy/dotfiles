@@ -40,7 +40,7 @@
 
     lazysql # https://youtu.be/9RArbqGOvsw
 
-    # rustc # installing unstable pkg for lastest version
+    rustc
     cargo
 
     # python

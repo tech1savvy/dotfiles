@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     # spotify
     termusic
+    spotdl
   ];
 
   # Spicetify is a tool to customize Spotify client
