@@ -1,6 +1,10 @@
 {
   "ui": {
-    "theme": "Default"
+    "theme": "Default",
+    "showStatusInTitle": true,
+    "showMemoryUsage": true,
+    "showCitations": true,
+    "showModelInfoInChat": true
   },
   "security": {
     "auth": {
@@ -12,7 +16,10 @@
   },
   "general": {
     "preferredEditor": "neovim",
-    "vimMode": true
+    "vimMode": true,
+    "previewFeatures": true,
+    "disableAutoUpdate": true,
+    "enablePromptCompletion": true
   },
   "mcpServers": {
     "context7": {
@@ -21,6 +28,14 @@
         "Accept": "application/json, text/event-stream"
       },
       "trust": true
+    }
+  },
+  "output": {
+    "format": "text"
+  },
+  "tools": {
+    "shell": {
+      "showColor": true
     }
   }
 }
