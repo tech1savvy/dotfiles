@@ -51,7 +51,7 @@ alias j="just" # cmd (task,scripts) runner
 alias br="source ~/.bashrc"
 alias be="nvim ~/.bashrc"
 alias leetcode="nvim leetcode.nvim"
-alias mk="bonk"
+alias touch="bonk"
 alias ytd="yt-dlp -f 'bv*[height=1080]+ba' -o '%(title)s - %(uploader)s.%(ext)s' --embed-chapters --no-playlist"
 alias ytds="yt-dlp -f 'bv*[height=1080]+ba' -o '%(title)s - %(uploader)s.%(ext)s' --embed-chapters --embed-subs --write-auto-sub --write-sub --sub-lang en --no-playlist"
 alias ytdp="yt-dlp -f 'bv*[height=1080]+ba' -o '%(playlist_index)03d - %(title)s - %(playlist_title)s.%(ext)s' --embed-chapters"
@@ -66,6 +66,9 @@ alias waka="wakatime-cli --today"
 alias tasker="taskwarrior-tui"
 
 alias psql="sudo -u postgres psql"
+
+alias wolf="librewolf"
+alias office="libreoffice"
 
 # node
 alias nrd="npm run dev"
