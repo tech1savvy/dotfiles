@@ -1,6 +1,8 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./dotnet.nix
+    ./go.nix
   ];
   environment.systemPackages = with pkgs; [
     # api testing
@@ -71,7 +73,8 @@
   ];
 
   # mongoDB community edition
-  services.mongodb = { # port: 27017
+  services.mongodb = {
+    # port: 27017
     enable = true;
     package = pkgs.mongodb-ce;
   };
@@ -83,5 +86,5 @@
     package = pkgs.mariadb;
   };
 
-  systemd.services.mysql.wantedBy = pkgs.lib.mkForce []; # make the service do not auto-start
+  systemd.services.mysql.wantedBy = pkgs.lib.mkForce [ ]; # make the service do not auto-start
 }
