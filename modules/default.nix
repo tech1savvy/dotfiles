@@ -5,6 +5,8 @@
 
     ./stylix.nix
 
+    # Display Managers
+    ./environment/greetd.nix
     # Window Managers
     ./environment/niri
     ./environment/cosmic.nix
