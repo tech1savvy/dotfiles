@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./pygame.nix
+  ];
   environment.systemPackages = with pkgs; [
     python313
     # pkg managers
