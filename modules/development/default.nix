@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./python
     ./dotnet.nix
     ./go.nix
   ];
