@@ -32,12 +32,6 @@
     ./modules/media/document.nix
     ./modules/media/file-manager.nix
 
-    ./modules/containerisation/distrobox.nix
-
-    ./modules/containerisation/docker.nix
-    ./modules/virtualisation/kvm.nix
-    ./modules/virtualisation/virtualbox
-
     # peripherals
     ./modules/peripherals/kanata.nix
     # ./modules/peripherals/interception-tools.nix

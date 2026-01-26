@@ -1,5 +1,7 @@
 {
   imports = [
+    ./containerisation
+    ./virtualisation
     ./homelab
     ./nginx
 
