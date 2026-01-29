@@ -30,5 +30,6 @@
 
     ./quickshell
     ./droidcam.nix
+    ./appimage.nix
   ];
 }
