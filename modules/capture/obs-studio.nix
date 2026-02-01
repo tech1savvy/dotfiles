@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.obs-studio = {
     enable = true;
     enableVirtualCamera = true;
@@ -11,6 +12,13 @@
       obs-composite-blur
       obs-backgroundremoval
       droidcam-obs
+      pixel-art
+      obs-vintage-filter
+      obs-scale-to-sound
+      obs-retro-effects
+      obs-dvd-screensaver
+      obs-composite-blur
+      input-overlay
     ];
   };
 }
