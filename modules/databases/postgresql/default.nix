@@ -1,6 +1,7 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
-    ./pgadmin.nix
+    # ./pgadmin.nix
   ];
   services.postgresql = {
     enable = true;
