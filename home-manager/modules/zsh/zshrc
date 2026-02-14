@@ -3,7 +3,7 @@
 # -------------------------------------------
 # Just type the filename to open it with the associated program
 alias -s json=jless
-alias -s md=bat
+# alias -s md=bat
 alias -s go='$EDITOR'
 alias -s rs='$EDITOR'
 alias -s nix='$EDITOR'
