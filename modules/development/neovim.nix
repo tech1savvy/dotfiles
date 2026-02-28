@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     neovim
     # repo:kickstart.nvim stated depencies
@@ -10,12 +11,13 @@
     ripgrep
     fd # fd-find
 
-    wl-clipboard # for wayland
+    # wl-clipboard # for wayland
 
     # Installing LSP and others throught nixpkgs
-    cbfmt
-    marksman
-    icu.dev # marksman dep
+    # cbfmt
+    # marksman
+    # icu.dev # marksman dep
+    statix # lints and suggestions for nix
 
     nil # nix lsp
     nixpkgs-fmt # nix formatter
@@ -23,7 +25,10 @@
 
     elinks # depedency for emmanueltouzery/apidocs.nvim
 
-    ghostscript # to preview pdfs
+    # ghostscript # to preview pdfs
+
+    # silicon # for github.com/michaelrommel/nvim-silicon
+    # codesnap # for github.com/mistricky/codesnap.nvim
   ];
 
   fonts.packages = with pkgs; [
