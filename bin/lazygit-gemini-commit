@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+
+# ==========================================
+# Common Settings & Checks
+# ==========================================
+
+# API key check (Countermeasure for non-interactive shells)
+if [ -z "$GEMINI_API_KEY" ]; then
+  [ -f ~/.zshrc ] && source ~/.zshrc
+  [ -f ~/.bashrc ] && source ~/.bashrc
+  [ -f ~/.profile ] && source ~/.profile
+fi
+
+if [ -z "$GEMINI_API_KEY" ]; then
+  gum style --foreground 196 "Error: GEMINI_API_KEY not found."
+  read -n 1 -s -r -p "Press any key to exit..."
+  exit 1
+fi
+
+# Get diff
+DIFF=$(git diff --cached)
+if [ -z "$DIFF" ]; then
+  gum style --foreground 196 "No staged changes."
+  read -n 1 -s -r -p "Press any key to exit..."
+  exit 1
+fi
+
+# ==========================================
+# Candidate Generation by AI
+# ==========================================
+
+# Prompt: Requesting a total of 2 : concise and detailed versions
+PROMPT="You are a commit message generator. Analyze the following git diff and generate 2 distinct commit messages conforming to Conventional Commits specification.
+
+Generate the following 2 variations:
+1. English: A standard, concise message.
+2. English: A slightly more detailed message explaining the 'what'.
+
+Output MUST be a valid JSON array of strings, like:
+[\"feat: english message\", \"fix: english detailed...\"]
+
+Do NOT output markdown code blocks. Output ONLY the JSON array.
+
+Diff:
+$DIFF"
+
+# Create JSON payload (safely escape using jq)
+PAYLOAD=$(jq -n --arg prompt "$PROMPT" '{contents: [{parts: [{text: $prompt}]}]}')
+
+# Use temporary files to avoid curl argument errors
+TMP_PAYLOAD=$(mktemp)
+echo "$PAYLOAD" >"$TMP_PAYLOAD"
+TMP_RESPONSE=$(mktemp)
+TMP_ERROR=$(mktemp)
+
+# API request (gemini-3-flash-preview)
+# Show spinner while waiting with gum spin
+gum spin --spinner dot --title "Generating candidates..." -- \
+  bash -c "curl -s -S -X POST \
+      -H 'Content-Type: application/json' \
+      -H \"x-goog-api-key: ${GEMINI_API_KEY}\" \
+      -d @$TMP_PAYLOAD \
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent' \
+      > $TMP_RESPONSE 2> $TMP_ERROR"
+
+RESPONSE=$(cat "$TMP_RESPONSE")
+rm "$TMP_PAYLOAD" "$TMP_RESPONSE" "$TMP_ERROR"
+
+# Parse response
+CANDIDATES=$(echo "$RESPONSE" | jq -r '.candidates[0].content.parts[0].text // empty')
+
+# Remove Markdown code blocks (just in case)
+CANDIDATES_CLEAN=$(echo "$CANDIDATES" | sed 's/^```json//g' | sed 's/^```//g')
+
+# Parse the array and convert to newline-separated text for gum
+CHOICES=$(echo "$CANDIDATES_CLEAN" | jq -r '.[]' 2>/dev/null)
+
+if [ -z "$CHOICES" ]; then
+  gum style --foreground 196 "Failed to parse candidates."
+  echo "Raw Response: $CANDIDATES"
+  read -n 1 -s -r -p "Press any key to exit..."
+  exit 1
+fi
+
+# ==========================================
+# Candidate Selection (gum choose)
+# ==========================================
+SELECTED_MSG=$(echo "$CHOICES" | gum choose --header "Pick a commit message:")
+
+if [ -z "$SELECTED_MSG" ]; then
+  echo "Cancelled."
+  exit 0
+fi
+
+# ==========================================
+# Final Edit (gum write)
+# ==========================================
+# TODO: Open default editor bydefault, git commit message editor window?
+#
+# Open editor with the selected candidate as the initial value
+FINAL_MSG=$(echo "$SELECTED_MSG" | gum write --width 80 --height 5 --placeholder "Edit commit message...")
+
+# Commit if input is present
+if [ -n "$FINAL_MSG" ]; then
+  git commit -m "$FINAL_MSG"
+else
+  echo "Commit cancelled."
+fi
