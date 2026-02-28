@@ -53,7 +53,7 @@
   (e  ) e
 
   (i  ) i
-  (i o) (tap-hold $tap-time $hold-time bspc @rmod1)
+  (i o) (tap-hold $tap-time $hold-time @cbspc @rmod1)
   (o  ) o
 
   (s  ) s
@@ -73,7 +73,7 @@
   (e  ) e
 
   (i  ) @mwu
-  (i o) @cbspc
+  (i o) bspc
   (o  ) end
 
   (up  ) up
@@ -212,8 +212,7 @@
 
   ? S-/
 
-  '' S-'
-  ' (tap-hold $tap-time $hold-time-quick ' @'')
+  '' (tap-hold $tap-time $hold-time-quick S-' ')
   : S-;
 
   ;; MOUSE
@@ -368,7 +367,7 @@
   grv 1 2 3 4 5 6 7 8 9 0 - = @__ ;; NUMBER ROW
   @__ q @w-tab @e-tab r t  y u @i-bspc @o-bspc p [ ] \ ;; TOP ROW
   @mouseless a @s-esc @d-esc f g  h j @k-ret @l-ret ; ' ret ;; HOME ROW
-  z    x c v b @__ n m , . / rsft ;; BOTTOM ROW
+  z    x c v b C-g n m , . / rsft ;; BOTTOM ROW
   @__  @__  @sft @mod @sft @__ ;; MODIFIERS
   @__  @__  @__   @__ ;; ARROW KEYS
 )
@@ -387,7 +386,7 @@
   @__ 
   @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ ;; NUMBER ROW
   @__ 1 2 3 4 5 6 7 8 9 0 @__ @__ @__ ;; TOP ROW
-  @__ @< @/ @= @> @~ @` @lbrc @{ @[ @' @__ @__ ;; HOME ROW
+  @__ @< @/ @= @> @~ @` @lbrc @{ @[ @'' @__ @__ ;; HOME ROW
   @! @@ @- @+ @$ @__ @^ @& @* @$ @\ @__ ;; BOTTOM ROW
   @__ @__ @__ @mod1base @__ @__ ;; MODIFIERS
   @__ @__ @__ @__ ;; ARROW KEYS
@@ -405,7 +404,7 @@
   esc
   @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ @__ ;; NUMBER ROW
   @__ @__ @__ @__ @__ @__ 6 7 8 9 0 @__ @__ @__ ;; TOP ROW
-  @__  @__ @__ @__ @__ @__ @` @lbrc @{ @[ @' @__ @__ ;; HOME ROW
+  @__  @__ @__ @__ @__ @__ @` @lbrc @{ @[ @'' @__ @__ ;; HOME ROW
   @__ @__ @__ @__ @__ @__ @^ @& @* @$ @\ @__ ;; BOTTOM ROW
   @__  @__  @__  @lmod2 @__  @__ ;; MODIFIERS
   @__  @__  @__   @__ ;; ARROW KEYS
