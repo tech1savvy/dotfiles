@@ -43,3 +43,8 @@ vim.keymap.set("n", "<leader>cL", "<cmd>Leet run<CR>", { silent = true, desc = "
 
 -- Toggle Neo-tree
 vim.keymap.set("n", "\\\\", "<cmd>Neotree toggle<CR>", { silent = true, desc = "Neotreee toggle" })
+
+-- Remap macro recording from q to Q
+vim.keymap.set("n", "Q", "q", { noremap = true, silent = true })
+-- Optional: Remap original q to something else to avoid conflicts
+vim.keymap.set("n", "q", "<Nop>", { noremap = true, silent = true })
