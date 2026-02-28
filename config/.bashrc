@@ -1,7 +1,0 @@
-source "$HOME/bash/settings"
-source "$HOME/bash/prompt"
-source "$HOME/bash/env"
-source "$HOME/bash/path"
-source "$HOME/bash/aliases"
-source "$HOME/bash/functions"
-source "$HOME/bash/init"
