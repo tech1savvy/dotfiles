@@ -1,17 +1,25 @@
 {
   imports = [
+    ./fish.nix
     ./stylix.nix
+
+    # ./gtk.nix
+    ./xdg.nix
+    ./keepassxc.nix
 
     # ./pointer.nix
     ./starship.nix
-    ./zsh.nix
-    ./glance.nix
+    # ./oh-my-posh
+    ./zsh
+    ./nix-your-shell.nix
+    ./zellij.nix
+    ./fzf.nix
+    # ./glance.nix
     ./firefox.nix
-    ./fish.nix
     ./text-expander/espanso.nix
     ./gemini.nix
 
-    ./scripts.nix
+    ./bin.nix
     ./eza.nix
     ./kitty.nix
 
@@ -23,7 +31,7 @@
     ./hyprsunset
     # ./hyprpanel
 
-    ./kdeconnect
+    # ./kdeconnect
 
     ./zoxide
 
@@ -46,16 +54,16 @@
 
     ./kubecolor
 
-    ./activitywatch
+    # ./activitywatch
 
     # ./obs-studio
 
-    ./email-clients/mutt.nix
+    # ./email-clients/mutt.nix
 
     ./atuin.nix
 
-    ./vesktop.nix
+    # ./vesktop.nix
 
-    ./element-desktop.nix
+    # ./element-desktop.nix
   ];
 }
