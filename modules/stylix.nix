@@ -1,15 +1,18 @@
-{pkgs, ...}: {
-  stylix.enable = true;
+{ pkgs, ... }:
+{
+  stylix = {
+    enable = true;
 
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
 
-  stylix.cursor = {
-    package = pkgs.capitaine-cursors;
-    name = "capitaine-cursors";
-    size = 20;
+    cursor = {
+      package = pkgs.capitaine-cursors;
+      name = "capitaine-cursors";
+      size = 20;
+    };
+
+    polarity = "dark";
+
+    targets.spicetify.enable = false;
   };
-
-  stylix.polarity = "dark";
-
-  stylix.targets.spicetify.enable = false;
 }
