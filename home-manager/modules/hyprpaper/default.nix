@@ -5,14 +5,14 @@
     settings = {
       ipc = "off";
       splash = false;
-      splash_offset = 2.0;
+      splash_offset = 2;
 
       preload = [
-        "~/Wallpapers/flower.jpg"
+        "~/Wallpapers/doom-the-dark-ages.png"
       ];
 
       wallpaper = [
-        ",~/Wallpapers/flower.jpg"
+        "eDP-1, ~/Wallpapers/doom-the-dark-ages.png"
       ];
     };
   };
