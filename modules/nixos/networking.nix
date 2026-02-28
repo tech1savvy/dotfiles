@@ -1,10 +1,11 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   networking = {
     hostName = "nixos";
 
-    # nameservers = [
-    #     "127.0.0.1"
-    # ];
+    nameservers = [
+      "127.0.0.1" # for pihole
+    ];
 
     networkmanager = {
       enable = true;
@@ -31,12 +32,15 @@
     };
 
     hosts = {
-      # virtul machines
-      "192.168.122.157" = ["puppet-master" "puppet-server"];
-      "192.168.122.134" = ["puppet-agent"];
-
-      "127.0.0.1:8096" = ["jellyfin.tech1savvy.com"];
+      "127.0.0.1" = [
+        "searx.home"
+        "traefik.home"
+      ];
     };
+
+    hostFiles = [
+
+    ];
 
     firewall = {
       enable = false;
@@ -60,16 +64,21 @@
   };
 
   networking.stevenblack = {
-    enable = true;
+    enable = false; # disabled in-favor of pihole
+
+    whitelist = [
+      # "instagram.com"
+      # "reddit.com"
+    ];
 
     block = [
       "fakenews"
       "gambling"
       "porn"
-      # "social"
+      "social"
     ];
   };
 
   # stop networkmanager from starting early at boot
-  systemd.services.NetworkManager-wait-online.wantedBy = lib.mkForce [];
+  systemd.services.NetworkManager-wait-online.wantedBy = lib.mkForce [ ];
 }
