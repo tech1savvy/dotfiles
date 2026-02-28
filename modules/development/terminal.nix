@@ -7,37 +7,38 @@
     fzf # source: https://www.youtube.com/shorts/iUHfq_JN4G8
 
     # json parser
-    jq
+    # jq
+    jless
 
     # comman command line tools bundle
     busybox # tree,
 
-    bonk # combines touch and mkdir
+    # bonk # combines touch and mkdir
 
     # modern alternatives
     duf # df
     fastfetch # neofetch
     curlie # curl
 
-    glow # md file
+    # glow # md file
 
-    bluetui
-    impala
+    # bluetui
+    # impala
 
     # ascii art
-    cmatrix
-    cbonsai
-    asciiquarium
-    pipes
+    # cmatrix
+    # cbonsai
+    # asciiquarium
+    # pipes
 
-    cowsay
+    # cowsay
 
     tldr # better manpages
-    thokr # typing test
+    # thokr # typing test
 
-    lnav # log file viewer
+    # lnav # log file viewer
 
-    tmate # terminal screen-sharing and access
-    figlet # ascii print text to terminal
+    # tmate # terminal screen-sharing and access
+    # figlet # ascii print text to terminal
   ];
 }
