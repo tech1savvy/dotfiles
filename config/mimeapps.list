@@ -22,8 +22,8 @@ application/vnd.openxmlformats-officedocument.presentationml.presentation=libreo
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=writer.desktop;
 
 ; image files
-image/png=vimiv.desktop;
-image/jpeg=vimiv.desktop;
+image/png=imv.desktop;
+image/jpeg=imv.desktop;
 
 ; video files
 
@@ -42,3 +42,4 @@ x-scheme-handler/unknown=librewolf.desktop
 x-scheme-handler/tg=io.github.kukuruzka165.materialgram.desktop
 x-scheme-handler/tonsite=io.github.kukuruzka165.materialgram.desktop
 x-scheme-handler/discord=vesktop.desktop
+x-scheme-handler/beeper=beepertexts.desktop
