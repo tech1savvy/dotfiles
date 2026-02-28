@@ -1,9 +1,15 @@
-{inputs, system, pkgs, ...}:
-let
-  inherit (inputs.nfsm.packages.${system}) nfsm nfsm-cli;
-  inherit (inputs.niri-scratchpad.packages.${system}) niri-scratchpad;
-  # TODO: Install nsticky
-in {
+{
+  inputs,
+  system,
+  pkgs,
+  ...
+}:
+# let
+# inherit (inputs.nfsm.packages.${system}) nfsm nfsm-cli;
+# inherit (inputs.niri-scratchpad.packages.${system}) niri-scratchpad;
+# TODO: Install nsticky
+# in {
+{
   programs.niri.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -11,11 +17,12 @@ in {
     alacritty
     fuzzel
     # swaylock
+    kitty
 
     xwayland-satellite # xwayland support
 
-    nfsm
-    nfsm-cli
+    # nfsm
+    # nfsm-cli
     # niri-scratchpad
   ];
 }
