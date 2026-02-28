@@ -1,7 +1,8 @@
 {
   programs.kubecolor = {
     enable = true;
-    enableAlias = false;
+    enableAlias = true;
+
     settings = {
       preset = "dark";
     };
