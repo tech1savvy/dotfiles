@@ -2,13 +2,14 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = false;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -28,8 +29,8 @@
   # services.xserver.libinput.enable = true;
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "tech1savvy";
+  # services.displayManager.autoLogin.enable = true;
+  # services.displayManager.autoLogin.user = "tech1savvy";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -56,6 +57,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   # system.stateVersion = "24.11"; # Did you read the comment?
-
-  system.nixos.label = "KDE";
 }
