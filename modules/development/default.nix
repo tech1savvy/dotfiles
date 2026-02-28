@@ -2,81 +2,70 @@
 {
   imports = [
     ./python
-    ./dotnet.nix
+    # ./dotnet.nix
     ./go.nix
   ];
   environment.systemPackages = with pkgs; [
     # api testing
-    postman
-    posting
+    # postman
+    # posting
     bruno
     bruno-cli
 
     # editors
     vscode
     # ai editors
-    code-cursor
+    # code-cursor
 
     # Node.js
     nodejs_22
-    nodePackages.npm
+    # nodePackages.npm
     pnpm
 
     nodemon
 
+    # bun
+
     # mongoDB shell
     mongosh
 
-    php
+    # php
 
     # SQL Dashboard
-    dbgate
-    jetbrains.datagrip
+    # dbgate
+    # jetbrains.datagrip
     # java driver for postgresql
-    postgresql_jdbc
+    # postgresql_jdbc
 
     awscli2 # cmd: aws
+    eksctl
     terraform # infrastucture as code
-    aws-nuke
+    # aws-nuke
 
-    web-ext # build, run, and test web extensions
+    # web-ext # build, run, and test web extensions
 
     lazysql # https://youtu.be/9RArbqGOvsw
 
-    rustc
-    cargo
+    # rustc
+    # cargo
 
-    go
-
-    mycli # shell for sql databases
+    # mycli # shell for sql databases
 
     wakatime-cli
 
-    charm-freeze # code file to image
+    # charm-freeze # code file to image
 
     # java
-    jdk
+    # jdk
 
-    act # Github Actions Locally
+    # act # Github Actions Locally
 
-    clang # gcc compiler frontend
+    # clang # gcc compiler frontend
 
-    typescript # tsc, tsserver
+    # typescript # tsc, tsserver
+
+    kubectl
+    minikube
   ];
 
-  # mongoDB community edition
-  services.mongodb = {
-    # port: 27017
-    enable = true;
-    package = pkgs.mongodb-ce;
-  };
-  # systemd.services.mongodb.wantedBy = pkgs.lib.mkForce []; # make the service do not auto-start
-
-  # mariadb: opensource drop-in repalcment for mysql
-  services.mysql = {
-    enable = false;
-    package = pkgs.mariadb;
-  };
-
-  systemd.services.mysql.wantedBy = pkgs.lib.mkForce [ ]; # make the service do not auto-start
 }
