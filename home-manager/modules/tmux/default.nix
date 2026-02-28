@@ -2,9 +2,11 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   tmuxConf = lib.readFile ./tmux.conf;
-in {
+in
+{
   programs.tmux = {
     enable = true;
     keyMode = "vi";
