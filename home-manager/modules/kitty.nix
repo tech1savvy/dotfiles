@@ -2,8 +2,11 @@
   programs.kitty = {
     enable = true;
 
+    # Not enabled by home.shell.enable_Integration option
     shellIntegration = {
       enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
     };
     settings = {
       confirm_os_window_close = 0;
