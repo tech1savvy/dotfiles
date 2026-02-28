@@ -1,16 +1,16 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     nh
+    nix-output-monitor # nom
+    nvd # nix pkg version diff
 
-    nix-output-monitor
-    nvd
+    # alejandra # format nix files
 
-    alejandra # format nix files
-
-    nix-tree # TUI for pkg depencies
+    # nix-tree # TUI for pkg depencies
 
     # NOTE: home-manager option availabe
-    nix-index
+    # nix-index
   ];
 
   environment.sessionVariables = {
