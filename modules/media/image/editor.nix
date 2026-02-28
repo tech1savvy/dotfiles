@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs; [
     # -- Paint Tools --
     # pinta
-    # gimp
+    gimp
 
     # -- Simple Editors --
     kdePackages.gwenview
