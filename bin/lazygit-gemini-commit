@@ -42,6 +42,8 @@ Output MUST be a valid JSON array of strings, like:
 
 NOTE: in case of dotfiles, use \"software_name: ...\"
 
+Do NOT output commit body, in one line only
+
 Do NOT output markdown code blocks. Output ONLY the JSON array.
 
 Diff:
@@ -63,7 +65,7 @@ gum spin --spinner dot --title "Generating candidates..." -- \
       -H 'Content-Type: application/json' \
       -H \"x-goog-api-key: ${GEMINI_API_KEY}\" \
       -d @$TMP_PAYLOAD \
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent' \
+      'https://generativelanguage.googleapis.com/v1beta/models/gemma-3-27b-it:generateContent' \
       > $TMP_RESPONSE 2> $TMP_ERROR"
 
 RESPONSE=$(cat "$TMP_RESPONSE")
