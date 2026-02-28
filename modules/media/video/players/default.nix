@@ -12,6 +12,6 @@
     # open-in-mpv
     # socat # Transfers data between two endpoints, here using to send commands to mpv
 
-    # yt-dlp # download/stream yt videos
+    yt-dlp # download/stream yt videos
   ];
 }
