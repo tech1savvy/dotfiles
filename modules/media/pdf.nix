@@ -1,12 +1,16 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    zathura # pdf viewer
-    poppler-utils # merge, break pdfs
-    densify # compress pdfs
-    ocamlPackages.cpdf # simplfied cli wrapper for ghostscript
-    # latex compiler headears
-    texliveFull
+    # Viewer
+    zathura
+
+    # Utils
+    poppler-utils # merge, break pdfs, extract text
+    # densify # compress pdfs
     ghostscript
+    # ocamlPackages.cpdf # simplfied cli wrapper for ghostscript
+
+    # Latex Compiler Headers
+    texliveFull
   ];
 }
