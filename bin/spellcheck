@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Usage: spellcheck wrd
+
+WORD="$1"
+
+if [ -z "$WORD" ]; then
+  echo "Usage: $0 <word>"
+  exit 1
+fi
+
+# Query Datamuse API for spelling suggestions
+RESPONSE=$(curl -s "https://api.datamuse.com/sug?s=${WORD}")
+
+# Extract suggestions using jq
+SUGGESTIONS=$(echo "$RESPONSE" | jq -r '.[].word')
+
+if [ -z "$SUGGESTIONS" ]; then
+  echo "No suggestions found for '$WORD'. Maybe it's correct. Or cursed."
+else
+  echo "Did you mean:"
+  echo "$SUGGESTIONS"
+fi
