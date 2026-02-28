@@ -1,15 +1,17 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.yazi = {
     enable = true;
 
     initLua = ./init.lua;
-    plugins = {
-      git = pkgs.yaziPlugins.git;
-      lazygit = pkgs.yaziPlugins.lazygit;
-
-      piper = pkgs.yaziPlugins.piper;
-      yatline = pkgs.yaziPlugins.yatline;
-      restore = pkgs.yaziPlugins.restore;
+    plugins = with pkgs; {
+      inherit (yaziPlugins)
+        git
+        lazygit
+        piper
+        yatline
+        restore
+        ;
     };
 
     settings = {
