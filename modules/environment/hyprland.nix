@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   # Enable Hyprland Wayland compositor
   programs.hyprland = {
     enable = true;
@@ -12,11 +13,11 @@
   };
 
   # Enable Display Manager
-  services.greetd.enable = true;
-  services.greetd.settings.default_session = {
-    command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd 'uwsm start hyprland-uwsm.desktop'";
-    user = "tech1savvy";
-  };
+  # services.greetd.enable = true;
+  # services.greetd.settings.default_session = {
+  #   command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd 'uwsm start hyprland-uwsm.desktop'";
+  #   user = "tech1savvy";
+  # };
 
   environment.sessionVariables = {
     # If your cursor becomes invisible
@@ -31,10 +32,10 @@
       name = "hyprland-plugins";
       paths = with pkgs.hyprlandPlugins; [
         # hyprwinwrap
-        hyprscrolling
+        # hyprscrolling
         hy3
         # hyprexpo
-        hyprspace
+        # hyprspace
         hypr-dynamic-cursors
       ];
     };
@@ -54,10 +55,10 @@
 
     # taskbar
     (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
     # pomodoro timer
-    uair #guide: https://thenegation.com/posts/pomodoro-waybar-uair/
+    uair # guide: https://thenegation.com/posts/pomodoro-waybar-uair/
 
     # notificaiton daemon
     swaynotificationcenter
@@ -104,7 +105,7 @@
     # pyprland
     pyprland
 
-    wl-kbptr
+    wl-kbptr # keyboard overlay
     wlrctl # for mouse movements
   ];
 
