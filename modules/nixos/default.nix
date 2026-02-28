@@ -4,6 +4,7 @@
     ./networking.nix
     ./bluetooth.nix
 
+    ./fonts.nix
     ./language.nix
     ./time-zone.nix
     ./audio.nix
