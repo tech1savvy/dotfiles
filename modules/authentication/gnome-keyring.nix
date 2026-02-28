@@ -1,6 +1,7 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   services.gnome.gnome-keyring.enable = true;
-  programs.seahorse.enable = true; # gui
+  programs.seahorse.enable = false; # gui
 
   security.pam.services = {
     login = {
