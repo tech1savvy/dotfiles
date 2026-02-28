@@ -4,8 +4,8 @@
     go
   ];
 
-  environment.sessionVariables = {
-    # FIX: Path not updating, currently using bashrc
-    PATH = [ "$HOME/go/bin" ];
-  };
+  # environment.sessionVariables = {
+  # FIX: Path not updating, currently using home.sessionVariables
+  # PATH = [ "$HOME/go/bin" ];
+  # };
 }
