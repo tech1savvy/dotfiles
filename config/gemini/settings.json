@@ -18,8 +18,13 @@
     "preferredEditor": "neovim",
     "vimMode": true,
     "previewFeatures": true,
-    "disableAutoUpdate": true,
-    "enablePromptCompletion": true
+    "enablePromptCompletion": true,
+    "enableAutoUpdate": true,
+    "sessionRetention": {
+      "enabled": true,
+      "maxAge": "30d",
+      "warningAcknowledged": true
+    }
   },
   "mcpServers": {
     "context7": {
