@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
@@ -48,6 +49,6 @@
 
   home.packages = with pkgs; [
     kitty
-    wayneko
+    # wayneko
   ];
 }
