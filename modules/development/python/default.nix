@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./pygame.nix
+    # ./pygame.nix
   ];
   environment.systemPackages = with pkgs; [
     python313
@@ -10,6 +10,6 @@
     python313Packages.pipx
     python313Packages.uv
     # common libraries/pkgs
-    python313Packages.tkinter
+    # python313Packages.tkinter
   ];
 }
