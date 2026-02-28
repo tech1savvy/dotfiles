@@ -2,11 +2,11 @@
   programs.vesktop = {
     enable = true;
 
-    settings = {};
+    settings = { };
 
     vencord = {
-      settings = {};
-      themes =  {};
+      settings = { };
+      themes = { };
       useSystem = true;
     };
   };
