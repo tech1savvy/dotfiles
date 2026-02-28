@@ -3,27 +3,17 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     ./modules
   ];
 
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "tech1savvy";
   home.homeDirectory = "/home/tech1savvy";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "24.11"; # Presever after update as fallback if breaking changes
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -43,8 +33,6 @@
     # '')
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
@@ -89,20 +77,6 @@
     ".config/fastfetch" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/fastfetch";
     };
-
-
-    ".npmrc" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/npm/.npmrc";
-    };
-
-    ".bashrc" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/.bashrc";
-    };
-
-    "/bash" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/bash";
-      recursive = true;
-    };
   };
 
   # Home Manager can also manage your environment variables through
@@ -122,8 +96,112 @@
   #  /etc/profiles/per-user/tech1savvy/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    # Default editors
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+
+    # Tell pnpm where to find and store global
+    PNPM_HOME = "$HOME/.local/share/pnpm";
   };
+
+  home.sessionPath = [
+    # pipx pkgs
+    "$HOME/.local/bin"
+    # cargo pkgs
+    "$HOME/.cargo/bin"
+    # custom scripts
+    "$HOME/bin"
+    # go pkgs
+    "$HOME/go/bin"
+    # mason pkgs
+    "$HOME/.local/share/nvim/mason/bin"
+    # pnpm pkgs
+    "$HOME/.local/share/pnpm"
+  ];
+
+  home.shellAliases = {
+    vi = "nvim";
+
+    # Directory & Navigation
+    cd = "z";
+    ".." = "cd ..";
+    "..." = "cd ../..";
+    "...." = "cd ../../..";
+
+    # Change TERM to xterm for SSH Connections
+    ssh = "export TERM=xterm && ssh";
+
+    # btop utf-8 locale
+    btop = "btop --force-utf";
+    ff = "fzf";
+
+    # TUIs
+    lg = "lazygit";
+    ld = "lazydocker";
+
+    # List Directory contents
+    l = "eza -lah --icons --git";
+    ls = "eza";
+    tree = "eza -h --tree --icons --git --git-ignore";
+
+    # Utilities
+    # Bat
+    cat = "bat";
+    man = "batman";
+    diff = "batdiff";
+    grep = "rg";
+    top = "htop";
+    curl = "curlie";
+    open = "xdg-open";
+
+    # node
+    npm = "pnpm";
+    npx = "pnpx";
+
+    tmux = "tmux -u";
+
+    # Safety nets
+    cp = "cp -i"; # ask for confirmation
+    mv = "mv -i";
+    rmt = "gio trash";
+    rmp = "rm -i"; # send to trash
+
+    # NixOS System Management
+    ns = "nh os switch";
+    nt = "nh os test";
+    nb = "nh os build";
+    nc = "nh clean all";
+
+    ytd = "yt-dlp -f 'bv*[height=1080]+ba' -o '%(title)s - %(uploader)s.%(ext)s' --embed-chapters --no-playlist";
+    ytds = "yt-dlp -f 'bv*[height=1080]+ba' -o '%(title)s - %(uploader)s.%(ext)s' --embed-chapters --embed-subs --write-auto-sub --write-sub --sub-lang en --no-playlist";
+    ytdp = "yt-dlp -f 'bv*[height=1080]+ba' -o '%(playlist_index)03d - %(title)s - %(playlist_title)s.%(ext)s' --embed-chapters";
+    ytdps = "yt-dlp -f 'bv*[height=1080]+ba' -o '%(playlist_index)03d - %(title)s - %(playlist_title)s.%(ext)s' --embed-chapters --embed-subs --write-auto-sub --write-sub --sub-lang en";
+
+    # Shortcuts
+    iv = "vimiv";
+    br = "brightnessctl s ";
+    mps = "mpv --input-ipc-server=/tmp/mpvsocket";
+    cpwd = "pwd | wl-copy";
+    leetcode = "nvim leetcode.nvim";
+    gemi = "gemini --model gemini-2.5-flash";
+    mycli = "sudo mycli -u root";
+    waka = "wakatime-cli --today";
+    tasker = "taskwarrior-tui";
+    psql = "sudo -u postgres psql";
+    wolf = "librewolf";
+    office = "libreoffice";
+
+    # Python
+    py = "python";
+    dj = "django-admin";
+    pym = "python manage.py";
+    venv = "python -m venv";
+    vact = "source .venv/bin/activate";
+    dact = "deactivate";
+  };
+
+  home.shell.enableBashIntegration = true;
+  home.shell.enableNushellIntegration = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
