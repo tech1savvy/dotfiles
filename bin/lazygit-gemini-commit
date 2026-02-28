@@ -30,6 +30,7 @@ fi
 # ==========================================
 
 # Prompt: Requesting a total of 2 : concise and detailed versions
+# TODO: May consider only one detailed message or message with body (will need jq parser config changes)
 PROMPT="You are a commit message generator. Analyze the following git diff and generate 2 distinct commit messages conforming to Conventional Commits specification.
 
 Generate the following 2 variations:
@@ -38,6 +39,8 @@ Generate the following 2 variations:
 
 Output MUST be a valid JSON array of strings, like:
 [\"feat: english message\", \"fix: english detailed...\"]
+
+NOTE: in case of dotfiles, use \"software_name: ...\"
 
 Do NOT output markdown code blocks. Output ONLY the JSON array.
 
