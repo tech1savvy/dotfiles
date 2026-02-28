@@ -1,6 +1,7 @@
 {
   # Use the systemd-boot EFI boot loader.
   boot = {
+    supportedFilesystems = [ "ntfs" ]; # read Windows file-system
     # kernelParams = [
     #   "quiet"
     # ];
