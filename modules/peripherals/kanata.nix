@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   environment.systemPackages = with pkgs; [
     # for testing input key presses
     evtest
@@ -34,22 +35,25 @@
     ProtectHome = lib.mkForce "tmpfs";
     BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/internalKeyboard.kbd";
 
-    After = ["kanata-rightUSBKeyboard.service" "kanata-leftUSBKeyboard"];
+    After = [
+      "kanata-rightUSBKeyboard.service"
+      "kanata-leftUSBKeyboard"
+    ];
 
-    wantedBy = pkgs.lib.mkForce [];
+    wantedBy = pkgs.lib.mkForce [ ];
   };
   systemd.services.kanata-rightUSBKeyboard.serviceConfig = {
     ProtectHome = lib.mkForce "tmpfs";
     BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
     # BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboardInvert.kbd";
 
-    wantedBy = pkgs.lib.mkForce [];
+    wantedBy = pkgs.lib.mkForce [ ];
   };
   systemd.services.kanata-leftUSBKeyboard.serviceConfig = {
     ProtectHome = lib.mkForce "tmpfs";
     BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
     # BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboardInvert.kbd";
 
-    wantedBy = pkgs.lib.mkForce [];
+    wantedBy = pkgs.lib.mkForce [ ];
   };
 }
