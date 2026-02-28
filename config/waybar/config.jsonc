@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
   "layer": "top", // Waybar at top layer
-  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  "position": "top", // Waybar position (top|bottom|left|right)
   "height": 0, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
   "spacing": 0, // Gaps between modules (4px)
@@ -50,14 +50,14 @@
       "9": "9  ",
       "10": "10 󰖟 ",
 
-      "11": " ",
-      "12": " ",
-      "13": "󰤚 ",
       // TODO: Add icons for all enabled scratchpads
-      "14": " ",
-      "21": "󰎄 ",
-      "22": "󰨇 ",
-      "23": "󱘓 ",
+      "20": " ",
+      "21": "󱘓 ",
+      "22": "󰎄 ",
+      "23": "󰨇 ",
+      "24": " ",
+      "25": " ",
+      "26": "󰤚 ",
 
       "librewolf": "🌐",
       "discord": "🤖",
