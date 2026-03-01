@@ -4,15 +4,14 @@
 # Common Settings & Checks
 # ==========================================
 
-# API key check (Countermeasure for non-interactive shells)
-if [ -z "$GEMINI_API_KEY" ]; then
-  [ -f ~/.zshrc ] && source ~/.zshrc
-  [ -f ~/.bashrc ] && source ~/.bashrc
-  [ -f ~/.profile ] && source ~/.profile
+API_KEY_FILE="/run/secrets/gemini-api-key"
+
+if [ -f "$API_KEY_FILE" ]; then
+  GEMINI_API_KEY=$(tr -d '\n' <"$API_KEY_FILE")
 fi
 
 if [ -z "$GEMINI_API_KEY" ]; then
-  gum style --foreground 196 "Error: GEMINI_API_KEY not found."
+  gum style --foreground 196 "Error: GEMINI_API_KEY not found in /run/secrets/gemini-api-key."
   read -n 1 -s -r -p "Press any key to exit..."
   exit 1
 fi
@@ -31,7 +30,7 @@ fi
 
 # Prompt: Requesting a total of 2 : concise and detailed versions
 # TODO: May consider only one detailed message or message with body (will need jq parser config changes)
-PROMPT="You are a commit message generator. Analyze the following git diff and generate 2 distinct commit messages conforming to Conventional Commits specification.
+PROMPT="You are a commit message generator. Analyze the following git diff and generate 2 distinct commit messages conforming:
 
 Generate the following 2 variations:
 1. English: A standard, concise message.
@@ -40,7 +39,9 @@ Generate the following 2 variations:
 Output MUST be a valid JSON array of strings, like:
 [\"feat: english message\", \"fix: english detailed...\"]
 
-NOTE: in case of dotfiles, use \"software_name: ...\"
+In case of dotfiles, use \"software_name: ...\"
+
+Lowercase is preffered
 
 Do NOT output commit body, in one line only
 

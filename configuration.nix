@@ -8,6 +8,7 @@
   imports = [
     ./hardware-configuration.nix
 
+    ./modules/sops.nix
     ./modules/nixos
     ./modules/nixpkgs
     ./modules/nh.nix

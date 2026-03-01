@@ -17,6 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,6 +36,7 @@
       nixos-hardware,
       home-manager,
       stylix,
+      sops-nix,
       solaar,
       ...
     }@inputs:
@@ -53,6 +59,7 @@
           nixos-hardware.nixosModules.lenovo-legion-16ach6h
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
+          sops-nix.nixosModules.sops
           solaar.nixosModules.default
         ];
 
