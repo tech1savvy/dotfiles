@@ -21,47 +21,6 @@
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-
-    # yt-x = {
-    #   url = "github:Benexl/yt-x";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    #
-    # hyprland-virtual-desktops = {
-    #   url = "github:levnikmyskin/hyprland-virtual-desktops";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # # NIRI
-    #
-    # nfsm = {
-    #   url = "github:gvolpe/nfsm";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # niri-scratchpad = {
-    #   url = "github:gvolpe/niri-scratchpad";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # nsticky = {
-    #   url = "github:lonerOrz/nsticky";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # QICKSHELL, NOCTALIA-SHELL
-    # quickshell = {
-    #   url = "github:outfoxxed/quickshell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # noctalia = {
-    #   url = "github:noctalia-dev/noctalia-shell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.quickshell.follows = "quickshell";  # Use same quickshell version
-    # };
   };
 
   outputs =
@@ -73,14 +32,6 @@
       home-manager,
       stylix,
       solaar,
-      # spicetify-nix,
-      # yt-x,
-      # stylix,
-      # TODO: remove hyprland-virtual-desktops flake
-      # hyprland-virtual-desktops,
-
-      # nfsm,
-      # niri-scratchpad,
       ...
     }@inputs:
     let
@@ -88,8 +39,6 @@
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     in
     {
-      # use "nixos", or your hostname as the name of the configuration
-      # it's a better practice than "default" shown in the video
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
@@ -103,10 +52,10 @@
           ./configuration.nix
           nixos-hardware.nixosModules.lenovo-legion-16ach6h
           home-manager.nixosModules.default
-          solaar.nixosModules.default
           stylix.nixosModules.stylix
-          # spicetify-nix.nixosModules.default
+          solaar.nixosModules.default
         ];
+
       };
 
       checks.${system}.nixos = self.nixosConfigurations.nixos.config.system.build.toplevel;
