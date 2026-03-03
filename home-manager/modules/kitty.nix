@@ -15,6 +15,8 @@
       allow_remote_control = "socket-only";
 
       listen_on = "unix:/tmp/kitty";
+
+      "map ctrl+backspace" = "send_text all \\x17";
     };
     extraConfig = "
       # kitty-scrollback.nvim Kitten alias
