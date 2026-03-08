@@ -4,6 +4,7 @@
     ./python
     # ./dotnet.nix
     ./go.nix
+    ./rust.nix
   ];
   environment.systemPackages = with pkgs; [
     # api testing
