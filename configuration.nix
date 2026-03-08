@@ -32,6 +32,11 @@
     ./modules/development
     ./modules/development/terminal.nix
     ./modules/development/neovim.nix
+    ./modules/development/python
+    ./modules/development/go.nix
+    ./modules/development/rust.nix
+    ./modules/development/php.nix
+    # ./modules/development/dotnet.nix
     # databases
     ./modules/databases/postgresql
     # ./modules/databases/mongodb.nix # FIX: Fails to start
