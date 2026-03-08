@@ -1,12 +1,13 @@
-{config, ...}: {
+{ config, ... }:
+{
   services.adguardhome = {
-    enable = false;
+    enable = true;
 
-    port = 3000;
-    host = "0.0.0.0";
+    port = 8080;
+    host = "127.0.0.1";
     openFirewall = false;
 
     allowDHCP = config.services.adguardhome.settings.dhcp.enabled or false;
-    mutableSettings = true;
+    mutableSettings = false;
   };
 }
