@@ -4,7 +4,8 @@
     "showStatusInTitle": true,
     "showMemoryUsage": true,
     "showCitations": true,
-    "showModelInfoInChat": true
+    "showModelInfoInChat": true,
+    "hideWindowTitle": true
   },
   "security": {
     "auth": {
@@ -44,3 +45,4 @@
     }
   }
 }
+
