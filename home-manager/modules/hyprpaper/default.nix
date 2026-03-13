@@ -8,11 +8,11 @@
       splash_offset = 2;
 
       preload = [
-        "~/Wallpapers/doom-the-dark-ages.png"
+        "~/Wallpapers/flower.jpg"
       ];
 
       wallpaper = [
-        "eDP-1, ~/Wallpapers/doom-the-dark-ages.png"
+        "eDP-1, ~/Wallpapers/flower.jpg"
       ];
     };
   };
