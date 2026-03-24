@@ -1,5 +1,0 @@
-{
-  services.grafana = {
-    enable = true;
-  };
-}
