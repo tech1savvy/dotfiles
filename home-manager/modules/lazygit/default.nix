@@ -4,6 +4,12 @@
     enable = true;
 
     settings = {
+      gui = {
+        # If true, switch to a different worktree without confirmation when checking out
+        # a branch that is checked out in that worktree
+        skipSwitchWorktreeOnCheckoutWarning = true;
+      };
+
       customCommands = [
         {
           key = "<c-g>";
