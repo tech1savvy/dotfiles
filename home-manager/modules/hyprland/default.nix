@@ -26,7 +26,7 @@
         # plugins
         # "./plugins/hyprwinwrap.conf"
         # "./plugins/hyprscrolling.conf"
-        "./plugins/hy3.conf"
+        # "./plugins/hy3.conf"
         # "./plugins/hyprexpo.conf"
         # "./plugins/virtual-desktops.conf"
       ];
