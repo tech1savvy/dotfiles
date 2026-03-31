@@ -30,7 +30,8 @@ fi
 
 # Prompt: Requesting a total of 2 : concise and detailed versions
 # TODO: May consider only one detailed message or message with body (will need jq parser config changes)
-PROMPT="You are a commit message generator. Analyze the following git diff and generate 2 distinct commit messages conforming:
+PROMPT="
+You are a commit message generator. Analyze the following git diff and generate 2 distinct commit messages conforming:
 
 Generate the following 2 variations:
 1. English: A standard, concise message.
@@ -48,7 +49,8 @@ Do NOT output commit body, in one line only
 Do NOT output markdown code blocks. Output ONLY the JSON array.
 
 Diff:
-$DIFF"
+$DIFF
+"
 
 # Create JSON payload (safely escape using jq)
 PAYLOAD=$(jq -n --arg prompt "$PROMPT" '{contents: [{parts: [{text: $prompt}]}]}')
