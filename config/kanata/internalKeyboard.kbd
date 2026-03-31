@@ -367,7 +367,7 @@
   grv 1 2 3 4 5 6 7 8 9 0 - = @__ ;; NUMBER ROW
   @__ q @w-tab @e-tab r t  y u @i-bspc @o-bspc p [ ] \ ;; TOP ROW
   @mouseless a @s-esc @d-esc f g  h j @k-ret @l-ret ; ' ret ;; HOME ROW
-  z    x c v b C-g n m , . / rsft ;; BOTTOM ROW
+  z    x c v b C-spc n m , . / rsft ;; BOTTOM ROW
   @__  @__  @sft @mod @sft @__ ;; MODIFIERS
   @__  @__  @__   @__ ;; ARROW KEYS
 )
