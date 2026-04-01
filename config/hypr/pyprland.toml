@@ -45,3 +45,10 @@ class = "kitty-writer"
 size = "70% 80%"
 animation = "fromTop"
 unfocus = "hide"
+
+[scratchpads.phone]
+command = "scrcpy --render-driver=opengl --turn-screen-off --stay-awake --no-audio"
+class = ".scrcpy-wrapped"
+size = "30% 90%"
+animation = "fromTop"
+unfocus = "hide"
