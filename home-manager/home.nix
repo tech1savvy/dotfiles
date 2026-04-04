@@ -155,8 +155,8 @@
     open = "xdg-open";
 
     # node
-    npm = "pnpm";
-    npx = "pnpx";
+    # npm = "pnpm";
+    # npx = "pnpx";
 
     tmux = "tmux -u";
 
