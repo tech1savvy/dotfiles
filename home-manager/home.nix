@@ -187,7 +187,6 @@
     mycli = "sudo mycli -u root";
     waka = "wakatime-cli --today";
     tasker = "taskwarrior-tui";
-    psql = "sudo -u postgres psql";
     wolf = "librewolf";
     office = "libreoffice";
 
