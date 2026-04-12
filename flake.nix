@@ -2,10 +2,21 @@
   description = "Nixos config flake";
 
   inputs = {
+
+    # NIXPKGS
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # HARDWARE
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    # FLAKE-PARTS
+    # flake-parts.url = "github:hercules-ci/flake-parts";
+    # wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+
+    # DEN
+    # import-tree.url = "github:vic/import-tree";
+    # inputs.den.url = "github:vic/den";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -26,7 +37,16 @@
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # HYPRLAND
+    # hyprtasking = {
+    #   url = "github:raybbian/hyprtasking";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
   };
+
+  # outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./parts);
 
   outputs =
     {
