@@ -2,7 +2,7 @@
 # Source: omarchy
 
 [[ -f ~/.config/user-dirs.dirs ]] && source ~/.config/user-dirs.dirs
-OUTPUT_DIR="${XDG_PICTURES_DIR:-$HOME/Pictures}"
+OUTPUT_DIR="$HOME/Screenshots"
 
 if [[ ! -d "$OUTPUT_DIR" ]]; then
   notify-send "Screenshot directory does not exist: $OUTPUT_DIR" -u critical -t 3000
