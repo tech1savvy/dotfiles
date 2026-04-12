@@ -10,6 +10,7 @@
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
+    package = pkgs-unstable.hyprland;
   };
 
   # Enable Display Manager
