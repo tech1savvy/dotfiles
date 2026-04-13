@@ -27,7 +27,7 @@
 
     # ghostscript # to preview pdfs
 
-    # silicon # for github.com/michaelrommel/nvim-silicon
+    silicon # for github.com/michaelrommel/nvim-silicon
     # codesnap # for github.com/mistricky/codesnap.nvim
   ];
 
