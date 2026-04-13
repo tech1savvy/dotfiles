@@ -17,6 +17,8 @@
       listen_on = "unix:/tmp/kitty";
 
       "map ctrl+backspace" = "send_text all \\x17";
+
+      copy_on_select = "yes";
     };
     extraConfig = "
       # kitty-scrollback.nvim Kitten alias
