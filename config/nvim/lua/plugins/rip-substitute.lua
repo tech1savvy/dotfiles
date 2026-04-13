@@ -1,10 +1,14 @@
+if false then
+  return {}
+end
+
 return {
   "chrisgrieser/nvim-rip-substitute",
   cmd = "RipSubstitute",
   opts = {},
   keys = {
     {
-      "<leader>r",
+      "<leader>fs",
       function()
         require("rip-substitute").sub()
       end,
