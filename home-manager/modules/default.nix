@@ -65,5 +65,7 @@
     # ./vesktop.nix
 
     # ./element-desktop.nix
+
+    ./mpvpaper.nix
   ];
 }
