@@ -10,6 +10,13 @@
       };
 
       listener = [
+
+        {
+          timeout = 120;
+          on-timeout = "notify-send 'u there?'";
+          on-resume = "notify-send 'boys, he's alive!'";
+        }
+
         {
           timeout = 900;
           on-timeout = "hyprlock";
