@@ -9,12 +9,12 @@ size = "65% 20%"
 animation = "fromTop"
 unfocus = "hide"
 
-[scratchpads.music]
-command = "kitty --class termusic termusic"
-class = "termusic"
-size = "70% 80%"
-animation = "fromRight"
-unfocus = "hide"
+# [scratchpads.music]
+# command = "kitty --class termusic termusic"
+# class = "termusic"
+# size = "70% 80%"
+# animation = "fromRight"
+# unfocus = "hide"
 
 [scratchpads.btop]
 command = "kitty --class kitty-btop btop --force-utf"
@@ -23,21 +23,21 @@ size = "80% 80%"
 animation = "fromTop"
 unfocus = "hide"
 
-[scratchpads.superproductivity]
-command = "super-productivity"
-class = "superProductivity"
-position = "0% 3%"
-size = "100% 97%"
-animation = "fromTop"
-unfocus = "hide"
+# [scratchpads.superproductivity]
+# command = "super-productivity"
+# class = "superProductivity"
+# position = "0% 3%"
+# size = "100% 97%"
+# animation = "fromTop"
+# unfocus = "hide"
 
-[scratchpads.qutebrowser]
-command = "qutebrowser"
-class = "org.qutebrowser.qutebrowser"
-position = "0% 5%"
-size = "100% 95%"
-animation = "fromTop"
-unfocus = "hide"
+# [scratchpads.qutebrowser]
+# command = "qutebrowser"
+# class = "org.qutebrowser.qutebrowser"
+# position = "0% 5%"
+# size = "100% 95%"
+# animation = "fromTop"
+# unfocus = "hide"
 
 [scratchpads.writer]
 command = "kitty -o background_opacity=0.8 --class kitty-writer --directory ~/notes nvim"
@@ -46,9 +46,9 @@ size = "70% 80%"
 animation = "fromTop"
 unfocus = "hide"
 
-[scratchpads.phone]
-command = "scrcpy --render-driver=opengl --turn-screen-off --stay-awake --no-audio"
-class = ".scrcpy-wrapped"
-size = "30% 90%"
-animation = "fromTop"
-unfocus = "hide"
+# [scratchpads.phone]
+# command = "scrcpy --render-driver=opengl --turn-screen-off --stay-awake --no-audio"
+# class = ".scrcpy-wrapped"
+# size = "30% 90%"
+# animation = "fromTop"
+# unfocus = "hide"
