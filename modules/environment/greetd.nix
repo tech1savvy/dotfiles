@@ -8,7 +8,7 @@
       default_session = {
         command =
           "${pkgs.tuigreet}/bin/tuigreet"
-          + " --cmd 'niri'"
+          + " --cmd 'uwsm start hyprland-uwsm.desktop'"
           + " --greeting '**** The Armoury ****'"
           + " --time"
           + " --remember --remember-session"
