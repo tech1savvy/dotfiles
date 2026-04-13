@@ -7,3 +7,5 @@ vim.o.cursorline = true
 vim.o.cursorcolumn = true
 
 vim.opt.swapfile = false
+
+vim.g.snacks_animate = false
