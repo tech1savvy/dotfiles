@@ -1,6 +1,6 @@
 {
   services.hyprpaper = {
-    enable = false;
+    enable = true;
 
     settings = {
       ipc = "off";
@@ -8,11 +8,11 @@
       splash_offset = 2;
 
       preload = [
-        "~/Wallpapers/flower.jpg"
+        "~/Wallpapers/cat-in-the-swamp-moewalls-com.jpg"
       ];
 
       wallpaper = [
-        "eDP-1, ~/Wallpapers/flower.jpg"
+        "eDP-1, ~/Wallpapers/cat-in-the-swamp-moewalls-com.jpg"
       ];
     };
   };

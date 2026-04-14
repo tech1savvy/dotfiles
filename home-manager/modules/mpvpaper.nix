@@ -1,6 +1,6 @@
 {
   programs.mpvpaper = {
-    enable = true;
+    enable = false;
 
     pauseList = ''
       firefox
