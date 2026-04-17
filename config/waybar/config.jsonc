@@ -13,7 +13,7 @@
 
   // Choose the order of the modules
   "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-  "modules-center": [],
+  "modules-center": ["custom/wakatime"],
   "modules-right": [
     "mpd",
     // "idle_inhibitor",
@@ -289,5 +289,11 @@
       "suspend": "systemctl suspend",
       "hibernate": "systemctl hibernate",
     },
+  },
+  "custom/wakatime": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/scripts/wakatime.sh",
+    "interval": 120,
+    "return-type": "json",
   },
 }

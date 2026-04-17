@@ -28,7 +28,8 @@ tooltip {
 #memory,
 #battery,
 #network,
-#pulseaudio {
+#pulseaudio,
+#custom-wakatime {
   margin: 6px 6px 6px 0px;
   padding: 2px 8px;
 }
@@ -76,6 +77,12 @@ tooltip {
 #memory,
 #network,
 #pulseaudio {
+  background-color: #2a2827;
+  border: 2px solid #504945;
+  color: #ddc7a1;
+}
+
+#custom-wakatime {
   background-color: #2a2827;
   border: 2px solid #504945;
   color: #ddc7a1;
