@@ -8,6 +8,14 @@ if [ $status -ne 0 ] || [ -z "$output" ]; then
 	exit 0
 fi
 
+output=$(echo "$output" | xargs)
+raw_output="$output"
+
+if [[ "$output" =~ ^[0-9]+\ secs?$ ]] || [[ "$output" =~ ^[0-9]+\ mins?$ ]] || [[ "$output" =~ ^[0:]+$ ]]; then
+	echo "{\"text\": \"💤\", \"tooltip\": \"${raw_output}\"}"
+	exit 0
+fi
+
 IFS=',' read -ra segments <<<"$output"
 
 categories=""
