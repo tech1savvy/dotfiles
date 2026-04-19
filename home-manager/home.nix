@@ -154,6 +154,8 @@
     curl = "curlie";
     open = "xdg-open";
 
+    j = "just";
+
     # node
     # npm = "pnpm";
     # npx = "pnpx";
