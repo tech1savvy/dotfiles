@@ -116,3 +116,11 @@ tooltip {
   font-style: italic;
   padding: 0 20px;
 }
+
+.timer {
+    background-color:  #2a2827;
+    border: 2px solid #504945;
+    color: #ddc7a1;
+    margin: 6px 6px 6px 150px;
+    padding: 2px 8px;
+}

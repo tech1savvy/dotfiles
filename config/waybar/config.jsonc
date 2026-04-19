@@ -5,15 +5,19 @@
   "height": 0, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
   "spacing": 0, // Gaps between modules (4px)
-
   "margin-top": 0,
   "margin-right": 0,
   "margin-bottom": -1, // -1px for no gap with hyprland window
   "margin-left": 0,
-
   // Choose the order of the modules
-  "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-  "modules-center": ["custom/wakatime"],
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/submap",
+    "custom/timer"
+  ],
+  "modules-center": [
+    "custom/wakatime"
+  ],
   "modules-right": [
     "mpd",
     // "idle_inhibitor",
@@ -49,7 +53,6 @@
       "8": "8",
       "9": "9  ",
       "10": "10 󰖟 ",
-
       // TODO: Add icons for all enabled scratchpads
       "20": " ",
       "21": "󱘓 ",
@@ -58,88 +61,76 @@
       "24": " ",
       "25": " ",
       "26": "󰤚 ",
-
       "librewolf": "🌐",
       "discord": "🤖",
       "postman": "📬",
       "obsidian": "📓",
       "code": "💾",
       "explorer": "🗃️",
-
       "1l": "◀️",
       "1r": "▶️",
       "1u": "🔺",
       "1d": "🔻",
-
       "2l": "◀️",
       "2r": "▶️",
       "2u": "🔺",
       "2d": "🔻",
-
       "3l": "◀️",
       "3r": "▶️",
       "3u": "🔺",
       "3d": "🔻",
-
       "4l": "◀️",
       "4r": "▶️",
       "4u": "🔺",
       "4d": "🔻",
-
       "5l": "◀️",
       "5r": "▶️",
       "5u": "🔺",
       "5d": "🔻",
-
       "6l": "◀️",
       "6r": "▶️",
       "6u": "🔺",
       "6d": "🔻",
-
       "7l": "◀️",
       "7r": "▶️",
       "7u": "🔺",
       "7d": "🔻",
-
       "8l": "◀️",
       "8r": "▶️",
       "8u": "🔺",
       "8d": "🔻",
-
       "9l": "◀️",
       "9r": "▶️",
       "9u": "🔺",
       "9d": "🔻",
-
       "10l": "◀️",
       "10r": "▶️",
       "10u": "🔺",
       "10d": "🔻",
-
       "urgent": "",
       "focused": "",
       // "active": "",
       "default": " ",
     },
-
     // Special workspace configuration
     "show-special": true,
     "special-visible-only": true,
     "active-only": false,
   },
-
   "hyprland/submap": {
     "format": "{}",
     "tooltip": false,
   },
-
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>",
   },
   "sway/scratchpad": {
     "format": "{icon} {count}",
     "show-empty": false,
-    "format-icons": ["", ""],
+    "format-icons": [
+      "",
+      ""
+    ],
     "tooltip": true,
     "tooltip-format": "{app}: {title}",
   },
@@ -202,12 +193,26 @@
     "critical-threshold": 80,
     // "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
-    "format-icons": ["", "", ""],
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
   },
   "backlight": {
     // "device": "acpi_video1",
     "format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
   },
   "battery": {
     "states": {
@@ -222,7 +227,13 @@
     "format-alt": "{time} {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": ["", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
   },
   "battery#bat2": {
     "bat": "BAT2",
@@ -262,7 +273,11 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""],
+      "default": [
+        "",
+        "",
+        ""
+      ],
     },
     "on-click": "pavucontrol",
   },
@@ -296,4 +311,20 @@
     "interval": 120,
     "return-type": "json",
   },
+  "custom/timer": {
+    "exec": "~/bin/waybar_timer hook",
+    "exec-on-event": false,
+    "return-type": "json",
+    "format": "{icon} {0}",
+    "format-icons": {
+      "standby": "🔴",
+      "running": "🟢",
+      "paused": "🟡"
+    },
+    "on-click": "~/bin/waybar_timer new 90 'notify-send \"Session finished\"'",
+    "on-click-middle": "~/bin/waybar_timer cancel",
+    "on-click-right": "~/bin/waybar_timer togglepause",
+    "on-scroll-up": "~/bin/waybar_timer increase 60 || ~/bin/waybar_timer new 1 'notify-send -u critical \"Timer expired\"'",
+    "on-scroll-down": "~/bin/waybar_timer decrease 60"
+  }
 }
