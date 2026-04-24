@@ -39,10 +39,10 @@
     };
 
     # HYPRLAND
-    # hyprtasking = {
-    #   url = "github:raybbian/hyprtasking";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    hyprtasking = {
+      url = "github:raybbian/hyprtasking";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
   };
 
