@@ -1,19 +1,23 @@
 {
-  services.hyprpaper = {
-    enable = true;
+  services.hyprpaper =
+    let
+      wallpaper = "~/Wallpapers/japanese-pedestrian-street.png";
+    in
+    {
+      enable = true;
 
-    settings = {
-      ipc = "off";
-      splash = false;
-      splash_offset = 2;
+      settings = {
+        ipc = "off";
+        splash = false;
+        splash_offset = 2;
 
-      preload = [
-        "~/Wallpapers/cat-in-the-swamp-moewalls-com.jpg"
-      ];
+        preload = [
+          wallpaper
+        ];
 
-      wallpaper = [
-        "eDP-1, ~/Wallpapers/cat-in-the-swamp-moewalls-com.jpg"
-      ];
+        wallpaper = [
+          "eDP-1, ${wallpaper}"
+        ];
+      };
     };
-  };
 }
