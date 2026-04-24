@@ -44,7 +44,8 @@
   "plugin": [
     "@mohak34/opencode-notifier@latest",
     "opencode-wakatime",
-    "cc-safety-net"
+    "cc-safety-net",
+    "@franlol/opencode-md-table-formatter@latest"
   ],
   "$schema": "https://opencode.ai/config.json"
 }

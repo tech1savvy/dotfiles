@@ -27,6 +27,11 @@ in
       source = config.lib.file.mkOutOfStoreSymlink "${cfg}/commands";
       recursive = true;
     };
+    # COMMANDS
+    ".config/opencode/skills" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${cfg}/skills";
+      recursive = true;
+    };
   };
 
 }
