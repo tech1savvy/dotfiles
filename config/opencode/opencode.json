@@ -1,0 +1,50 @@
+{
+  "permission": {
+    "*": "ask",
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "task": "allow",
+    "todowrite": "allow",
+    "bash": {
+      "*": "ask",
+      "ls *": "ask",
+      "cat *": "allow",
+      "grep *": "allow",
+      "gh run *": "allow",
+      "gh workflow *": "allow",
+      "git branch -a": "allow",
+      "git ls-files *": "allow",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git log *": "allow",
+      "git revert *": "deny",
+      "lualatex *": "allow",
+      "wakatime-cli **": "allow",
+      "wakatime-cli --config-read api_key": "deny",
+      "wakafetch **": "allow"
+    },
+    "external_directory": {
+      "~/.config/opencode/commands/**": "allow",
+      "~/.config/opencode/skills/**": "allow",
+      "~/wiki/**": "allow"
+    },
+    "skill": {
+      "flashcards": "allow"
+    }
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "oauth": {}
+    }
+  },
+  "plugin": [
+    "@mohak34/opencode-notifier@latest",
+    "opencode-wakatime",
+    "cc-safety-net"
+  ],
+  "$schema": "https://opencode.ai/config.json"
+}
