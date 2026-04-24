@@ -26,8 +26,8 @@
       "wakafetch **": "allow"
     },
     "external_directory": {
-      "~/.config/opencode/commands/**": "allow",
-      "~/.config/opencode/skills/**": "allow",
+      "~/.config/opencode/**": "allow",
+      "~/.agents/skills/**": "allow",
       "~/wiki/**": "allow"
     },
     "skill": {
