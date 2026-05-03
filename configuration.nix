@@ -111,7 +111,7 @@
     ./modules/homelab/traefik.nix
 
     ./modules/nix-ld.nix
-
+    ./modules/gitwatch.nix
   ];
 
   # Select unstable pkgs
