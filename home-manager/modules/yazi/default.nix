@@ -18,6 +18,14 @@
       mgr = {
         show_hidden = true;
         linemode = "size";
+        ratio = [
+          1
+          3
+          6 # preview pan
+        ];
+      };
+      preview = {
+        wrap = "yes";
       };
       plugin = {
         prepend_fetchers = [
