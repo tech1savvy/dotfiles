@@ -16,11 +16,10 @@
       customCommands = [
         {
           key = "<c-g>";
-          description = "Generate commit message via Gemini";
+          description = "Generate commit message";
           context = "global";
           output = "terminal";
-          # TODO: Add sopsnix support
-          command = "~/bin/lazygit-gemini-commit"; # needs $GEMINI_API_KEY
+          command = "~/bin/commit-generator";
         }
       ];
     };
