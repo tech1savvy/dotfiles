@@ -21,17 +21,18 @@
       "git log *": "allow",
       "git revert *": "deny",
       "lualatex *": "allow",
-      "wakatime-cli **": "allow",
+      "wakatime-cli *": "allow",
       "wakatime-cli --config-read api_key": "deny",
-      "wakafetch **": "allow"
+      "wakafetch *": "allow"
     },
     "external_directory": {
-      "~/.config/opencode/**": "allow",
-      "~/.agents/skills/**": "allow",
+      "~/.config/opencode/*": "allow",
+      "~/.agents/skills/*": "allow",
       "~/wiki/**": "allow"
     },
     "skill": {
-      "flashcards": "allow"
+      "flashcards": "allow",
+      "conventional-commit": "allow"
     }
   },
   "mcp": {
@@ -45,7 +46,8 @@
     "@mohak34/opencode-notifier@latest",
     "opencode-wakatime",
     "cc-safety-net",
-    "@franlol/opencode-md-table-formatter@latest"
+    "@franlol/opencode-md-table-formatter@latest",
+    "opencode-nvim-editor-context"
   ],
   "$schema": "https://opencode.ai/config.json"
 }
