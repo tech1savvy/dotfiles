@@ -1,28 +1,50 @@
 [Added Associations]
-application/octet-stream=org.kde.kate.desktop;
+# Text / Code
+text/plain=writer.desktop;
+
+# Documents
 application/pdf=librewolf.desktop;draw.desktop;zathura.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-3.desktop;libreoffice-2.desktop;libreoffice.desktop;
+
+# Images
 image/png=vimiv-3.desktop;vimiv-2.desktop;
-x-scheme-handler/http=librewolf.desktop;
-x-scheme-handler/https=librewolf.desktop;
-text/plain=writer.desktop;
-video/mp4=vlc.desktop;umpv.desktop;
-text/html=org.pwmt.zathura-cb.desktop;
 image/jpeg=vimiv.desktop;
 
-[Default Applications]
+# Video / Media
+video/mp4=vlc.desktop;umpv.desktop;
+
+# Web
+text/html=org.pwmt.zathura-cb.desktop;
+x-scheme-handler/http=librewolf.desktop;
+x-scheme-handler/https=librewolf.desktop;
+
+# Binary
 application/octet-stream=org.kde.kate.desktop;
+
+[Default Applications]
+# Text / Code
+application/octet-stream=org.kde.kate.desktop;
+
+# Documents
 application/pdf=zathura.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-3.desktop;
+
+# Images
 image/png=vimiv-3.desktop;
+
+# Web
 text/html=vivaldi-stable.desktop
-x-scheme-handler/about=vivaldi-stable.desktop
-x-scheme-handler/figma=figma-linux.desktop
 x-scheme-handler/http=vivaldi-stable.desktop
 x-scheme-handler/https=vivaldi-stable.desktop
+x-scheme-handler/about=vivaldi-stable.desktop
+x-scheme-handler/unknown=vivaldi-stable.desktop
+
+# Apps
+x-scheme-handler/figma=figma-linux.desktop
 x-scheme-handler/logseq=Logseq.desktop
+x-scheme-handler/beeper=Beeper.desktop
+
+# Torrents (Motrix)
 x-scheme-handler/magnet=motrix.desktop
 x-scheme-handler/mo=motrix.desktop
 x-scheme-handler/motrix=motrix.desktop
-x-scheme-handler/unknown=vivaldi-stable.desktop
-x-scheme-handler/beeper=Beeper.desktop
