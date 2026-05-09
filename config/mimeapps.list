@@ -25,3 +25,4 @@ x-scheme-handler/magnet=motrix.desktop
 x-scheme-handler/mo=motrix.desktop
 x-scheme-handler/motrix=motrix.desktop
 x-scheme-handler/unknown=vivaldi-stable.desktop
+x-scheme-handler/beeper=Beeper.desktop
