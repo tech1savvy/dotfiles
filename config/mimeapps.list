@@ -12,6 +12,7 @@ image/jpeg=vimiv.desktop;
 
 # Video / Media
 video/mp4=vlc.desktop;umpv.desktop;
+text/vtt=code.desktop;
 
 # Web
 text/html=org.pwmt.zathura-cb.desktop;
@@ -24,6 +25,7 @@ application/octet-stream=org.kde.kate.desktop;
 [Default Applications]
 # Text / Code
 application/octet-stream=org.kde.kate.desktop;
+text/vtt=code.desktop;
 
 # Documents
 application/pdf=zathura.desktop;
