@@ -16,9 +16,17 @@
 
       listen_on = "unix:/tmp/kitty";
 
-      "map ctrl+backspace" = "send_text all \\x17";
-
       copy_on_select = "yes";
+
+      # KEYBINDS
+      "map ctrl+backspace" = "send_text all \\x17";
+      "map ctrl+shift+enter" = "new_window_with_cwd";
+      "map ctrl+shift+n" = "new_os_window_with_cwd";
+
+      # CURSOR ANIMATIONS
+      cursor_trail = 10;
+      cursor_trail_start_threshold = 0;
+      cursor_trail_decay = "0.1 0.5";
     };
     extraConfig = "
       # kitty-scrollback.nvim Kitten alias
