@@ -1,6 +1,11 @@
 {
   description = "Nixos config flake";
 
+  nixConfig = {
+    extra-substituters = [ "https://microvm.cachix.org" ];
+    extra-trusted-public-keys = [ "microvm.cachix.org-1:oXnBc6hRE3eX5rSYdRyMYXnfzcCxC7yKPTbZXALsqys=" ];
+  };
+
   inputs = {
 
     # NIXPKGS
@@ -48,6 +53,12 @@
     # import-tree.url = "github:vic/import-tree";
     # inputs.den.url = "github:vic/den";
 
+    # MICROVM
+    microvm = {
+      url = "github:microvm-nix/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   # outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./parts);
@@ -62,6 +73,7 @@
       stylix,
       sops-nix,
       solaar,
+      microvm,
       ...
     }@inputs:
     let
@@ -89,6 +101,46 @@
 
       };
 
+      nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          microvm.nixosModules.microvm
+          {
+            networking.hostName = "vm";
+            users.users.root.password = "";
+            users.users.tech1savvy = {
+              isNormalUser = true;
+              description = "tech1savvy";
+              extraGroups = [ "wheel" ];
+              password = "";
+            };
+            system.stateVersion = "25.11";
+
+            microvm = {
+              volumes = [
+                {
+                  mountPoint = "/var";
+                  image = "var.img";
+                  size = 256; # MB
+                }
+              ];
+              shares = [
+                {
+                  proto = "9p";
+                  tag = "ro-store";
+                  source = "/nix/store/";
+                  mountPoint = "/nix/.ro-store";
+                }
+              ];
+              hypervisor = "qemu";
+              socket = "control.socket";
+            };
+          }
+        ];
+      };
+
       checks.${system}.nixos = self.nixosConfigurations.nixos.config.system.build.toplevel;
+
+      packages.${system}.vm = self.nixosConfigurations.vm.config.microvm.declaredRunner;
     };
 }
