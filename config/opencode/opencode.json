@@ -47,7 +47,8 @@
     "opencode-wakatime",
     "cc-safety-net",
     "@franlol/opencode-md-table-formatter@latest",
-    "opencode-nvim-editor-context"
+    "opencode-nvim-editor-context",
+    "@slkiser/opencode-quota"
   ],
   "$schema": "https://opencode.ai/config.json"
 }
