@@ -10,14 +10,7 @@
     # HARDWARE
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    # FLAKE-PARTS
-    # flake-parts.url = "github:hercules-ci/flake-parts";
-    # wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
-
-    # DEN
-    # import-tree.url = "github:vic/import-tree";
-    # inputs.den.url = "github:vic/den";
-
+    # HOME-MANAGER
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,21 +21,32 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # HYPRLAND
     hyprtasking = {
       url = "github:raybbian/hyprtasking";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    # LOGITECH
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # INFRA
+    # SOPS-NIX
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # FLAKE-PARTS
+    # flake-parts.url = "github:hercules-ci/flake-parts";
+    # wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+
+    # DEN
+    # import-tree.url = "github:vic/import-tree";
+    # inputs.den.url = "github:vic/den";
 
   };
 
