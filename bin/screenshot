@@ -2,7 +2,7 @@
 # Source: omarchy
 
 [[ -f ~/.config/user-dirs.dirs ]] && source ~/.config/user-dirs.dirs
-OUTPUT_DIR="$HOME/Screenshots"
+OUTPUT_DIR="$HOME/Pictures/Screenshots"
 
 if [[ ! -d "$OUTPUT_DIR" ]]; then
   notify-send "Screenshot directory does not exist: $OUTPUT_DIR" -u critical -t 3000
