@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 
-if [ -z "$1" ]; then
-  echo "missing application name as argument"
-fi
+set -euo pipefail
 
 program="$1"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+script="$SCRIPT_DIR/modules/reload-$program.sh"
 
-if [ "$program" == "kanata" ]; then
-  reload-kanata.sh
-elif [ "$program" == "waybar" ]; then
-  reload-waybar.sh
-elif [ "$program" == "hyprpaper" ]; then
-  reload-hyprpaper.sh
-fi
+[ -f "$script" ] || {
+  echo "unknown application: $program" >&2
+  exit 1
+}
+
+exec "$script"
