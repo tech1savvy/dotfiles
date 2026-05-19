@@ -1,7 +1,7 @@
 {
   services.hyprpaper =
     let
-      wallpaper = "~/Wallpapers/japanese-pedestrian-street.png";
+      wallpaper = "~/Pictures/Wallpapers/memento.jpg";
     in
     {
       enable = true;
