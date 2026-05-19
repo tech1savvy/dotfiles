@@ -2,14 +2,19 @@ return {
   {
     "stevearc/conform.nvim",
     opts = function(_, opts)
-      -- Define which formatters to use for go files
+      -- GO
       opts.formatters_by_ft = opts.formatters_by_ft or {}
       opts.formatters_by_ft.go = { "goimports", "gofumpt", "golines" }
 
-      -- (Optional) Customize golines arguments, such as max line length
+      -- golines argments
       opts.formatters = opts.formatters or {}
       opts.formatters.golines = {
         prepend_args = { "--max-len=100", "--base-formatter=gofumpt" },
+      }
+
+      -- MARKDOWN
+      opts.formatters_by_ft = {
+        markdown = {},
       }
     end,
   },
