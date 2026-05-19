@@ -1,4 +1,4 @@
-if false then
+if true then
   return {}
 end
 return {
@@ -31,7 +31,7 @@ return {
     workspaces = {
       {
         name = "notes",
-        path = "~/notes",
+        path = "~/Documents/notes",
       },
       -- {
       --   name = "work",
@@ -279,8 +279,8 @@ return {
     -- Optional, configure additional syntax highlighting / extmarks.
     -- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
     ui = {
-      enable = true, -- set to false to disable all additional syntax features
-      update_debounce = 200, -- update delay after a text change (in milliseconds)
+      enable = true,          -- set to false to disable all additional syntax features
+      update_debounce = 200,  -- update delay after a text change (in milliseconds)
       max_file_length = 5000, -- disable UI features for files with more than this many lines
       -- Define how various check-boxes are displayed
       checkboxes = {
