@@ -1,5 +1,7 @@
 {
   imports = [
+    ./shell
+
     ./fish.nix
     ./stylix.nix
 
