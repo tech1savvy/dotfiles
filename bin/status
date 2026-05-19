@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+program="$1"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+script="$SCRIPT_DIR/modules/status-$program.sh"
+
+[ -f "$script" ] || {
+  echo "unknown application: $program" >&2
+  exit 1
+}
+
+exec "$script"
