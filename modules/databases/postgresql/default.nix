@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     # ./pgadmin.nix
@@ -9,7 +9,7 @@
   ];
 
   services.postgresql = {
-    enable = false; # use docker per project instead
+    enable = lib.mkDefault false; # use docker per project instead
 
     package = pkgs.postgresql_16;
 
