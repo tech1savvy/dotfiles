@@ -1,73 +1,73 @@
 {
   imports = [
-    ./shell
-
+    # SHELLS & PROMPT
     ./fish.nix
-    ./stylix.nix
-
-    # ./gtk.nix
-    ./xdg.nix
-    ./keepassxc.nix
-
-    # ./pointer.nix
+    ./nix-your-shell.nix
+    ./shell
+    ./zsh
     ./starship.nix
     # ./oh-my-posh
-    ./zsh
-    ./nix-your-shell.nix
-    ./zellij.nix
+
+    # SHELL HISTORY & NAVIGATION
+    ./atuin.nix
     ./fzf.nix
-    # ./glance.nix
-    ./firefox.nix
-    ./text-expander/espanso.nix
-    ./gemini.nix
-
-    ./bin.nix
-    ./eza.nix
-    ./kitty.nix
-
-    ./hyprland
-    ./hyprpolkitagent
-    ./hyprpaper
-    ./hyprlock
-    ./hypridle
-    ./hyprsunset
-    # ./hyprpanel
-
-    # ./kdeconnect
-
     ./zoxide
 
+    # TERMINAL & MULTIPLEXERS
+    ./kitty.nix
+    ./tmux
+    ./zellij.nix
+
+    # CLI TOOLS
+    ./bat.nix
     ./btop.nix
+    ./eza.nix
     ./htop.nix
+    # ./glance.nix
     ./yazi
     ./zathura
 
-    ./qutebrowser
-
-    ./launchers
-
-    ./cliphist
-
-    ./tmux
-    ./lazygit
-    ./lazydocker
-
-    ./bat.nix
-
+    # DEVELOPMENT
     ./kubecolor
+    ./lazydocker
+    ./lazygit
+    ./opencode.nix
 
-    # ./activitywatch
+    # DESKTOP CONFIGURATION
+    ./bin.nix
+    ./stylix.nix
+    ./xdg.nix
+    # ./gtk.nix
+    # ./pointer.nix
+    # ./qt.nix
 
-    # ./obs-studio
+    # HYPRLAND
+    ./hyprland
+    ./hypridle
+    ./hyprlock
+    ./hyprpaper
+    ./hyprpolkitagent
+    ./hyprsunset
+    # ./hyprpanel
 
-    # ./email-clients/mutt.nix
-
-    ./atuin.nix
-
-    # ./vesktop.nix
-
-    # ./element-desktop.nix
-
+    # DESKTOP UTILITIES
+    ./cliphist
+    ./kdeconnect
+    ./launchers
     ./mpvpaper.nix
+    ./udiskie.nix
+
+    # APPLICATIONS
+    ./activitywatch
+    ./firefox.nix
+    ./gemini.nix
+    ./jrnl.nix
+    ./keepassxc.nix
+    ./qutebrowser
+    ./text-expander/espanso.nix
+    # ./email-clients/mutt.nix
+    # ./element-desktop.nix
+    # ./obs-studio
+    # ./vesktop.nix
   ];
 }

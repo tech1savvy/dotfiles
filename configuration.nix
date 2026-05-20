@@ -6,29 +6,28 @@
 }:
 {
   imports = [
+    # CORE
     ./hardware-configuration.nix
-
     ./modules/sops.nix
     ./modules/nixos
     ./modules/nixpkgs
     ./modules/nh.nix
     ./modules/zsh.nix
-
-    # -- Core Utils --
-    ./modules/version-control/git.nix
-
-    # -- System Utils --
-    ./modules/utils/zram.nix
-    # ./modules/utils/corectrl.nix
-
     ./modules/stylix.nix
+    ./modules/nix-ld.nix
 
+    # SYSTEM UTILITIES
+    ./modules/utils/zram.nix
     ./modules/appimage.nix
     ./modules/solaar.nix
     ./modules/android-tools.nix
     ./modules/adb.nix
+    ./modules/mobile/mirroring.nix
+    ./modules/udisks2.nix
+    # ./modules/utils/corectrl.nix
+    # ./modules/flatpak.nix
 
-    # development
+    # DEVELOPMENT
     ./modules/development
     ./modules/development/terminal.nix
     ./modules/development/neovim.nix
@@ -36,82 +35,87 @@
     ./modules/development/go.nix
     ./modules/development/rust.nix
     ./modules/development/php.nix
+    ./modules/version-control/git.nix
     # ./modules/development/dotnet.nix
-    # databases
+
+    # DATABASES
     ./modules/databases/postgresql
-    # ./modules/databases/mongodb.nix # FIX: Fails to start
+    # ./modules/databases/mongodb.nix
     # ./modules/databases/mariadb.nix
 
-    # -- Media --
+    # MEDIA
     ./modules/media/file-management.nix
     ./modules/media/pdf.nix
     ./modules/media/image/viewer.nix
     ./modules/media/image/editor.nix
     ./modules/media/video/players
     ./modules/media/video/editor.nix
-    # ./modules/media/video/players/ytx.nix
     ./modules/media/music/players
+    # ./modules/media/video/players/ytx.nix
     # ./modules/media/music/spicetify.nix
 
-    # --- Prodoction ---
-    ./modules/capture/obs-studio.nix
+    # CLOUD & BACKUP
+    ./modules/cloud/storage.nix
+    ./modules/backup/restic.nix
 
-    # -- Peripherals --
+    # PRODUCTION & CREATION
+    ./modules/capture/obs-studio.nix
+    ./modules/droidcam.nix
+
+    # HARDWARE & PERIPHERALS
     ./modules/peripherals/kanata.nix
     # ./modules/peripherals/interception-tools.nix
 
-    # -- Display/Lockscreen Managers --
+    # DISPLAY & DESKTOP
     ./modules/environment/greetd.nix
-
-    # -- Desktop Environments --
-    ./modules/environment/plasma6.nix
-    # ./modules/environment/cosmic.nix
-
-    # -- Window Managers --
+    ./modules/environment/cosmic.nix
     ./modules/environment/niri
     ./modules/environment/hyprland.nix
+    # ./modules/environment/plasma6.nix
     # ./modules/environment/dwm.nix
     # ./modules/environment/i3wm.nix
 
-    # gaming
+    # VIRTUALISATION & CONTAINERS
+    ./modules/containerisation
+    ./modules/virtualisation
+    ./modules/virtualisation/waydroid.nix
+
+    # PRODUCTIVITY
+    ./modules/productivity.nix
+    ./modules/gitwatch.nix
+
+    # SELF-HOSTING
+    ./modules/homelab
+    ./modules/homelab/pihole.nix
+    ./modules/homelab/traefik.nix
+    ./modules/homelab/grafana.nix
+    ./modules/homelab/ai/ollama.nix
+    ./modules/ansible
+    # ./modules/homelab/freenet.nix
+    # ./modules/homelab/searx.nix
+    # ./modules/homelab/blocky.nix
+    # ./modules/homelab/adguardhome.nix
+    # ./modules/homelab/k3s
+    # ./modules/homelab/freshrss.nix
+    # ./modules/homelab/miniflux.nix
+    # ./modules/nginx
+
+    # SECURITY & AUTHENTICATION
+    ./modules/authentication/gnome-keyring.nix
+    # ./modules/authentication/kwallet.nix
+
+    # GAMING
     # ./modules/gaming
     # ./modules/gaming/streaming.nix
     # ./modules/gaming/emulation.nix
 
-    # productivity
-    ./modules/productivity.nix
-    ./modules/nh.nix
-    ./modules/containerisation
-    ./modules/virtualisation
-    ./modules/virtualisation/waydroid.nix
-    # ./modules/homelab
-    # ./modules/nginx
-
-    # ./modules/ansible
-
-    # ./modules/pay-respects.nix
-
-    # devops
+    # DEVOPS
     # ./modules/prometheus
     # ./modules/grafana
+    # ./modules/pay-respects.nix
 
-    # ./modules/cloud/storage.nix
-
-    ./modules/authentication/gnome-keyring.nix
-    # ./modules/authentication/kwallet.nix
-
+    # OTHER (DISABLED)
     # ./modules/quickshell
-    # ./modules/droidcam.nix
-
-    # ./modules/homelab/freenet.nix
-    ./modules/homelab/searx.nix
-    # ./modules/homelab/blocky.nix
-    ./modules/homelab/pihole.nix
-    ./modules/homelab/k3s
-    ./modules/homelab/traefik.nix
-
-    ./modules/nix-ld.nix
-    ./modules/gitwatch.nix
   ];
 
   # Select unstable pkgs
