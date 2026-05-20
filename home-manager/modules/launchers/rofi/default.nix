@@ -30,10 +30,6 @@
       #   path = lib.getExe pkgs.rofi-systemd;
       # }
       # {
-      #   name = "rbw";
-      #   path = lib.getExe pkgs.rofi-rbw-wayland;
-      # }
-      # {
       #   name = "pulse";
       #   path = lib.getExe pkgs.rofi-pulse-select;
       # }
@@ -65,8 +61,7 @@
     };
     plugins = with pkgs; [
       rofi-calc
-      # rofi-emoji-wayland # 'rofi-emoji-wayland' has been merged into `rofi-emoji as 'rofi-wayland' has been merged into 'rofi'
-      rofi-emoji
+      rofi-emoji # 'rofi-emoji-wayland' has been merged into `rofi-emoji`
       rofi-file-browser
       # rofi-blezz
       rofi-top
