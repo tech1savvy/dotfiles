@@ -1,11 +1,9 @@
-{ pkgs, ... }:
 {
   services.gnome.gnome-keyring.enable = true;
-  programs.seahorse.enable = false; # gui
+  programs.seahorse.enable = true; # gui
 
   security.pam.services = {
-    login = {
-      enableGnomeKeyring = true;
-    };
+    login.enableGnomeKeyring = true;
+    greetd.enableGnomeKeyring = true;
   };
 }
