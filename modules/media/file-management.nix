@@ -1,9 +1,11 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     # file manager
     xfce.thunar
 
     zip
+    unrar
 
     xdg-desktop-portal-termfilechooser
 
