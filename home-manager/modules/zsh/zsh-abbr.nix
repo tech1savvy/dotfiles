@@ -28,6 +28,13 @@
       gp = "git push";
 
       deploy = "nix run github:serokell/deploy-rs -- .#";
+
+      # Kubectl
+      kgp = "kubectl get pods";
+      kaf = "kubectl apply -f";
+      kdf = "kubectl delete -f";
+      kg = "kubectl get";
+      kl = "kubectl logs";
     };
   };
 }
