@@ -1,11 +1,9 @@
 {
   programs.keepassxc = {
-    autostart = true;
-    enable = true;
+    autostart = false;
+    enable = false;
     settings = {
       FdoSecrets.Enabled = true; # Enable Secret Service Integration
     };
   };
-
-  xdg.autostart.enable = true;
 }
