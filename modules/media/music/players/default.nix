@@ -7,7 +7,7 @@
     blanket # ambinet audio player
 
     # spotify
-    termusic
-    # spotdl
+    tauon
+    spotdl
   ];
 }
