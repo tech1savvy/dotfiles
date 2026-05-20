@@ -11,6 +11,8 @@
       "*": "ask",
       "ls *": "ask",
       "cat *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
       "grep *": "allow",
       "gh run *": "allow",
       "gh workflow *": "allow",
@@ -48,7 +50,7 @@
     "cc-safety-net",
     "@franlol/opencode-md-table-formatter@latest",
     "opencode-nvim-editor-context",
-    "@slkiser/opencode-quota"
+    "@slkiser/opencode-quota",
   ],
   "$schema": "https://opencode.ai/config.json"
 }
