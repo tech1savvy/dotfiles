@@ -1,0 +1,29 @@
+{
+  programs.jrnl = {
+    enable = true;
+
+    settings = {
+      colors = {
+        body = "none";
+        date = "black";
+        tags = "yellow";
+        title = "cyan";
+      };
+      default_hour = 9;
+      default_minute = 0;
+      editor = "nvim";
+      encrypt = false;
+      highlight = true;
+      indent_character = "|";
+      journals = {
+        default = {
+          journal = "/home/tech1savvy/.local/share/jrnl/journal.txt";
+        };
+      };
+      linewrap = 79;
+      tagsymbols = "#@";
+      template = false;
+      timeformat = "%F %r";
+    };
+  };
+}
