@@ -6,6 +6,7 @@
     gimp
 
     # -- Simple Editors --
+    gthumb
     kdePackages.gwenview
   ];
 }
