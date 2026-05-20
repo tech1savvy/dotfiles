@@ -28,6 +28,7 @@
         "/home/tech1savvy/.local/share/PrismLauncher/prismlauncher.cfg"
         "/home/tech1savvy/.local/share/atuin"
         "/home/tech1savvy/.local/share/dolphin"
+        "/home/tech1savvy/.local/share/jrnl/journal.txt"
         "/home/tech1savvy/.local/share/qutebrowser"
         "/home/tech1savvy/.local/share/rbw"
         "/home/tech1savvy/.opencommit"
