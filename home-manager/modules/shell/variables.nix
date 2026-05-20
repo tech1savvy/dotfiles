@@ -8,5 +8,8 @@
     PNPM_HOME = "$HOME/.local/share/pnpm";
 
     SSH_AUTH_SOCK = "$HOME/.bitwarden-ssh-agent.sock";
+
+    RESTIC_REPOSITORY = "rclone:gdrive:/backups";
+    RESTIC_PASSWORD_FILE = "/run/secrets/restic-gdrive-repo-password";
   };
 }
