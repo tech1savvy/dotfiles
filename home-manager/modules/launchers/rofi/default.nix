@@ -2,7 +2,12 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
+  imports = [
+    ./rbw.nix
+  ];
+
   programs.rofi = {
     enable = true;
 
