@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   services.immich = {
-    enable = true;
+    enable = false;
 
     port = 2283;
     host = "0.0.0.0";
