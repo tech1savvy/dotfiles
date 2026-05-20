@@ -9,6 +9,7 @@
     # densify # compress pdfs
     ghostscript
     # ocamlPackages.cpdf # simplfied cli wrapper for ghostscript
+    img2pdf
 
     # Latex Compiler Headers
     texliveFull
