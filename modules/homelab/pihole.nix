@@ -1,17 +1,29 @@
 {
   # Pi-hole web interface
   services.pihole-web = {
-    enable = true;
-    ports = [ "8080" ];
+    enable = false;
+    ports = [ "8081" ];
   };
   # DNS Server
   services.pihole-ftl = {
-    enable = true;
+    enable = false;
 
     useDnsmasqConfig = false;
     settings = {
       dns = {
-        upstreams = [ "8.8.8.8" ];
+        upstreams = [
+          # Google
+          "8.8.8.8"
+          # FIX: Not getting enabled in pihole dashboard
+          "8.8.4.4"
+          "2001:4860:4860::8888"
+          "2001:4860:4860::8844"
+          # Cloudflare
+          "1.1.1.1"
+          "1.0.0.1"
+          "2606:4700:4700::1111"
+          "2606:4700:4700::1001"
+        ];
       };
     };
 
@@ -29,7 +41,7 @@
         description = "tech1savvy's allowlist";
       }
       {
-        enabled = true;
+        enabled = false;
         url = "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/social/hosts";
         description = "social media blocklist (Steven Black)";
         type = "block";
