@@ -1,29 +1,48 @@
 {
   config,
+  inputs,
   pkgs,
   ...
 }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    plugins = [
+    plugins = with pkgs.hyprlandPlugins; [
       # inputs.hyprland-virtual-desktops.packages.${pkgs.system}.virtual-desktops
+      # inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
     ];
     settings = {
       source = [
-        "./modules/programs.conf"
-        "./modules/aesthetics.conf"
+
+        # Aesthetics
+        "./modules/aesthetics/animations.conf"
+        "./modules/aesthetics/borders.conf"
+        "./modules/aesthetics/decorations.conf"
+        "./modules/aesthetics/gaps.conf"
+
+        # Windows
+        "./modules/layouts.conf"
+        "./modules/app.conf"
+        "./modules/scratchpads.conf"
+
+        # Binds
+        "./modules/binds/programs.conf"
+        "./modules/binds/hardware.conf"
+        "./modules/binds/navigation.conf"
+        "./modules/binds/window.conf"
+
+        # Submap
+        "./modules/submaps/kbptr.conf"
+
+        # Others
+        "./modules/monitors.conf"
+        "./modules/input.conf"
         "./modules/autostart.conf"
         "./modules/environment.conf"
-        "./modules/input.conf"
-        "./modules/keybindings.conf"
-        "./modules/monitors.conf"
-        "./modules/windowrules.conf"
-        "./modules/workspaces.conf"
+        "./modules/misc.conf"
 
-        "./modules/kbptr.conf"
-
-        # plugins
+        # Plugins
+        # "./plugins/hyprtasking.conf"
         # "./plugins/hyprwinwrap.conf"
         # "./plugins/hy3.conf"
         # "./plugins/hyprexpo.conf"
