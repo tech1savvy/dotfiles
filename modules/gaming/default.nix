@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./minecraft/luncher.nix
     ./minecraft/server.nix
@@ -17,10 +18,10 @@
     enable32Bit = true;
   };
 
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.modesetting.enable = true;
 
-  programs.steam.enable = true;
+  programs.steam.enable = false;
   # better sandbox for games
   programs.steam.gamescopeSession.enable = true;
 
