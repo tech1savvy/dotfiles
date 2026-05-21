@@ -95,7 +95,6 @@
     # ./modules/homelab/searx.nix
     # ./modules/homelab/blocky.nix
     # ./modules/homelab/adguardhome.nix
-    # ./modules/homelab/k3s
     # ./modules/homelab/freshrss.nix
     # ./modules/homelab/miniflux.nix
     # ./modules/nginx
