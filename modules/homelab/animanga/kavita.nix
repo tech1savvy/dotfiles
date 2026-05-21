@@ -1,8 +1,9 @@
+{ config, ... }:
 {
   services.kavita = {
     enable = true;
     user = "kavita";
-    tokenKeyFile = "/home/tech1savvy/dotfiles/secrets/kavita-token.txt";
+    tokenKeyFile = config.sops.secrets."kavita/token".path;
     settings = {
       Port = 4030;
     };

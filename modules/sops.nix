@@ -16,6 +16,12 @@
       "rclone/gdrive/client-secret" = {
         owner = "tech1savvy";
       };
+      "kavita/token" = {
+        owner = "tech1savvy";
+      };
+      "firefly-iii/app-key" = {
+        owner = "tech1savvy";
+      };
     };
   };
 
