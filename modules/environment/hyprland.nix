@@ -1,24 +1,15 @@
 {
-  config,
   pkgs,
-  lib,
+  pkgs-unstable,
   ...
 }:
 {
-  # Enable Hyprland Wayland compositor
   programs.hyprland = {
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
     package = pkgs-unstable.hyprland;
   };
-
-  # Enable Display Manager
-  # services.greetd.enable = true;
-  # services.greetd.settings.default_session = {
-  #   command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd 'uwsm start hyprland-uwsm.desktop'";
-  #   user = "tech1savvy";
-  # };
 
   environment.sessionVariables = {
     # If your cursor becomes invisible
@@ -27,17 +18,17 @@
     NIXOS_OZONE_WL = "1";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
 
-    # hyprland plugins
+    # PLUGINS
     # thread: https://discourse.nixos.org/t/installing-hyprlands-plugins-package-without-home-manager/65971
     HYPR_PLUGIN_DIR = pkgs.symlinkJoin {
       name = "hyprland-plugins";
       paths = with pkgs.hyprlandPlugins; [
         # hyprwinwrap
         # hyprscrolling
-        hy3
+        # hy3
         # hyprexpo
         # hyprspace
-        hypr-dynamic-cursors
+        # hypr-dynamic-cursors
       ];
     };
   };
@@ -72,8 +63,7 @@
 
     # normal file manager
     kdePackages.dolphin
-    # missing kde dependcies for non-kde setups
-    kdePackages.qtsvg # SCG icon suppot
+    # missing kde dependcies for non-kde setups kdePackages.qtsvg # SCG icon suppot
     kdePackages.breeze-icons # breeze icon theme
 
     kdePackages.breeze
@@ -119,6 +109,4 @@
   xdg.portal.extraPortals = [
     pkgs.xdg-desktop-portal-gtk
   ];
-
-  system.nixos.label = "Hyprland";
 }
