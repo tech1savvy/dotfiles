@@ -105,7 +105,7 @@
         inherit system;
         modules = [
           microvm.nixosModules.microvm
-          {
+          ({ pkgs, ... }: {
             networking.hostName = "vm";
             users.users.root.password = "";
             users.users.tech1savvy = {
@@ -116,7 +116,24 @@
             };
             system.stateVersion = "25.11";
 
+            services.xserver.enable = true;
+            services.xserver.displayManager.lightdm.enable = true;
+            services.xserver.windowManager.i3.enable = true;
+
+            environment.systemPackages = with pkgs; [
+              firefox
+              alacritty
+              i3status
+              dmenu
+            ];
+
             microvm = {
+              vcpu = 4;
+              mem = 2049; # QEMU hangs on exactly 2 GB
+              graphics = {
+                enable = true;
+                backend = "gtk";
+              };
               volumes = [
                 {
                   mountPoint = "/var";
@@ -135,7 +152,7 @@
               hypervisor = "qemu";
               socket = "control.socket";
             };
-          }
+          })
         ];
       };
 
