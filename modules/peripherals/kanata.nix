@@ -1,59 +1,84 @@
 {
+  config,
   lib,
   pkgs,
   ...
 }:
+with lib;
+let
+  cfg = config.peripherals.kanata;
+  internalEnabled = cfg.internalKeyboard.enable;
+  rightEnabled = cfg.rightUSBKeyboard.enable;
+  leftEnabled = cfg.leftUSBKeyboard.enable;
+  anyEnabled = internalEnabled || rightEnabled || leftEnabled;
+in
 {
-  environment.systemPackages = with pkgs; [
-    # for testing input key presses
-    evtest
-  ];
 
-  services.kanata = {
-    enable = true;
-    package = pkgs.kanata-with-cmd;
-    keyboards = {
-      internalKeyboard = {
-        configFile = "/home/tech1savvy/dotfiles/config/kanata/internalKeyboard.kbd";
-        # port = 6666;
-      };
-      rightUSBKeyboard = {
-        configFile = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
-        # configFile = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboardInvert.kbd";
-        # port = 7777;
-      };
-      leftUSBKeyboard = {
-        configFile = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
-        # configFile = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboardInvert.kbd";
-        # port = 5555;
-      };
-    };
+  options.peripherals.kanata = {
+    internalKeyboard.enable = mkEnableOption "";
+    rightUSBKeyboard.enable = mkEnableOption "";
+    leftUSBKeyboard.enable = mkEnableOption "";
   };
 
-  # Allow the service to access config files stored in home dir
-  systemd.services.kanata-internalKeyboard.serviceConfig = {
-    ProtectHome = lib.mkForce "tmpfs";
-    BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/internalKeyboard.kbd";
+  config = mkIf anyEnabled {
 
-    After = [
-      "kanata-rightUSBKeyboard.service"
-      "kanata-leftUSBKeyboard"
+    environment.systemPackages = with pkgs; [
+      evtest # for testing input key presses
     ];
 
-    wantedBy = pkgs.lib.mkForce [ ];
-  };
-  systemd.services.kanata-rightUSBKeyboard.serviceConfig = {
-    ProtectHome = lib.mkForce "tmpfs";
-    BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
-    # BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboardInvert.kbd";
+    services.kanata = {
+      enable = true;
+      package = pkgs.kanata-with-cmd;
+      keyboards = {
+        internalKeyboard = mkIf internalEnabled {
+          configFile = "/home/tech1savvy/dotfiles/config/kanata/internalKeyboard.kbd";
+          # port = 6666;
+        };
+        rightUSBKeyboard = mkIf rightEnabled {
+          configFile = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
+          # configFile = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboardInvert.kbd";
+          # port = 7777;
+        };
+        leftUSBKeyboard = mkIf leftEnabled {
+          configFile = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
+          # configFile = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboardInvert.kbd";
+          # port = 5555;
+        };
+      };
+    };
 
-    wantedBy = pkgs.lib.mkForce [ ];
-  };
-  systemd.services.kanata-leftUSBKeyboard.serviceConfig = {
-    ProtectHome = lib.mkForce "tmpfs";
-    BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
-    # BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboardInvert.kbd";
+    # Allow the service to access config files stored in home dir
+    systemd.services = {
+      kanata-internalKeyboard = mkIf internalEnabled {
+        serviceConfig = {
+          ProtectHome = lib.mkForce "tmpfs";
+          BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/internalKeyboard.kbd";
 
-    wantedBy = pkgs.lib.mkForce [ ];
+          After =
+            (lib.optional rightEnabled "kanata-rightUSBKeyboard.service")
+            ++ (lib.optional leftEnabled "kanata-leftUSBKeyboard");
+
+          wantedBy = lib.mkForce [ ];
+        };
+      };
+      kanata-rightUSBKeyboard = mkIf rightEnabled {
+        serviceConfig = {
+          ProtectHome = lib.mkForce "tmpfs";
+          BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboard.kbd";
+          # BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/rightUSBKeyboardInvert.kbd";
+
+          wantedBy = lib.mkForce [ ];
+        };
+      };
+      kanata-leftUSBKeyboard = mkIf leftEnabled {
+        serviceConfig = {
+          ProtectHome = lib.mkForce "tmpfs";
+          BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboard.kbd";
+          # BindReadOnlyPaths = "/home/tech1savvy/dotfiles/config/kanata/leftUSBKeyboardInvert.kbd";
+
+          wantedBy = lib.mkForce [ ];
+        };
+      };
+    };
   };
 }
