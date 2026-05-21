@@ -1,66 +1,49 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    # api testing
-    # postman
-    # posting
+    # API TESTING
     bruno
     bruno-cli
+    # postman
+    # posting
 
-    # editors
-    vscode
-    # ai editors
-    # code-cursor
-
-    # Node.js
-    nodejs_22
-    # nodePackages.npm
-    pnpm
-
-    nodemon
-
-    # bun
-
-    # mongoDB shell
+    # DATABASES
+    lazysql # https://youtu.be/9RArbqGOvsw
     mongosh
-
-    # php
-
-    # SQL Dashboard
     # dbgate
     # jetbrains.datagrip
-    # java driver for postgresql
+    # mycli
     # postgresql_jdbc
 
+    # EDITORS & IDEs
+    vscode
+    # code-cursor
+
+    # INFRASTRUCTURE & DEVOPS
     awscli2 # cmd: aws
     eksctl
-    terraform # infrastucture as code
-    # aws-nuke
-
-    # web-ext # build, run, and test web extensions
-
-    lazysql # https://youtu.be/9RArbqGOvsw
-
-    # rustc
-    # cargo
-
-    # mycli # shell for sql databases
-
-    wakatime-cli
-
-    # charm-freeze # code file to image
-
-    # java
-    # jdk
-
-    # act # Github Actions Locally
-
-    # clang # gcc compiler frontend
-
-    # typescript # tsc, tsserver
-
     kubectl
     minikube
-  ];
+    terraform # infrastructure as code
+    # act # Github Actions Locally
+    # aws-nuke
 
+    # LANGUAGES & RUNTIMES
+    nodejs_22
+    nodemon
+    pnpm
+    # bun
+    # cargo
+    # clang # gcc compiler frontend
+    # jdk
+    # nodePackages.npm
+    # rustc
+    # typescript # tsc, tsserver
+
+    # UTILITIES
+    just
+    wakatime-cli
+    # charm-freeze # code file to image
+    # web-ext # build, run, and test web extensions
+  ];
 }

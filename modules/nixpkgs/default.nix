@@ -10,86 +10,89 @@
   # $ nix search wget
 
   environment.systemPackages = with pkgs; [
-    vagrant
-    deploy-rs
-    colmena
-    nixos-anywhere
-
-    # todoist # cli client
-    todoist-electron # webapp client
-    # planify # todoist-supported gui client
-
-    unstable.idescriptor
-    zed-editor
-
-    blanket # ambinet audio player
-
-    libheif
-
-    openssl
-
-    # unstable.beeper
-    kubernetes-helm
-
-    nix-fast-build
-    namespace-cli
-
-    # Web
+    # BROWSERS
+    google-chrome
     librewolf
     ungoogled-chromium
-    google-chrome
-    motrix
-
-    # Office
-    # libreoffice
-    onlyoffice-desktopeditors
-
-    # Communication
-    discord
-    # webcord
-    # webcord-vencord
-    # legcord
-
-    # Screenshots
-    flameshot
-
-    # Monitor
-    brightnessctl
-
-    # flatpak
-    # bottles
-
+    (vivaldi.override {
+      proprietaryCodecs = true;
+    })
     # qutebrowser
-
-    # signal-desktop
-    localsend
-
-    # openvpn
-    # update-resolv-conf
-
-    # anki
-    # rustdesk
-
-    opencommit
-    # gemini-cli
-
-    # jellyfin-web
-
-    # qtscrcpy
-
-    # materialgram
-
-    # sysbench
-    speedtest-go # internet speed cli
-
-    # bootdev-cli
-
-    # claws-mail
-
-    # webcamoid # access laptop webcam
-
     # tridactyl-native # Native messenger for Tridactyl, a vim-like Firefox webextension
 
+    # CLOUD & DEVOPS
+    cloudlens
+    colmena
+    deploy-rs
+    google-cloud-sdk
+    infracost
+    k9s # tui for kubernetes
+    kubernetes-helm
+    namespace-cli
+    nixos-anywhere
+    turso
+    turso-cli
+    vagrant
+
+    # COMMUNICATION
+    discord
+    localsend
+    # unstable.beeper
+    # claws-mail
+    # legcord
+    # materialgram
+    # rustdesk
+    # signal-desktop
+    # webcord
+    # webcord-vencord
+
+    # DEVELOPMENT
+    bun
+    fabric-ai
+    nix-fast-build
+    opencommit
+    zed-editor
+    # unstable.idescriptor
+    # unstable.opencode
+    # unstable.opencode-desktop
+    # bootdev-cli
+    # gemini-cli
+
+    # MEDIA & GRAPHICS
+    blanket # ambinet audio player
+    ffmpeg
+    libheif
+    motrix
+    # jellyfin-web
+    # webcamoid # access laptop webcam
+
+    # PRODUCTIVITY
+    anki
+    bitwarden-desktop
+    newsflash
+    onlyoffice-desktopeditors
+    todoist-electron # webapp client
+    # unstable.spacedrive
+    # bottles
+    # libreoffice
+    # planify # todoist-supported gui client
+    # todoist # cli client
+
+    # SCREENSHOTS & CAPTURE
+    flameshot
+    grim
+    satty
+    shotman
+    slurp
+    wayfreeze
+
+    # SYSTEM UTILITIES
+    brightnessctl
+    openssl
+    speedtest-go # internet speed cli
+    # openvpn
+    # sysbench
+    # update-resolv-conf
   ];
 
   programs.kdeconnect.enable = false;
