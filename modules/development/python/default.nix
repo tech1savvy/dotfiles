@@ -9,6 +9,7 @@
       ps: with ps; [
         # tkinter
         # torchvision
+        # python-docx
       ]
     ))
     # pkg managers
