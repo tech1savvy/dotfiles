@@ -1,7 +1,7 @@
 {
   services.hyprpaper =
     let
-      wallpaper = "~/Pictures/Wallpapers/lunar-tides.jpg";
+      wallpaper = "~/wallpapers/solarized.jpeg";
     in
     {
       enable = true;
