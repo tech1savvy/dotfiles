@@ -1,7 +1,7 @@
 {
   imports = [
     # SHELLS & PROMPT
-    ./fish.nix
+#     ./fish.nix
     ./nix-your-shell.nix
     ./shell
     ./zsh
@@ -15,19 +15,21 @@
 
     # TERMINAL & MULTIPLEXERS
     ./kitty.nix
-    ./tmux
+#     ./tmux
     ./zellij.nix
 
     # CLI TOOLS
     ./bat.nix
     ./btop.nix
     ./eza.nix
-    ./htop.nix
+    ./nh.nix
+#     ./htop.nix
     # ./glance.nix
     ./yazi
     ./zathura
 
     # DEVELOPMENT
+    ./git.nix
     ./kubecolor
     ./lazydocker
     ./lazygit
@@ -52,19 +54,19 @@
 
     # DESKTOP UTILITIES
     ./cliphist
-    ./kdeconnect
+#     ./kdeconnect
     ./launchers
-    ./mpvpaper.nix
+#     ./mpvpaper.nix
     ./udiskie.nix
 
     # APPLICATIONS
-    ./activitywatch
-    ./firefox.nix
-    ./gemini.nix
-    ./jrnl.nix
-    ./keepassxc.nix
-    ./qutebrowser
-    ./text-expander/espanso.nix
+#     ./activitywatch
+#     ./firefox.nix
+#     ./gemini.nix
+#     ./jrnl.nix
+#     ./keepassxc.nix
+#     ./qutebrowser
+#     ./text-expander/espanso.nix
     # ./email-clients/mutt.nix
     # ./element-desktop.nix
     # ./obs-studio
