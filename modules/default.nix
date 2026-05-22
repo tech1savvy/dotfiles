@@ -24,46 +24,27 @@
     ./development
 
     # DATABASES
-#     ./databases/postgresql
-    # ./databases/mongodb.nix
-    # ./databases/mariadb.nix
+    # ./databases
 
     # MEDIA
-    ./media/file-management.nix
-#     ./media/pdf.nix
-#     ./media/image/viewer.nix
-#     ./media/image/editor.nix
-#     ./media/video/players
-#     ./media/video/editor.nix
-#     ./media/music/players
-    # ./media/video/players/ytx.nix
-    # ./media/music/spicetify.nix
+    ./media
 
     # CLOUD & BACKUP
     ./cloud/storage.nix
     ./backup/restic.nix
 
     # PRODUCTION & CREATION
-    ./capture/obs-studio.nix
-#     ./droidcam.nix
+    ./capture
 
     # HARDWARE & PERIPHERALS
-    ./peripherals/kanata.nix
-    # ./peripherals/interception-tools.nix
+    ./peripherals
 
     # DISPLAY & DESKTOP
-    ./environment/greetd.nix
-#     ./environment/cosmic.nix
-#     ./environment/niri
-    ./environment/hyprland.nix
-    # ./environment/plasma6.nix
-    # ./environment/dwm.nix
-    # ./environment/i3wm.nix
+    ./environment
 
     # VIRTUALISATION & CONTAINERS
 #     ./containerisation
 #     ./virtualisation
-#     ./virtualisation/waydroid.nix
 
     # PRODUCTIVITY
 #     ./productivity.nix
@@ -71,27 +52,14 @@
 
     # SELF-HOSTING
 #     ./homelab
-#     ./homelab/pihole.nix
-#     ./homelab/traefik.nix
-#     ./homelab/grafana.nix
-#     ./homelab/ai/ollama.nix
 #     ./ansible
-    # ./homelab/freenet.nix
-    # ./homelab/searx.nix
-    # ./homelab/blocky.nix
-    # ./homelab/adguardhome.nix
-    # ./homelab/freshrss.nix
-    # ./homelab/miniflux.nix
     # ./nginx
 
     # SECURITY & AUTHENTICATION
-    ./authentication/gnome-keyring.nix
-    # ./authentication/kwallet.nix
+    ./authentication
 
     # GAMING
     # ./gaming
-    # ./gaming/streaming.nix
-    # ./gaming/emulation.nix
 
     # DEVOPS
     # ./prometheus

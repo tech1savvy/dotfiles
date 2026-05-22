@@ -16,10 +16,26 @@
     ./immich.nix
     # ./paperless.nix
 
-    # UTILITIES
+    # SECURITY & NETWORK
     # ./adguardhome.nix
-    # ./microbin.nix
+    # ./blocky.nix
+    # ./freenet.nix
+    # ./pihole.nix
+    # ./traefik.nix
+
+    # MONITORING
+    # ./grafana.nix
+
+    # AI
+    # ./ai/ollama.nix
+
+    # SYNDICATION
+    # ./freshrss.nix
+    # ./miniflux.nix
     # ./searx.nix
+
+    # UTILITIES
+    # ./microbin.nix
   ];
 
   users.groups.media = { };

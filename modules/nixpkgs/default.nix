@@ -11,9 +11,9 @@
 
   environment.systemPackages = with pkgs; [
     # BROWSERS
-    google-chrome
-    librewolf
-    ungoogled-chromium
+#     google-chrome
+#     librewolf
+#     ungoogled-chromium
     (vivaldi.override {
       proprietaryCodecs = true;
     })
@@ -21,22 +21,22 @@
     # tridactyl-native # Native messenger for Tridactyl, a vim-like Firefox webextension
 
     # CLOUD & DEVOPS
-    cloudlens
-    colmena
-    deploy-rs
-    google-cloud-sdk
-    infracost
-    k9s # tui for kubernetes
-    kubernetes-helm
-    namespace-cli
-    nixos-anywhere
-    turso
-    turso-cli
-    vagrant
+#     cloudlens
+#     colmena
+#     deploy-rs
+#     google-cloud-sdk
+#     infracost
+#     k9s # tui for kubernetes
+#     kubernetes-helm
+#     namespace-cli
+#     nixos-anywhere
+#     turso
+#     turso-cli
+#     vagrant
 
     # COMMUNICATION
     discord
-    localsend
+#     localsend
     # unstable.beeper
     # claws-mail
     # legcord
@@ -47,11 +47,11 @@
     # webcord-vencord
 
     # DEVELOPMENT
-    bun
-    fabric-ai
+#     bun
+#     fabric-ai
     nix-fast-build
-    opencommit
-    zed-editor
+#     opencommit
+#     zed-editor
     # unstable.idescriptor
     # unstable.opencode
     # unstable.opencode-desktop
@@ -59,19 +59,19 @@
     # gemini-cli
 
     # MEDIA & GRAPHICS
-    blanket # ambinet audio player
-    ffmpeg
-    libheif
-    motrix
+#     blanket # ambinet audio player
+#     ffmpeg
+#     libheif
+#     motrix
     # jellyfin-web
     # webcamoid # access laptop webcam
 
     # PRODUCTIVITY
     anki
     bitwarden-desktop
-    newsflash
-    onlyoffice-desktopeditors
-    todoist-electron # webapp client
+#     newsflash
+#     onlyoffice-desktopeditors
+#     todoist-electron # webapp client
     # unstable.spacedrive
     # bottles
     # libreoffice
@@ -79,12 +79,12 @@
     # todoist # cli client
 
     # SCREENSHOTS & CAPTURE
-    flameshot
-    grim
-    satty
-    shotman
-    slurp
-    wayfreeze
+#     flameshot
+#     grim
+#     satty
+#     shotman
+#     slurp
+#     wayfreeze
 
     # SYSTEM UTILITIES
     brightnessctl

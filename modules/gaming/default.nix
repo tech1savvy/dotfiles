@@ -7,6 +7,8 @@
   imports = [
     ./minecraft/luncher.nix
     ./minecraft/server.nix
+    # ./streaming.nix
+    # ./emulation.nix
   ];
 
   # Enable Prism Launcher (Minecraft launcher)
