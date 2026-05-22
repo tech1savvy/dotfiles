@@ -53,6 +53,8 @@
       url = "github:microvm-nix/microvm.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # AI
+    llm-agents.url = "github:numtide/llm-agents.nix";
 
   };
 

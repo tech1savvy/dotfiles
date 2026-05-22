@@ -38,6 +38,7 @@
     ./modules/development/php.nix
     ./modules/version-control/git.nix
     # ./modules/development/dotnet.nix
+    ./modules/opencode.nix
 
     # DATABASES
     ./modules/databases/postgresql
