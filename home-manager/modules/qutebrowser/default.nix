@@ -46,7 +46,7 @@
     greasemonkey = [
       (pkgs.fetchurl {
         url = "https://cdn.jsdelivr.net/gh/adamlui/youtube-classic/greasemonkey/youtube-classic.user.js";
-        sha256 = "sha256-qXaOoF6zfJM+BM/duTD4fqzMrozn9Xfd9Sdg+KkXPRg=";
+        sha256 = "sha256-Y+JSy4N+pdYwTyOK8X9upg8zWHovlCIh2rocLxDUpHs=";
       })
     ];
 
