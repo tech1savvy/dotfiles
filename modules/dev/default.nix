@@ -10,13 +10,12 @@
 #     ./php.nix
     ../version-control/git.nix
     # ./dotnet.nix
-    ../opencode.nix
   ];
 
   environment.systemPackages = with pkgs; [
     # API TESTING
     bruno
-    bruno-cli
+    # bruno-cli
     # postman
     # posting
 

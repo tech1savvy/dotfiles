@@ -12,16 +12,15 @@
     # SYSTEM UTILITIES
 #     ./utils/zram.nix
 #     ./appimage.nix
-#     ./solaar.nix
 #     ./android-tools.nix
     ./adb.nix
     ./mobile/mirroring.nix
-    ./udisks2.nix
     # ./utils/corectrl.nix
     # ./flatpak.nix
 
     # DEVELOPMENT
-    ./development
+    ./dev
+    ./agents
 
     # DATABASES
     # ./databases
@@ -37,7 +36,7 @@
     ./capture
 
     # HARDWARE & PERIPHERALS
-    ./peripherals
+    ./hardware
 
     # DISPLAY & DESKTOP
     ./environment
