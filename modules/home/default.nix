@@ -7,9 +7,6 @@
     ./modules
   ];
 
-  home.username = "tech1savvy";
-  home.homeDirectory = "/home/tech1savvy";
-
   home.stateVersion = "24.11"; # Presever after update as fallback if breaking changes
 
   home.file = {

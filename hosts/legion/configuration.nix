@@ -26,15 +26,7 @@
   # Initially required by Nvidia Drivers
   nixpkgs.config.allowUnfree = true;
 
-  # Home-manager
-  home-manager = {
-    # also pass inputs to home-manager modules
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "tech1savvy" = import ../../home-manager/home.nix;
-    };
-    backupFileExtension = "backup";
-  };
+  home-manager.users."tech1savvy" = import ../../users/tech1savvy.nix;
 
   # Do not change to maintain backwards compatibility
   system.stateVersion = "24.11";
