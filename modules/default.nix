@@ -4,7 +4,6 @@
     ./sops.nix
     ./nixos
     ./nixpkgs
-    ./development/nix
     ./zsh.nix
     ./stylix.nix
     ./nix-ld.nix
@@ -22,16 +21,7 @@
     # ./flatpak.nix
 
     # DEVELOPMENT
-#     ./development
-    ./development/terminal.nix
-    ./development/neovim.nix
-#     ./development/python
-    ./development/go.nix
-#     ./development/rust.nix
-#     ./development/php.nix
-    ./version-control/git.nix
-    # ./development/dotnet.nix
-    ./opencode.nix
+    ./development
 
     # DATABASES
 #     ./databases/postgresql

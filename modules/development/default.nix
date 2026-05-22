@@ -1,5 +1,18 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./nix
+    ./terminal.nix
+    ./neovim.nix
+#     ./python
+    ./go.nix
+#     ./rust.nix
+#     ./php.nix
+    ../version-control/git.nix
+    # ./dotnet.nix
+    ../opencode.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     # API TESTING
     bruno
