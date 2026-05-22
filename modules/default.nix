@@ -4,7 +4,7 @@
     ./sops.nix
     ./nixos
     ./nixpkgs
-    ./nh.nix
+    ./development/nix
     ./zsh.nix
     ./stylix.nix
     ./nix-ld.nix

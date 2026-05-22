@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    nh
-    nix-output-monitor # nom
     nvd # nix pkg version diff
 
     # alejandra # format nix files
