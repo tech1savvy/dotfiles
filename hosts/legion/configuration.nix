@@ -12,12 +12,6 @@
     ../../modules
   ];
 
-  peripherals.kanata = {
-    internalKeyboard.enable = true;
-    rightUSBKeyboard.enable = false;
-    leftUSBKeyboard.enable = false;
-  };
-
   # Select unstable pkgs
   nixpkgs.config.packageOverrides = pkgs: {
     unstable = pkgs-unstable;
