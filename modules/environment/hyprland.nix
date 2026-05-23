@@ -45,10 +45,6 @@
     # session manager
     uwsm
 
-    # taskbar
-    (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
     # pomodoro timer
     uair # guide: https://thenegation.com/posts/pomodoro-waybar-uair/
 

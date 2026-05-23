@@ -5,6 +5,7 @@
     gnome.enable = true;
     kde.enable = true;
     firefox.enable = true;
+    waybar.enable = true;
   };
 
 }

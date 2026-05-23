@@ -55,6 +55,9 @@
     ./hyprsunset
     # ./hyprpanel
 
+    # WAYBAR
+    ./waybar
+
     # DESKTOP UTILITIES
     ./cliphist
 #     ./kdeconnect
@@ -79,11 +82,6 @@
   home.stateVersion = "24.11"; # Presever after update as fallback if breaking changes
 
   home.file = {
-
-    ".config/waybar" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/waybar";
-      recursive = true;
-    };
 
     ".config/wl-kbptr" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/wl-kbptr";
