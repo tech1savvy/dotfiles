@@ -11,6 +11,5 @@
     ./user.nix
 
     ./enable-flakes.nix
-    ./swap.nix
   ];
 }
