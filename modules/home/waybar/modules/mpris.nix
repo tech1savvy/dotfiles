@@ -2,6 +2,8 @@
   settings.mpris = {
     format = "{title}";
     "format-paused" = "<i>{title}</i>";
+    "title-len" = 20;
+    ellipsis = "...";
   };
 
   style = ''
