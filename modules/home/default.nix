@@ -77,6 +77,7 @@
     # ./element-desktop.nix
     # ./obs-studio
     # ./vesktop.nix
+    ./easyeffects
   ];
 
   home.stateVersion = "24.11"; # Presever after update as fallback if breaking changes
