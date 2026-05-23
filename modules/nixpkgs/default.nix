@@ -62,7 +62,7 @@
 #     blanket # ambinet audio player
 #     ffmpeg
 #     libheif
-#     motrix
+    motrix
     # jellyfin-web
     # webcamoid # access laptop webcam
 
