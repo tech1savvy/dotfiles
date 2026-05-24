@@ -2,8 +2,8 @@
   settings."network#speed" = {
     interval = 1;
     format = "{ifname}";
-    "format-wifi" = " {bandwidthUpBytes}  {bandwidthDownBytes}";
-    "format-ethernet" = "   {bandwidthUpBytes}  {bandwidthDownBytes}";
+    "format-wifi" = " {bandwidthUpBytes}  {bandwidthDownBytes}";
+    "format-ethernet" = " {bandwidthUpBytes}  {bandwidthDownBytes}";
     "format-disconnected" = "󰌙 ";
     "format-linked" = "󰈁 {ifname} (No IP)";
     "min-length" = 24;
