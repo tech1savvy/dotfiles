@@ -4,6 +4,7 @@
     nvd # nix pkg version diff
 
     # alejandra # format nix files
+    nixfmt
 
     # nix-tree # TUI for pkg depencies
 
