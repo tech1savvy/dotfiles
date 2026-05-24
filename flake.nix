@@ -65,12 +65,6 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
-      nixos-hardware,
-      home-manager,
-      stylix,
-      sops-nix,
-      solaar,
-      microvm,
       ...
     }@inputs:
     let
@@ -89,10 +83,10 @@
         };
         modules = [
           ./hosts/legion/configuration.nix
-          home-manager.nixosModules.default
-          stylix.nixosModules.stylix
-          sops-nix.nixosModules.sops
-          solaar.nixosModules.default
+          inputs.home-manager.nixosModules.default
+          inputs.stylix.nixosModules.stylix
+          inputs.sops-nix.nixosModules.sops
+          inputs.solaar.nixosModules.default
         ];
 
       };
@@ -100,7 +94,7 @@
       nixosConfigurations.vm = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          microvm.nixosModules.microvm
+          inputs.microvm.nixosModules.microvm
           ./hosts/vm/configuration.nix
         ];
       };
