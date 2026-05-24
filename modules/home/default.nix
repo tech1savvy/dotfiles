@@ -75,8 +75,8 @@
 #     ./text-expander/espanso.nix
     # ./email-clients/mutt.nix
     # ./element-desktop.nix
-    # ./obs-studio
-    # ./vesktop.nix
+    ./obs-studio
+    ./vesktop.nix
     ./easyeffects
   ];
 
