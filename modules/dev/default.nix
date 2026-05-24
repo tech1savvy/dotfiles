@@ -4,9 +4,9 @@
     ./nix
     ./terminal.nix
     ./neovim.nix
-#     ./python
+    ./python
     ./go.nix
-#     ./rust.nix
+    ./rust.nix
 #     ./php.nix
     ../version-control/git.nix
     # ./dotnet.nix
