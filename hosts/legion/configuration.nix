@@ -1,7 +1,6 @@
 {
   inputs,
-  pkgs,
-  pkgs-unstable,
+  pkgsUnstable,
   ...
 }:
 {
@@ -14,7 +13,7 @@
 
   # Select unstable pkgs
   nixpkgs.config.packageOverrides = pkgs: {
-    unstable = pkgs-unstable;
+    unstable = pkgsUnstable;
   };
 
   # Initially required by Nvidia Drivers

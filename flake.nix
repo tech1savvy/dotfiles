@@ -69,7 +69,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      pkgsUnstable = nixpkgs-unstable.legacyPackages.${system};
     in
     {
       nixosConfigurations.legion = nixpkgs.lib.nixosSystem {
@@ -78,7 +78,7 @@
           inherit
             inputs
             system
-            pkgs-unstable
+            pkgsUnstable
             ;
         };
         modules = [
