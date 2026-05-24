@@ -34,7 +34,7 @@
     # COMMUNICATION
     discord
 #     localsend
-    # unstable.beeper
+    unstable.beeper
     # claws-mail
     # legcord
     # materialgram
