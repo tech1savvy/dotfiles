@@ -67,5 +67,6 @@
 
     # OTHER (DISABLED)
     # ./quickshell
+    # ./kdeconnect.nix
   ];
 }

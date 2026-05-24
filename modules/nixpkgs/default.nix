@@ -91,6 +91,4 @@
     # sysbench
     # update-resolv-conf
   ];
-
-  programs.kdeconnect.enable = false;
 }
