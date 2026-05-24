@@ -69,7 +69,10 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgsUnstable = nixpkgs-unstable.legacyPackages.${system};
+      pkgsUnstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
       nixosConfigurations.legion = nixpkgs.lib.nixosSystem {
@@ -88,7 +91,6 @@
           inputs.sops-nix.nixosModules.sops
           inputs.solaar.nixosModules.default
         ];
-
       };
 
       nixosConfigurations.vm = nixpkgs.lib.nixosSystem {

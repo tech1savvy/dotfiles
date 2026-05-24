@@ -11,13 +11,12 @@
     ../../modules
   ];
 
-  # Select unstable pkgs
+  nixpkgs.config.allowUnfree = true;
+
+  # Allow pkgs.unstable
   nixpkgs.config.packageOverrides = pkgs: {
     unstable = pkgsUnstable;
   };
-
-  # Initially required by Nvidia Drivers
-  nixpkgs.config.allowUnfree = true;
 
   home-manager.users."tech1savvy" = import ../../users/tech1savvy.nix;
 
