@@ -1,14 +1,21 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   c = config.lib.stylix.colors;
   mods = (import ./modules) c;
-  mergedSettings = builtins.foldl' (acc: m: acc // m.settings) {} mods;
+  mergedSettings = builtins.foldl' (acc: m: acc // m.settings) { } mods;
   mergedStyle = ''
     * {
-      font-size: 11px;
+      font-size: 8px;
     }
-  '' + builtins.concatStringsSep "\n" (builtins.map (m: m.style) mods);
-in {
+  ''
+  + builtins.concatStringsSep "\n" (builtins.map (m: m.style) mods);
+in
+{
   home.file.".config/waybar/power_menu.xml".text = ''
     <?xml version="1.0" encoding="UTF-8"?>
     <interface>
@@ -44,41 +51,46 @@ in {
     enable = true;
     package = pkgs.waybar;
 
-    settings = [({
-      layer = "top";
-      position = "top";
-      height = 0;
-      spacing = 0;
-      "margin-top" = 0;
-      "margin-right" = 0;
-      "margin-bottom" = -1;
-      "margin-left" = 0;
+    settings = [
+      (
+        {
+          layer = "top";
+          position = "top";
+          height = 0;
+          spacing = 0;
+          "margin-top" = 0;
+          "margin-right" = 0;
+          "margin-bottom" = -1;
+          "margin-left" = 0;
 
-      modules-left = [
+          modules-left = [
 
-        "hyprland/workspaces"
-        "hyprland/submap"
-        "custom/timer"
-      ];
-      modules-center = [
-        "custom/wakatime"
-        "mpris"
-        "cava"
-      ];
-      modules-right = [
+            "hyprland/workspaces"
+            "hyprland/submap"
+            "custom/timer"
+          ];
+          modules-center = [
+            "custom/wakatime"
+            "mpris"
+            "cava"
+          ];
+          modules-right = [
 
-        "pulseaudio"
-        "pulseaudio#microphone"
-        "network"
-        "network#speed"
-        "cpu"
-        "memory"
-        "battery"
-        "clock"
-        "tray"
-        "custom/power"
-      ];
-    } // mergedSettings)];
+            "pulseaudio"
+            "pulseaudio#microphone"
+            "network"
+            "network#speed"
+            "cpu"
+            "memory"
+            "battery"
+            "clock"
+            "tray"
+            "custom/power"
+          ];
+        }
+        // mergedSettings
+      )
+    ];
 
     style = lib.mkAfter mergedStyle;
   };
