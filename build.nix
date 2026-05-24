@@ -1,9 +1,10 @@
 { ... }: let
-  defaultCache = {
-    url = "https://cache.nixos.org";
-    key = "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=";
-  };
-  extraCaches = [
+  caches = [
+    { url = "https://cache.nixos.org"; key = ""; }
+    # MIRRORS
+    { url = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=1"; key = ""; }
+    { url = "https://mirror.sjtu.edu.cn/nix-channels/store?priority=2"; key = ""; }
+    { url = "https://mirrors.ustc.edu.cn/nix-channels/store?priority=3"; key = ""; }
     # NIX-COMMUNITY: home-manager, stylix etc
     { url = "https://nix-community.cachix.org"; key = "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="; }
     # GARNIX: CI builds
@@ -19,13 +20,12 @@
   ];
 in {
   nix.settings = {
+    substituters = map (c: c.url) caches;
+    trusted-public-keys = map (c: c.key) caches;
+
     download-buffer-size = 524288000;
     http-connections = 128;
     max-substitution-jobs = 128;
-    substituters = [ defaultCache.url ];
-    trusted-public-keys = [ defaultCache.key ];
     trusted-users = [ "tech1savvy" ];
-    extra-substituters = map (c: c.url) extraCaches;
-    extra-trusted-public-keys = map (c: c.key) extraCaches;
   };
 }
