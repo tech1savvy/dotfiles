@@ -4,6 +4,7 @@
 {
   imports = [
     ./file.nix
+    ./scripts
     # SHELLS & PROMPT
     #     ./fish.nix
     ./nix-your-shell.nix
@@ -61,6 +62,7 @@
 
     # DESKTOP UTILITIES
     ./cliphist
+    ./satty.nix
     #     ./kdeconnect
     ./launchers
     #     ./mpvpaper.nix
