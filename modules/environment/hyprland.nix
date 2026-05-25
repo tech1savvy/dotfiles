@@ -71,17 +71,7 @@
     slurp # for selecting regions
     wl-clipboard # for clipboard support
     jq # for JSON parsing
-    libnotify # for notifications
     hyprpicker # (optional, for freeze-screen feature)
-
-    # lock-screen
-    hyprlock
-
-    # idle to sleep or hibrnation
-    hypridle
-
-    # wallpaper daemon
-    hyprpaper
 
     # gui-config editor
     # hyprgui
@@ -94,11 +84,6 @@
 
     wl-kbptr # keyboard overlay
     wlrctl # for mouse movements
-  ];
-
-  fonts.packages = with pkgs; [
-    font-awesome # default for waybar
-    nerd-fonts.noto # for swaync
   ];
 
   xdg.portal.enable = true;
