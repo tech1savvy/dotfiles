@@ -64,14 +64,11 @@
 
     kdePackages.breeze
 
-    # take screenshots
-    hyprshot
-    # dependencies
-    grim # for screenshots
-    slurp # for selecting regions
-    wl-clipboard # for clipboard support
-    jq # for JSON parsing
-    hyprpicker # (optional, for freeze-screen feature)
+    # clipboard
+    wl-clipboard
+
+    # color picker
+    hyprpicker
 
     # gui-config editor
     # hyprgui
