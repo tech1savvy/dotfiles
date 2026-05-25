@@ -34,6 +34,7 @@
 
     # DEVELOPMENT
     ./git.nix
+    ./gh.nix
     ./kubecolor
     ./lazydocker
     ./lazygit
@@ -79,8 +80,6 @@
     ./vesktop.nix
     ./easyeffects
   ];
-
-  };
 
   home.stateVersion = "24.11"; # Presever after update as fallback if breaking changes
 
