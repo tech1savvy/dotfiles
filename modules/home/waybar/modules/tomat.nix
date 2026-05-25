@@ -3,6 +3,7 @@
     exec = "tomat status";
     interval = 1;
     "return-type" = "json";
+    #FIX: tomato emoji not rendered (setting hm module fonts.fontconfig may help)
     format = "{text}";
     tooltip = true;
     "on-click" = "tomat toggle";
