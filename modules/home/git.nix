@@ -8,8 +8,10 @@ in
     enable = true;
 
     settings = {
-      user.name = gitUsername;
-      user.email = gitEmail;
+      user = {
+        name = gitUsername;
+        email = gitEmail;
+      };
       init.defaultBranch = "main";
     };
   };
