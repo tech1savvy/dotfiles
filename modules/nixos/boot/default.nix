@@ -1,7 +1,11 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
     ./limine.nix
+    ./plymouth.nix
   ];
+
+  splash.plymouth.enable = false;
 
   boot = {
     supportedFilesystems = [ "ntfs" ];
