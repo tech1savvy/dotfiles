@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   imports = [ ../modules/home ];
 
   home.username = "tech1savvy";

@@ -1,8 +1,9 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
     ./greetd.nix
-#     ./cosmic.nix
-#     ./niri
+    #     ./cosmic.nix
+    #     ./niri
     ./hyprland.nix
     # ./plasma6.nix
     # ./dwm.nix

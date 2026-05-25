@@ -4,8 +4,8 @@
   ];
 
   # BUG: Journal logs:
-    # FTL Configuration error error="bridge.permissions not configured"
-    # INF See https://docs.mau.fi/faq/field-unconfigured for more info
+  # FTL Configuration error error="bridge.permissions not configured"
+  # INF See https://docs.mau.fi/faq/field-unconfigured for more info
 
   services.mautrix-whatsapp = {
     enable = true;

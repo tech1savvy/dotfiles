@@ -3,5 +3,5 @@
   virtualisation.docker.enable = true;
 
   # Example: Add users to the docker group for socket access
-  users.users.tech1savvy.extraGroups = ["docker"];
+  users.users.tech1savvy.extraGroups = [ "docker" ];
 }

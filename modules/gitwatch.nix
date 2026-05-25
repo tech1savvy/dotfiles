@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   inherit (lib)
@@ -47,36 +52,38 @@ in
 
   options.services.gitwatch = mkOption {
     description = "A set of git repositories to watch for.";
-    default = {};
-    type = types.attrsOf (types.submodule {
-      options = {
-        enable = mkEnableOption "watching for repo";
-        path = mkOption {
-          description = "The path to repo in local machine";
-          type = types.str;
+    default = { };
+    type = types.attrsOf (
+      types.submodule {
+        options = {
+          enable = mkEnableOption "watching for repo";
+          path = mkOption {
+            description = "The path to repo in local machine";
+            type = types.str;
+          };
+          user = mkOption {
+            description = "The name of services's user";
+            type = types.str;
+            default = "root";
+          };
+          remote = mkOption {
+            description = "Optional url of remote repository";
+            type = types.nullOr types.str;
+            default = null;
+          };
+          message = mkOption {
+            description = "Optional text to use in as commit message";
+            type = types.nullOr types.str;
+            default = null;
+          };
+          branch = mkOption {
+            description = "Optional branch in remote repository";
+            type = types.nullOr types.str;
+            default = null;
+          };
         };
-        user = mkOption {
-          description = "The name of services's user";
-          type = types.str;
-          default = "root";
-        };
-        remote = mkOption {
-          description = "Optional url of remote repository";
-          type = types.nullOr types.str;
-          default = null;
-        };
-        message = mkOption {
-          description = "Optional text to use in as commit message";
-          type = types.nullOr types.str;
-          default = null;
-        };
-        branch = mkOption {
-          description = "Optional branch in remote repository";
-          type = types.nullOr types.str;
-          default = null;
-        };
-      };
-    });
+      }
+    );
   };
 
   config = {

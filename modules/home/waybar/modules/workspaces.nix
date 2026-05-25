@@ -48,7 +48,8 @@
       "class<eu.betterbird.Betterbird>" = " ";
       "title<.*gmail.*>" = "󰊫 ";
       "class<[Tt]elegram-desktop|org.telegram.desktop|io.github.tdesktop_x64.TDesktop>" = " ";
-      "class<discord|discord-canary|[Ww]ebcord|[Vv]esktop|com.discordapp.Discord|dev.vencord.Vesktop>" = " ";
+      "class<discord|discord-canary|[Ww]ebcord|[Vv]esktop|com.discordapp.Discord|dev.vencord.Vesktop>" =
+        " ";
       "title<.*whatsapp.*>" = " ";
       "title<.*zapzap.*>" = " ";
       "title<.*messenger.*>" = " ";

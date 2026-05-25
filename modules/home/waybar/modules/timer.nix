@@ -12,7 +12,8 @@
     "on-click" = "~/bin/waybar_timer new 90 'notify-send \"Session finished\"'";
     "on-click-middle" = "~/bin/waybar_timer cancel";
     "on-click-right" = "~/bin/waybar_timer togglepause";
-    "on-scroll-up" = "~/bin/waybar_timer increase 60 || ~/bin/waybar_timer new 1 'notify-send -u critical \"Timer expired\"'";
+    "on-scroll-up" =
+      "~/bin/waybar_timer increase 60 || ~/bin/waybar_timer new 1 'notify-send -u critical \"Timer expired\"'";
     "on-scroll-down" = "~/bin/waybar_timer decrease 60";
   };
 

@@ -10,9 +10,9 @@
     ./home-manager.nix
 
     # SYSTEM UTILITIES
-#     ./utils/zram.nix
-#     ./appimage.nix
-#     ./android-tools.nix
+    #     ./utils/zram.nix
+    #     ./appimage.nix
+    #     ./android-tools.nix
     ./adb.nix
     ./mobile/mirroring.nix
     # ./utils/corectrl.nix
@@ -42,16 +42,16 @@
     ./environment
 
     # VIRTUALISATION & CONTAINERS
-#     ./containerisation
-#     ./virtualisation
+    #     ./containerisation
+    #     ./virtualisation
 
     # PRODUCTIVITY
-#     ./productivity.nix
+    #     ./productivity.nix
     ./gitwatch.nix
 
     # SELF-HOSTING
-#     ./homelab
-#     ./ansible
+    #     ./homelab
+    #     ./ansible
     # ./nginx
 
     # SECURITY & AUTHENTICATION

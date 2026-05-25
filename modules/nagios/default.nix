@@ -3,12 +3,17 @@
   pkgs,
   package,
   ...
-}: {
+}:
+{
   services.nagios = {
     enable = true;
     objectDefs =
-      (map (x: "${pkgs.nagios}/etc/objects/${x}.cfg") ["templates" "timeperiods" "commands"])
-      ++ [./main.cfg];
+      (map (x: "${pkgs.nagios}/etc/objects/${x}.cfg") [
+        "templates"
+        "timeperiods"
+        "commands"
+      ])
+      ++ [ ./main.cfg ];
     # extraConfig = {
     #   # for verbose logs
     #   debug_level = "-1";

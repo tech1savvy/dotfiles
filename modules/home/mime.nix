@@ -5,55 +5,65 @@
     enable = true;
 
     associations.added = {
-      "application/octet-stream" = ["org.kde.kate.desktop"];
-      "application/pdf" = ["librewolf.desktop" "draw.desktop" "zathura.desktop"];
+      "application/octet-stream" = [ "org.kde.kate.desktop" ];
+      "application/pdf" = [
+        "librewolf.desktop"
+        "draw.desktop"
+        "zathura.desktop"
+      ];
       "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [
         "libreoffice-3.desktop"
         "libreoffice-2.desktop"
         "libreoffice.desktop"
       ];
-      "x-scheme-handler/http" = ["librewolf.desktop"];
-      "x-scheme-handler/https" = ["librewolf.desktop"];
-      "text/plain" = ["writer.desktop"];
-      "video/mp4" = ["vlc.desktop" "umpv.desktop"];
-      "text/html" = ["org.pwmt.zathura-cb.desktop"];
+      "x-scheme-handler/http" = [ "librewolf.desktop" ];
+      "x-scheme-handler/https" = [ "librewolf.desktop" ];
+      "text/plain" = [ "writer.desktop" ];
+      "video/mp4" = [
+        "vlc.desktop"
+        "umpv.desktop"
+      ];
+      "text/html" = [ "org.pwmt.zathura-cb.desktop" ];
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [
         "writer.desktop"
       ];
-      "text/markdown" = ["librewolf.desktop" "nvim.desktop"];
+      "text/markdown" = [
+        "librewolf.desktop"
+        "nvim.desktop"
+      ];
 
       # telegram / materialgram
-      "x-scheme-handler/tg" = ["io.github.kukuruzka165.materialgram.desktop"];
-      "x-scheme-handler/tonsite" = ["io.github.kukuruzka165.materialgram.desktop"];
+      "x-scheme-handler/tg" = [ "io.github.kukuruzka165.materialgram.desktop" ];
+      "x-scheme-handler/tonsite" = [ "io.github.kukuruzka165.materialgram.desktop" ];
     };
 
     defaultApplications = {
-      "application/octet-stream" = ["org.kde.kate.desktop"];
-      "application/pdf" = ["zathura.desktop"];
+      "application/octet-stream" = [ "org.kde.kate.desktop" ];
+      "application/pdf" = [ "zathura.desktop" ];
       "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [
         "libreoffice-3.desktop"
       ];
 
       # image files
-      "image/png" = ["vimiv.desktop"];
-      "image/jpeg" = ["vimiv.desktop"];
+      "image/png" = [ "vimiv.desktop" ];
+      "image/jpeg" = [ "vimiv.desktop" ];
 
       # video files
 
-      "text/html" = ["librewolf.desktop"];
-      "x-scheme-handler/about" = ["librewolf.desktop"];
-      "x-scheme-handler/figma" = ["figma-linux.desktop"];
-      "x-scheme-handler/http" = ["librewolf.desktop"];
-      "x-scheme-handler/https" = ["librewolf.desktop"];
-      "x-scheme-handler/logseq" = ["Logseq.desktop"];
-      "x-scheme-handler/magnet" = ["motrix.desktop"];
-      "x-scheme-handler/mo" = ["motrix.desktop"];
-      "x-scheme-handler/motrix" = ["motrix.desktop"];
-      "x-scheme-handler/unknown" = ["librewolf.desktop"];
+      "text/html" = [ "librewolf.desktop" ];
+      "x-scheme-handler/about" = [ "librewolf.desktop" ];
+      "x-scheme-handler/figma" = [ "figma-linux.desktop" ];
+      "x-scheme-handler/http" = [ "librewolf.desktop" ];
+      "x-scheme-handler/https" = [ "librewolf.desktop" ];
+      "x-scheme-handler/logseq" = [ "Logseq.desktop" ];
+      "x-scheme-handler/magnet" = [ "motrix.desktop" ];
+      "x-scheme-handler/mo" = [ "motrix.desktop" ];
+      "x-scheme-handler/motrix" = [ "motrix.desktop" ];
+      "x-scheme-handler/unknown" = [ "librewolf.desktop" ];
 
       # telegram / materialgram
-      "x-scheme-handler/tg" = ["io.github.kukuruzka165.materialgram.desktop"];
-      "x-scheme-handler/tonsite" = ["io.github.kukuruzka165.materialgram.desktop"];
+      "x-scheme-handler/tg" = [ "io.github.kukuruzka165.materialgram.desktop" ];
+      "x-scheme-handler/tonsite" = [ "io.github.kukuruzka165.materialgram.desktop" ];
     };
   };
 }

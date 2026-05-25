@@ -1,6 +1,7 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
     ./obs-studio.nix
-#     ./droidcam.nix
+    #     ./droidcam.nix
   ];
 }

@@ -1,4 +1,5 @@
-{ lib, ... }: {
+{ lib, ... }:
+{
   networking.networkmanager = {
     enable = true;
     # wifi.backend = "iwd"; # stops connecting to wifi

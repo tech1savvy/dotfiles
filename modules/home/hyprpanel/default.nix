@@ -16,7 +16,7 @@
             "workspaces"
             "media"
           ];
-          middle = ["windowtitle"];
+          middle = [ "windowtitle" ];
           right = [
             "volume"
             "network"

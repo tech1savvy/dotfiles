@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.pointerCursor = {
     name = "Breeze";
     package = pkgs.kdePackages.breeze;

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   networking.hostName = "vm";
   users.users.root.password = "";
   users.users.tech1savvy = {
