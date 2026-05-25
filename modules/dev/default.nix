@@ -2,6 +2,7 @@
 {
   imports = [
     ./nix
+    ./json
     ./terminal.nix
     ./neovim.nix
     ./python

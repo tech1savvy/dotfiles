@@ -13,10 +13,6 @@
     # figlet # ascii print text to terminal
     # pipes
 
-    # JSON
-    jless
-    # jq
-
     # NETWORKING
     curlie # curl
     tmate # terminal screen-sharing and access
