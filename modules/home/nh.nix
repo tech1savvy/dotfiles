@@ -4,7 +4,7 @@
     enable = true;
     flake = "\${HOME}/dotfiles";
     clean = {
-      enable = false;
+      enable = true;
       dates = "weekly";
     };
   };
