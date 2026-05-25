@@ -2,6 +2,7 @@
 {
   imports = [
     ./waybar.nix
+    ./tomat-service.nix
     ./modules/wakatime-script.nix
   ];
 

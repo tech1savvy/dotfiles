@@ -67,7 +67,7 @@ in
 
             "hyprland/workspaces"
             "hyprland/submap"
-            "custom/timer"
+            "custom/tomat"
           ];
           modules-center = [
             "custom/wakatime"

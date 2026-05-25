@@ -2,7 +2,7 @@ c:
 builtins.map (f: if builtins.isFunction f then f c else f) [
   (import ./workspaces.nix)
   (import ./submap.nix)
-  (import ./timer.nix)
+  (import ./tomat.nix)
   (import ./cava.nix)
   (import ./mpris.nix)
   (import ./wakatime.nix)
