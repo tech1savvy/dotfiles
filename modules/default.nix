@@ -42,8 +42,8 @@
     ./environment
 
     # VIRTUALISATION & CONTAINERS
-    #     ./containerisation
-    #     ./virtualisation
+    ./containerisation
+    ./virtualisation
 
     # PRODUCTIVITY
     #     ./productivity.nix
