@@ -1,8 +1,10 @@
 { pkgs, ... }:
 {
   fonts.packages = with pkgs; [
-    noto-fonts
     nerd-fonts.noto
-    font-awesome # default for waybar
+    nerd-fonts.jetbrains-mono
+    nerd-fonts._3270
+
+    font-awesome # required for waybar
   ];
 }
