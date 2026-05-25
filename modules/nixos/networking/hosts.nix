@@ -1,6 +1,6 @@
 {
   networking = {
-    hostName = "nixos";
+    hostName = "legion"; # TODO: make dynamic based host
 
     hosts = {
       "127.0.0.1" = [
