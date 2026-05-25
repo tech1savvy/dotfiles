@@ -8,6 +8,7 @@
   splash.plymouth.enable = false;
 
   boot = {
+    tmp.cleanOnBoot = true;
     supportedFilesystems = [ "ntfs" ];
     loader = {
       systemd-boot.enable = false;
