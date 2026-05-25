@@ -5,7 +5,7 @@
 }:
 {
   imports = [
-    inputs.nixos-hardware.nixosModules.lenovo-legion-16ach6h
+    inputs.nixos-hardware.nixosModules.lenovo-legion-16ach6h-hybrid
     ./hardware.nix
     ../../build.nix
     ../../modules
