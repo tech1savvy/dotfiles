@@ -33,8 +33,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono # icon support
-    # noto-fonts-emoji # emoji support #  'noto-fonts-emoji' has been renamed to/replaced by 'noto-fonts-color-emoji'
-    noto-fonts-color-emoji
+    noto-fonts-color-emoji # emoji support
   ];
 
   # For Mason managed binaries
