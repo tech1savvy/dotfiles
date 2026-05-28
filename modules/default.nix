@@ -50,7 +50,7 @@
     ./gitwatch.nix
 
     # SELF-HOSTING
-    #     ./homelab
+    ./lab
     #     ./ansible
     # ./nginx
 
