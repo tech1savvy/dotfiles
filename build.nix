@@ -1,21 +1,20 @@
-{ ... }:
 let
   caches = [
     {
-      url = "https://cache.nixos.org";
+      url = "https://cache.nixos.org?priority=1";
       key = "";
     }
     # MIRRORS
     {
-      url = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=1";
+      url = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=2";
       key = "";
     }
     {
-      url = "https://mirror.sjtu.edu.cn/nix-channels/store?priority=2";
+      url = "https://mirror.sjtu.edu.cn/nix-channels/store?priority=3";
       key = "";
     }
     {
-      url = "https://mirrors.ustc.edu.cn/nix-channels/store?priority=3";
+      url = "https://mirrors.ustc.edu.cn/nix-channels/store?priority=4";
       key = "";
     }
     # NIX-COMMUNITY: home-manager, stylix etc
