@@ -1,11 +1,12 @@
-c:
-builtins.map (f: if builtins.isFunction f then f c else f) [
+{ c, pkgs, ... }:
+builtins.map (f: if builtins.isFunction f then f { inherit c pkgs; } else f) [
   (import ./workspaces.nix)
   (import ./submap.nix)
   (import ./tomat.nix)
   (import ./cava.nix)
   (import ./mpris.nix)
   (import ./wakatime.nix)
+  (import ./wakatime-script.nix)
   (import ./pulseaudio.nix)
   (import ./microphone.nix)
   (import ./network.nix)
@@ -16,4 +17,5 @@ builtins.map (f: if builtins.isFunction f then f c else f) [
   (import ./clock.nix)
   (import ./tray.nix)
   (import ./power.nix)
+  (import ./power-menu.nix)
 ]

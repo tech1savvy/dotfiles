@@ -1,4 +1,4 @@
-c: {
+{ c, ... }: {
   settings.pulseaudio = {
     format = "{volume}% {icon}";
     "format-bluetooth" = "{volume}% {icon} ";

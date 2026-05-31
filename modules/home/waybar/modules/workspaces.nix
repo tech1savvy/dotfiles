@@ -1,4 +1,4 @@
-c: {
+{ c, ... }: {
   settings."hyprland/workspaces" = {
     "disable-scroll" = true;
     "all-outputs" = true;

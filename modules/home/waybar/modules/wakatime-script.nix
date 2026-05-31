@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  settings = { };
+  style = "";
   home.packages = [
     (pkgs.writeShellScriptBin "waybar-wakatime" ''
       output=$(wakatime-cli --today 2>/dev/null)
