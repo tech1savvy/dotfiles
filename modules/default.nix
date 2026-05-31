@@ -10,7 +10,7 @@
     ./home-manager.nix
 
     # SYSTEM UTILITIES
-    #     ./utils/zram.nix
+    ./utils/zram.nix
     #     ./appimage.nix
     #     ./android-tools.nix
     ./adb.nix
