@@ -1,4 +1,4 @@
-{
+c: {
   settings."hyprland/workspaces" = {
     "disable-scroll" = true;
     "all-outputs" = true;
@@ -9,19 +9,22 @@
     "on-scroll-up" = "hyprctl dispatch workspace e+1";
     "on-scroll-down" = "hyprctl dispatch workspace e-1";
     "persistent-workspaces" = {
-      "*" = 5;
+      "*" = 0;
     };
-    format = "{icon} {windows}";
+    format =
+      "[<span color='#${c.base07}'>{name}</span>"
+      + "<span color='#${c.base07}'> : </span>"
+      + "<span color='#${c.base07}'>{windows}</span>]";
     "format-window-separator" = " ";
     "window-rewrite-default" = " ";
     "format-icons" = {
-      "1" = "󰎤";
-      "2" = "󰎧";
-      "3" = "󰎪";
-      "4" = "󰎭";
-      "5" = "󰎱";
-      urgent = "";
-      focused = "";
+      "1" = "󰎤 ";
+      "2" = "󰎧 ";
+      "3" = "󰎪 ";
+      "4" = "󰎭 ";
+      "5" = "󰎱 ";
+      urgent = " ";
+      focused = " ";
       default = " ";
     };
     "window-rewrite" = {
@@ -52,6 +55,7 @@
         " ";
       "title<.*whatsapp.*>" = " ";
       "title<.*zapzap.*>" = " ";
+      "title<.*beeper.*>" = "󰭻 ";
       "title<.*messenger.*>" = " ";
       "title<.*facebook.*>" = " ";
       "class<[Ss]ignal|signal-desktop|org.signal.Signal>" = "󰍩 ";
@@ -155,5 +159,6 @@
       box-shadow: 0 0 0 0.5px @base09;
       color: @base09;
     }
+
   '';
 }

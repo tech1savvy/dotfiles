@@ -10,7 +10,7 @@ let
   mergedSettings = builtins.foldl' (acc: m: acc // m.settings) { } mods;
   mergedStyle = ''
     * {
-      font-size: 8px;
+      font-size: 9px;
     }
   ''
   + builtins.concatStringsSep "\n" (builtins.map (m: m.style) mods);
