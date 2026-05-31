@@ -8,7 +8,7 @@
     # ./firefly-iii.nix
 
     # MEDIA & STREAMING
-    # ./animanga
+    ./animanga
     # ./jellyfin.nix
     # ./torrent
 

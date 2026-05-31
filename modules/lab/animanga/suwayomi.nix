@@ -1,12 +1,19 @@
+{ pkgs, ... }:
 {
   services.suwayomi-server = {
     enable = true;
+    package = pkgs.unstable.suwayomi-server;
+    openFirewall = true;
+    user = "suwayomi";
     group = "media";
     dataDir = "/var/lib/suwayomi-server";
     settings = {
       server = {
         port = 4000;
         ip = "0.0.0.0";
+        basicAuthEnabled = false;
+        basicAuthUsername = null;
+        basicAuthPasswordFile = null;
 
         # downloader
         downloadsPath = "/var/lib/suwayomi-server";
