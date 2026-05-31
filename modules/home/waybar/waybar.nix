@@ -50,7 +50,6 @@ in
             "pulseaudio"
             "pulseaudio#microphone"
             "network"
-            "network#speed"
             "cpu"
             "memory"
             "battery"

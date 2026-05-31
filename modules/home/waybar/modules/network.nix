@@ -1,11 +1,23 @@
 {
   settings.network = {
-    "format-wifi" = "{essid} ({signalStrength}%)  ";
-    "format-ethernet" = "{ipaddr}/{cidr}  ";
-    "tooltip-format" = "{ifname} via {gwaddr}  ";
-    "format-linked" = "{ifname} (No IP)  ";
-    "format-disconnected" = "Disconnected ⚠";
-    "format-alt" = "{ifname}: {ipaddr}/{cidr}";
+    interval = 1;
+    format = " {bandwidthUpBytes}  {bandwidthDownBytes}";
+    "format-wifi" = " {bandwidthUpBytes}  {bandwidthDownBytes}";
+    "format-ethernet" = " {bandwidthUpBytes}  {bandwidthDownBytes}";
+    "format-disconnected" = "󰌙 ";
+    "format-linked" = "󰈁 {ifname}";
+
+    "format-alt" = "{ipaddr}/{cidr}";
+    "format-alt-wifi" = "{ipaddr}  ";
+    "format-alt-ethernet" = "{ipaddr} 󰌘";
+
+    "tooltip-format" = "";
+    "tooltip-format-wifi" = "{essid} ({signalStrength}%)  ";
+    "tooltip-format-ethernet" = "{ifname} 󰌘";
+    "tooltip-format-disconnected" = "";
+
+    "min-length" = 20;
+    "max-length" = 24;
   };
 
   style = ''
