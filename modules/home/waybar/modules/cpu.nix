@@ -1,6 +1,6 @@
 {
   settings.cpu = {
-    format = "{usage}% ";
+    format = "{usage}%  ";
     tooltip = false;
   };
 
@@ -9,7 +9,7 @@
       background: @base01;
       border: 1px solid @base02;
       color: @base06;
-      margin: 4px 4px 4px 0px;
+      margin: 4px 0px 4px 0px;
       padding: 1px 6px;
     }
 
