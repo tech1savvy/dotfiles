@@ -13,7 +13,7 @@
     ./utils/zram.nix
     #     ./appimage.nix
     #     ./android-tools.nix
-    ./adb.nix
+    # ./adb.nix # REMOVED
     ./mobile/mirroring.nix
     # ./utils/corectrl.nix
     # ./flatpak.nix
