@@ -1,4 +1,5 @@
-{ c, ... }: {
+{ c, ... }:
+{
   settings."hyprland/workspaces" = {
     "disable-scroll" = true;
     "all-outputs" = true;
@@ -134,14 +135,18 @@
   style = ''
     #workspaces {
       background: @base01;
+      color: @base06;
       margin: 2px 1px 2px 1px;
-      border: 1px solid @base02;
+      padding: 1px 6px;
     }
 
     #workspaces button {
-      all: initial;
+      background: transparent;
+      border: none;
+      border-bottom: none;
+      box-shadow: none;
+      margin: 0;
       min-width: 0;
-      box-shadow: inset 0 -3px transparent;
       padding: 1px 3px;
       color: @base04;
     }
@@ -155,8 +160,9 @@
     }
 
     #workspaces button.active {
-      border-bottom: 0.5px solid @base09;
-      box-shadow: 0 0 0 0.5px @base09;
+      background: transparent;
+      border: none;
+      box-shadow: none;
       color: @base09;
     }
 
