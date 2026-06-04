@@ -6,7 +6,7 @@
 
   style = ''
     #custom-separator {
-      margin: 4px 4px 4px 4px;
+      margin: 2px 1px 2px 1px;
       padding: 1px 1px;
     }
   '';

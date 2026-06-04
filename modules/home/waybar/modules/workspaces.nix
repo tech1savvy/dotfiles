@@ -134,7 +134,7 @@
   style = ''
     #workspaces {
       background: @base01;
-      margin: 4px 0px 4px 4px;
+      margin: 2px 1px 2px 1px;
       border: 1px solid @base02;
     }
 
