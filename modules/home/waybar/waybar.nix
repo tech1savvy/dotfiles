@@ -29,9 +29,10 @@ in
           position = "top";
           height = 0;
           spacing = 0;
+          "fixed-center" = false;
           "margin-top" = 0;
           "margin-right" = 0;
-          "margin-bottom" = -1;
+          "margin-bottom" = 0;
           "margin-left" = 0;
 
           modules-left = [
