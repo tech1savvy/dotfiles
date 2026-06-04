@@ -7,7 +7,7 @@
     "lower_cutoff_freq" = 50;
     "higher_cutoff_freq" = 12000;
     method = "pulse";
-    hide_on_silence = false;
+    hide_on_silence = true;
     sleep_timer = 5;
     source = "auto";
     stereo = false;

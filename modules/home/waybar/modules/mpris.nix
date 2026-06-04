@@ -4,6 +4,7 @@
     "format-paused" = "<i>{title}</i>";
     "title-len" = 12;
     ellipsis = "...";
+    interval = 1;
   };
 
   style = ''

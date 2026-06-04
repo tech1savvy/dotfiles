@@ -15,6 +15,7 @@ builtins.map (f: if builtins.isFunction f then f { inherit c pkgs; } else f) [
   (import ./battery.nix)
   (import ./clock.nix)
   (import ./tray.nix)
+  (import ./separator.nix)
   (import ./power.nix)
   (import ./power-menu.nix)
 ]
