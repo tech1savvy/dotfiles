@@ -36,25 +36,27 @@ in
           "margin-left" = 0;
 
           modules-left = [
-
             "hyprland/workspaces"
             "hyprland/submap"
-            "custom/tomat"
           ];
           modules-center = [
             "custom/wakatime"
+            "cava"
             "mpris"
             "cava"
+            "custom/tomat"
           ];
           modules-right = [
-
             "pulseaudio"
             "pulseaudio#microphone"
+            "custom/separator"
             "network"
             "cpu"
             "memory"
+            "custom/separator"
             "battery"
             "clock"
+            "custom/separator"
             "tray"
             "custom/power"
           ];
