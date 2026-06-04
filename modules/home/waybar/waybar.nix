@@ -11,6 +11,7 @@ let
   mergedStyle = ''
     * {
       font-size: 9px;
+      min-height: 0;
     }
   ''
   + builtins.concatStringsSep "\n" (builtins.map (m: m.style) mods);
@@ -27,8 +28,7 @@ in
         {
           layer = "top";
           position = "top";
-          height = 0;
-          spacing = 0;
+          spacing = 3;
           "fixed-center" = false;
           "margin-top" = 0;
           "margin-right" = 0;
