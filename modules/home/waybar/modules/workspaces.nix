@@ -142,12 +142,6 @@
 
     #workspaces button {
       background: transparent;
-      border: none;
-      border-bottom: none;
-      box-shadow: none;
-      margin: 0;
-      min-width: 0;
-      padding: 1px 3px;
       color: @base04;
     }
 
@@ -161,8 +155,6 @@
 
     #workspaces button.active {
       background: transparent;
-      border: none;
-      box-shadow: none;
       color: @base09;
     }
 
