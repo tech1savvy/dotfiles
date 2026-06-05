@@ -1,6 +1,6 @@
 {
   inputs,
-  pkgsUnstable,
+  pkgsStable,
   ...
 }:
 {
@@ -12,10 +12,13 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-39.8.10"
+  ];
 
-  # Allow pkgs.unstable
+  # Allow pkgs.stable
   nixpkgs.config.packageOverrides = pkgs: {
-    unstable = pkgsUnstable;
+    stable = pkgsStable;
   };
 
   home-manager.users."tech1savvy" = import ../../users/tech1savvy.nix;

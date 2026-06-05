@@ -4,27 +4,28 @@
   inputs = {
 
     # NIXPKGS
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
     # HARDWARE
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # HOME-MANAGER
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     stylix = {
-      url = "github:nix-community/stylix/release-25.11";
+      url = "github:nix-community/stylix/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # HYPRLAND
+    hyprland.url = "github:hyprwm/Hyprland";
     hyprtasking = {
       url = "github:raybbian/hyprtasking";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "hyprland";
     };
 
     # LOGITECH
@@ -64,12 +65,11 @@
     {
       self,
       nixpkgs,
-      nixpkgs-unstable,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgsUnstable = import nixpkgs-unstable {
+      pkgsStable = import {
         inherit system;
         config.allowUnfree = true;
       };
@@ -81,7 +81,7 @@
           inherit
             inputs
             system
-            pkgsUnstable
+            pkgsStable
             ;
         };
         modules = [

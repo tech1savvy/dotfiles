@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgsUnstable,
   ...
 }:
 {
@@ -8,7 +7,6 @@
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
-    package = pkgsUnstable.hyprland;
   };
 
   environment.sessionVariables = {

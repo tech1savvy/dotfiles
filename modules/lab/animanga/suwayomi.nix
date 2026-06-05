@@ -1,8 +1,6 @@
-{ pkgs, ... }:
 {
   services.suwayomi-server = {
     enable = true;
-    package = pkgs.unstable.suwayomi-server;
     openFirewall = true;
     user = "suwayomi";
     group = "media";

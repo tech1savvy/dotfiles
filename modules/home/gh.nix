@@ -5,9 +5,7 @@
 
     extensions = with pkgs; [
       gh-dash
-      # FIX: Allow unstable pkgs in home-manager
-      # ref: https://youtu.be/hlytf6Uxf4E
-      # unstable.gh-enhance
+      gh-enhance
     ];
 
     gitCredentialHelper = {

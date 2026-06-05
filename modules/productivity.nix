@@ -12,7 +12,7 @@
     # journal
 
     # tasks
-    unstable.super-productivity
+    super-productivity
 
     taskwarrior3
     # taskwarrior-tui

@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     # file manager
-    xfce.thunar
+    thunar
 
     zip
     unrar

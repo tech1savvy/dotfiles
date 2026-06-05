@@ -5,7 +5,7 @@
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
 
-    iconTheme = {
+    icons = {
       enable = true;
       package = pkgs.beauty-line-icon-theme;
       light = "BeautyLine";

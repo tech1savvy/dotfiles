@@ -34,7 +34,7 @@
     # COMMUNICATION
     discord
     #     localsend
-    unstable.beeper
+    beeper
     # claws-mail
     # legcord
     # materialgram
@@ -49,9 +49,7 @@
     nix-fast-build
     #     opencommit
     #     zed-editor
-    # unstable.idescriptor
-    # unstable.opencode
-    # unstable.opencode-desktop
+    # idescriptor
     # bootdev-cli
     # gemini-cli
 
