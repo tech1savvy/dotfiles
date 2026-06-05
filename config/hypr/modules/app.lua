@@ -17,7 +17,7 @@ hl.window_rule({ match = { class = "^(com.moonlight_stream.Moonlight)$" }, works
 hl.window_rule({ match = { class = "^(org.qutebrowser.qutebrowser)$" }, workspace = "name:qutebrowser" })
 
 -- SPOTIFY
-hl.window_rule({ match = { class = "^(spotify)$" }, workspace = "name:spotify" })
+hl.window_rule({ match = { class = "^(Spotify)$" }, workspace = "name:spotify" })
 
 -- WHATSAPP
 hl.window_rule({
