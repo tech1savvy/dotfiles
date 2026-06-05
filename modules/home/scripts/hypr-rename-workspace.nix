@@ -17,7 +17,7 @@ in
       (pkgs.writeShellScriptBin "hypr-rename-workspace" ''
         ID=$(/run/current-system/sw/bin/hyprctl activeworkspace -j | ${pkgs.jq}/bin/jq -r .id)
         NEW=$(${pkgs.rofi}/bin/rofi -dmenu -p "Rename workspace: ")
-        [ -n "$NEW" ] && /run/current-system/sw/bin/hyprctl dispatch renameworkspace "$ID" "$ID-$NEW"
+        [ -n "$NEW" ] && /run/current-system/sw/bin/hyprctl eval "hl.dispatch(hl.dsp.workspace.rename({ workspace = $ID, name = \"$ID-$NEW\" }))"
       '')
     ];
   };
