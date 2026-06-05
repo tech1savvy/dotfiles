@@ -1,27 +1,27 @@
 -- DISCORD
-hl.window_rule({ match = { class = "^(discord)$" }, workspace = "special:discord" })
+hl.window_rule({ match = { class = "^(discord)$" }, workspace = "name:discord" })
 
 -- OBS Studio
-hl.window_rule({ match = { class = "^(com.obsproject.Studio)$" }, workspace = "special:obs" })
+hl.window_rule({ match = { class = "^(com.obsproject.Studio)$" }, workspace = "name:obs" })
 
 -- OBSIDIAN
-hl.window_rule({ match = { class = "^(obsidian)$" }, workspace = "special:obsidian" })
+hl.window_rule({ match = { class = "^(obsidian)$" }, workspace = "name:obsidian" })
 
 -- ANKI
-hl.window_rule({ match = { class = "^(anki)$" }, workspace = "special:anki" })
+hl.window_rule({ match = { class = "^(anki)$" }, workspace = "name:anki" })
 
 -- MOONLIGHT
-hl.window_rule({ match = { class = "^(com.moonlight_stream.Moonlight)$" }, workspace = "special:moonlight" })
+hl.window_rule({ match = { class = "^(com.moonlight_stream.Moonlight)$" }, workspace = "name:moonlight" })
 
 -- QUTEBROWSER
-hl.window_rule({ match = { class = "^(org.qutebrowser.qutebrowser)$" }, workspace = "special:qutebrowser" })
+hl.window_rule({ match = { class = "^(org.qutebrowser.qutebrowser)$" }, workspace = "name:qutebrowser" })
 
 -- SPOTIFY
-hl.window_rule({ match = { class = "^(spotify)$" }, workspace = "special:spotify" })
+hl.window_rule({ match = { class = "^(spotify)$" }, workspace = "name:spotify" })
 
 -- WHATSAPP
 hl.window_rule({
   match = { class = "^(chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default)$" },
   workspace =
-  "special:whatsapp"
+  "name:whatsapp"
 })
