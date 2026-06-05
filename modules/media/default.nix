@@ -9,6 +9,6 @@
     # ./video/editor.nix
     # ./music/players
     # ./video/players/ytx.nix
-    ./music/spicetify.nix
+    ./music/spicetify
   ];
 }
