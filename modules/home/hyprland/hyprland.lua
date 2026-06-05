@@ -18,6 +18,7 @@ require("modules.binds.window")
 
 -- Submap
 require("modules.submaps.kbptr")
+require("modules.submaps.app")
 
 -- Environment
 require("modules.environment")
