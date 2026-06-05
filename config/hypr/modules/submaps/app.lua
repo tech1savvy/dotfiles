@@ -1,4 +1,4 @@
--- APP SUBMAP (SUPER + A enters, single key toggles, ESC exits)
+-- APP SUBMAP (SUPER + N enters, single key toggles, ESC exits)
 hl.define_submap("app", function()
   hl.bind("d", hl.dsp.focus({ workspace = "name:discord" }))
   hl.bind("d", hl.dsp.submap("reset"))
@@ -37,4 +37,4 @@ hl.define_submap("app", function()
   hl.bind("ESCAPE", hl.dsp.submap("reset"))
 end)
 
-hl.bind("SUPER + A", hl.dsp.submap("app"))
+hl.bind("SUPER + N", hl.dsp.submap("app"))
