@@ -21,6 +21,7 @@ require("modules.submaps.kbptr")
 
 -- Environment
 require("modules.environment")
+require("modules.xwayland")
 
 -- Others
 require("modules.monitors")
