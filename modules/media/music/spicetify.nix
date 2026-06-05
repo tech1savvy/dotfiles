@@ -11,9 +11,9 @@
       spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
     in
     {
-      enable = false;
+      enable = true;
       theme = spicePkgs.themes.text;
-      colorScheme = "Gruvbox";
+      colorScheme = "Solarized";
 
       enabledExtensions = with spicePkgs.extensions; [
         keyboardShortcut # bindings: https://spicetify.app/docs/advanced-usage/extensions/#keyboard-shortcut
@@ -23,22 +23,22 @@
         hidePodcasts
         autoVolume
 
-        # unpacked
-        {
-          # The source of the extension
-          # make sure you're using the correct branch
-          # It could also be a sub-directory of the repo
-          #
-          # https://github.com/adventuretc/Spicetify-HideImages-Extension
-          src = pkgs.fetchFromGitHub {
-            owner = "adventuretc";
-            repo = "Spicetify-HideImages-Extension";
-            rev = "main";
-            hash = "sha256-AOpeeyWdwTiSooZxJdcbN6O9W9GeFVX+vH/Qf/VNhjc=";
-          };
-          # The actual file name of the extension usually ends with .js
-          name = "HideImages.js";
-        }
+        # UNPACKED
+        # {
+        #   # The source of the extension
+        #   # make sure you're using the correct branch
+        #   # It could also be a sub-directory of the repo
+        #   #
+        #   # https://github.com/adventuretc/Spicetify-HideImages-Extension
+        #   src = pkgs.fetchFromGitHub {
+        #     owner = "adventuretc";
+        #     repo = "Spicetify-HideImages-Extension";
+        #     rev = "main";
+        #     hash = "sha256-5IASr7wx7P+6foRoGwy9NuBf5vNerMQm3WaDHWf6ego=";
+        #   };
+        #   # The actual file name of the extension usually ends with .js
+        #   name = "HideImages.js";
+        # }
       ];
 
       # enabledCustomApps =  [

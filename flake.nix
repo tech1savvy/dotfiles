@@ -57,6 +57,8 @@
     # AI
     llm-agents.url = "github:numtide/llm-agents.nix";
 
+    # SPICETIFY
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   # outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./parts);
@@ -90,6 +92,7 @@
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
           inputs.solaar.nixosModules.default
+          inputs.spicetify-nix.nixosModules.default
         ];
       };
 
