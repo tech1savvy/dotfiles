@@ -45,7 +45,7 @@ x-scheme-handler/unknown=vivaldi-stable.desktop
 # Apps
 x-scheme-handler/figma=figma-linux.desktop
 x-scheme-handler/logseq=Logseq.desktop
-x-scheme-handler/beeper=Beeper.desktop
+x-scheme-handler/beeper=beepertexts.desktop
 
 # Torrents (Motrix)
 x-scheme-handler/magnet=motrix.desktop
