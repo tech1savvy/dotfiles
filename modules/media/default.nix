@@ -11,4 +11,6 @@
     # ./video/players/ytx.nix
     ./music/spicetify
   ];
+
+  spicetify.enable = true;
 }
