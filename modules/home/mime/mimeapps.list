@@ -1,26 +1,4 @@
 [Added Associations]
-# Text / Code
-text/plain=writer.desktop;
-
-# Documents
-application/pdf=librewolf.desktop;draw.desktop;zathura.desktop;
-application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-3.desktop;libreoffice-2.desktop;libreoffice.desktop;
-
-# Images
-image/png=vimiv-3.desktop;vimiv-2.desktop;
-image/jpeg=vimiv.desktop;
-
-# Video / Media
-video/mp4=vlc.desktop;umpv.desktop;
-text/vtt=code.desktop;
-
-# Web
-text/html=org.pwmt.zathura-cb.desktop;
-x-scheme-handler/http=librewolf.desktop;
-x-scheme-handler/https=librewolf.desktop;
-
-# Binary
-application/octet-stream=org.kde.kate.desktop;
 
 [Default Applications]
 # Text / Code

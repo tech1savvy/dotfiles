@@ -45,6 +45,7 @@
     ./bin.nix
     ./stylix.nix
     ./xdg.nix
+    ./mime
     # ./gtk.nix
     # ./pointer.nix
 

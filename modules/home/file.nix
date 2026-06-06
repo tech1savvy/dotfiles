@@ -23,10 +23,6 @@
       recursive = true;
     };
 
-    ".config/mimeapps.list" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/mimeapps.list";
-    };
-
     ".config/fastfetch" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/fastfetch";
     };
