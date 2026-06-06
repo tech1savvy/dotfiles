@@ -12,6 +12,10 @@ in
     ".config/opencode/tui.json" = {
       source = config.lib.file.mkOutOfStoreSymlink "${cfg}/tui.json";
     };
+    # AGENTS.md
+    ".config/opencode/AGENTS.md" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${cfg}/AGENTS.md";
+    };
     # PLUGINS
     # -- NOTIFIER
     ".config/opencode/opencode-notifier.json" = {
