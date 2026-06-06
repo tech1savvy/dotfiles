@@ -25,8 +25,6 @@
       enable = true;
       qemu = {
         swtpm.enable = true;
-        # ovmf.enable = true; # ovmf are available by default now
-        # ovmf.packages = [pkgs.OVMFFull.fd];
       };
     };
     spiceUSBRedirection.enable = true;
