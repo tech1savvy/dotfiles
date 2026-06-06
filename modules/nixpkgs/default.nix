@@ -67,7 +67,7 @@
     #     newsflash
     #     onlyoffice-desktopeditors
     #     todoist-electron # webapp client
-    # unstable.spacedrive
+    # spacedrive
     # bottles
     # libreoffice
     # planify # todoist-supported gui client
