@@ -13,8 +13,8 @@
     };
 
     cursor = {
-      package = pkgs.capitaine-cursors;
-      name = "capitaine-cursors";
+      package = pkgs.comixcursors;
+      name = "comixcursors";
       size = 20;
     };
 
