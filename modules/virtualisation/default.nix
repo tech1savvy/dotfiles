@@ -1,6 +1,6 @@
 {
   imports = [
-    ./kvm.nix
+    ./libvirt.nix
     ./vagrant
     # ./virtualbox
     # ./waydroid.nix
