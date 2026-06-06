@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./nix-index.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     nvd # nix pkg version diff
 
@@ -8,8 +12,6 @@
 
     # nix-tree # TUI for pkg depencies
 
-    # NOTE: home-manager option availabe
-    # nix-index
   ];
 
   environment.sessionVariables = {

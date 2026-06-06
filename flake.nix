@@ -59,6 +59,12 @@
 
     # SPICETIFY
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    # NIX-INDEX
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./parts);
@@ -93,6 +99,7 @@
           inputs.sops-nix.nixosModules.sops
           inputs.solaar.nixosModules.default
           inputs.spicetify-nix.nixosModules.default
+          inputs.nix-index-database.nixosModules.default
         ];
       };
 
