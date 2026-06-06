@@ -1,23 +1,22 @@
 {
-  services.hyprpaper =
-    let
-      wallpaper = "~/wallpapers/solarized/pacman.png";
-    in
-    {
-      enable = true;
+  services.hyprpaper = {
+    enable = true;
 
-      settings = {
-        ipc = "off";
-        splash = false;
-        splash_offset = 2;
-
-        preload = [
-          wallpaper
-        ];
-
-        wallpaper = [
-          "eDP-1, ${wallpaper}"
-        ];
+    settings = {
+      wallpaper = {
+        monitor = "";
+        path = "~/wallpapers/solarized/crane.jpg";
+        fit_mode = "cover";
+        # If path is DIR
+        timeout = 30;
+        order = "random";
+        # scan subdirectires
+        recursive = true;
       };
+
+      ipc = "off";
+      splash = false;
+      splash_offset = 2;
     };
+  };
 }
