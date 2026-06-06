@@ -11,13 +11,14 @@
 
     # journal
 
-    # tasks
-    super-productivity
+    # TASKS
+    # super-productivity
 
-    taskwarrior3
+    # --TASKWARRIOR
+    # taskwarrior3
     # taskwarrior-tui
     # tasksh # taskwarrior repl
-    vit # colorful and minimal
+    # vit # colorful and minimal
     # tasknc # clean and minimal, but requires v2
   ];
 }

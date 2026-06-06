@@ -46,7 +46,7 @@
     ./virtualisation
 
     # PRODUCTIVITY
-    #     ./productivity.nix
+    ./productivity.nix
     ./gitwatch.nix
 
     # SELF-HOSTING
