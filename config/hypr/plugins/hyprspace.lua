@@ -1,0 +1,39 @@
+hl.on("hyprland.start", function()
+  hl.exec_cmd("hyprctl plugin load \"$HYPR_PLUGIN_DIR/lib/libhyprspace.so\"")
+
+  hl.config({
+    plugin = {
+      overview = {
+        -- Color workspaces window
+        dragAlpha = 0.5,
+        panelColor = "rgba(0, 0, 0, 0)",
+        panelBorderColor = "rgb(0, 0, 0)",
+        workspaceActiveBackground = "rgba(0,0,0,0)",
+        disableBlur = 1,
+
+        -- Layout
+        workspaceMargin = 0,
+        panelHeight = 200,
+        panelBorderRadius = 0,
+        panelBorderWidth = 0,
+        workspaceBorderSize = 0,
+        overrideGaps = 1,
+        onBottom = 0,
+        adaptiveHeight = 1,
+        centerAligned = false,
+
+        -- Event
+        autoDrag = 1,
+        autoScroll = 1,
+        drawActiveWorkspace = 1,
+        showNewWorkspace = 0,
+        showEmptyWorkspace = 0,
+        exitOnClick = 0,
+
+        -- Animation
+        overrideAnimSpeed = 8,
+      },
+    },
+  })
+end)
+-- hl.bind("SUPER + O", hl.dsp.layout("overview:toggle"))

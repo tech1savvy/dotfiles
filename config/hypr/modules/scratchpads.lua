@@ -1,0 +1,10 @@
+-- Scratchpads - toggle dropdown terminals/applications using pyprland
+-- hl.exec_cmd("pypr")
+--
+-- hl.bind("SUPER + T", hl.dsp.exec_cmd("pypr toggle term"))
+-- hl.bind("SUPER + B", hl.dsp.exec_cmd("pypr toggle btop"))
+-- hl.bind("SUPER + N", hl.dsp.exec_cmd("pypr toggle writer"))
+-- hl.bind("SUPER + P", hl.dsp.exec_cmd("pypr toggle phone"))
+-- hl.bind("SUPER + M", hl.dsp.exec_cmd("pypr toggle music"))
+-- hl.bind("SUPER + W", hl.dsp.exec_cmd("pypr toggle qutebrowser"))
+-- hl.bind("SUPER + S", hl.dsp.exec_cmd("pypr toggle superproductivity"))

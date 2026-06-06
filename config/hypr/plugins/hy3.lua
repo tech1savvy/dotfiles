@@ -1,0 +1,138 @@
+hl.on("hyprland.start", function()
+  hl.exec_cmd("hyprctl plugin load \"$HYPR_PLUGIN_DIR/lib/libhy3.so\"")
+
+  hl.config({
+    plugin = {
+      hy3 = {
+        -- disable gaps when only one window is onscreen
+        -- 0 - always show gaps
+        -- 1 - hide gaps with a single window onscreen
+        -- 2 - 1 but also show the window border
+        no_gaps_when_only = 0, -- default: 0
+        -- policy controlling what happens when a node is removed from a group,
+        -- leaving only a group
+        -- 0 = remove the nested group
+        -- 1 = keep the nested group
+        -- 2 = keep the nested group only if its parent is a tab group
+        node_collapse_policy = 2, -- default: 2
+        -- offset from group split direction when only one window is in a group
+        group_inset = 10, -- default: 10
+        -- if a tab group will automatically be created for the first window spawned in a workspace
+        tab_first_window = true,
+        -- tab group settings
+        tabs = {
+          -- height of the tab bar
+          height = 6, -- default: 22
+          -- height = 12 -- default: 22
+
+          -- padding between the tab bar and its focused node
+          padding = 0, -- default: 6
+
+          -- the tab bar should animate in/out from the top instead of below the window
+          from_top = false, -- default: false
+
+          -- radius of tab bar corners
+          radius = 0, -- default: 6
+
+          -- tab bar border width
+          border_width = 0, -- default: 2
+
+          -- Tab Title
+          render_text = false, -- default: true
+          -- center the window title
+          text_center = true, -- default: true
+          -- font to render the window title with
+          text_font = "Sans", -- default: Sans
+          -- height of the window title
+          text_height = 6, -- default: 8
+          -- left padding of the window title
+          text_padding = 3, -- default: 3
+          -- active tab bar segment colors
+          col = {
+            active = "rgba(189, 174, 147, 1)", -- default: rgba(33ccff40)
+            ["active.border"] = "rgba(83, 163, 103, 1)", -- default: rgba(33ccffee)
+            ["active.text"] = "rgba(ffffffff)", -- default: rgba(ffffffff)
+
+            -- active tab bar segment colors for bars on an unfocused monitor
+            active_alt_monitor = "rgba(60606040)", -- default: rgba(60606040)
+            ["active_alt_monitor.border"] = "rgba(808080ee)", -- default: rgba(808080ee)
+            ["active_alt_monitor.text"] = "rgba(ffffffff)", -- default: rgba(ffffffff)
+
+            -- focused tab bar segment colors (focused node in unfocused container)
+            focused = "rgba(60606040)", -- default: rgba(60606040)
+            ["focused.border"] = "rgba(808080ee)", -- default: rgba(808080ee)
+            ["focused.text"] = "rgba(ffffffff)", -- default: rgba(ffffffff)
+
+            -- inactive tab bar segment colors
+            inactive = "rgba(80, 73, 69, 1)", -- default: rgba(30303020)
+            ["inactive.border"] = "rgba(163, 83, 83, 1)", -- default: rgba(606060aa)
+            ["inactive.text"] = "rgba(ffffffff)", -- default: rgba(ffffffff)
+
+            -- urgent tab bar segment colors
+            urgent = "rgba(ff223340)", -- default: rgba(ff223340)
+            ["urgent.border"] = "rgba(ff2233ee)", -- default: rgba(ff2233ee)
+            ["urgent.text"] = "rgba(ffffffff)", -- default: rgba(ffffffff)
+
+            -- locked tab bar segment colors
+            locked = "rgba(90903340)", -- default: rgba(90903340)
+            ["locked.border"] = "rgba(909033ee)", -- default: rgba(909033ee)
+            ["locked.text"] = "rgba(ffffffff)", -- default: rgba(ffffffff)
+          },
+          -- if tab backgrounds should be blurred
+          -- Blur is only visible when the above colors are not opaque.
+          blur = true, -- default: true
+
+          -- opacity multiplier for tabs
+          -- Applies to blur as well as the given colors.
+          opacity = 0.5, -- default: 1.0
+        },
+
+        -- autotiling settings
+        autotile = {
+          -- enable autotile
+          enable = false, -- default: false
+
+          -- make autotile-created groups ephemeral
+          ephemeral_groups = true, -- default: true
+
+          -- if a window would be squished smaller than this width, a vertical split will be created
+          -- -1 = never automatically split vertically
+          -- 0 = always automatically split vertically
+          -- <number> = pixel width to split at
+          trigger_width = 0, -- default: 0
+
+          -- if a window would be squished smaller than this height, a horizontal split will be created
+          -- -1 = never automatically split horizontally
+          -- 0 = always automatically split horizontally
+          -- <number> = pixel height to split at
+          trigger_height = 0, -- default: 0
+
+          -- a space or comma separated list of workspace ids where autotile should be enabled
+          -- it's possible to create an exception rule by prefixing the definition with "not:"
+          -- workspaces = 1,2 -- autotiling will only be enabled on workspaces 1 and 2
+          -- workspaces = not:1,2 -- autotiling will be enabled on all workspaces except 1 and 2
+          workspaces = "all", -- default: all
+        },
+      },
+    },
+  })
+end)
+
+hl.bind("SUPER + CTRL + 1", hl.dsp.layout("hy3:focustab index 1"))
+hl.bind("SUPER + CTRL + 2", hl.dsp.layout("hy3:focustab index 2"))
+hl.bind("SUPER + CTRL + 3", hl.dsp.layout("hy3:focustab index 3"))
+hl.bind("SUPER + CTRL + 4", hl.dsp.layout("hy3:focustab index 4"))
+hl.bind("SUPER + CTRL + 5", hl.dsp.layout("hy3:focustab index 5"))
+
+-- Move focus between tabs with vim keys
+-- hl.bind("SUPER + h", hl.dsp.layout("hy3:focustab left"))
+-- hl.bind("SUPER + SHIFT + h", hl.dsp.layout("hy3:movewindow left"))
+-- hl.bind("SUPER + j", hl.dsp.layout("hy3:focustab d"))
+-- hl.bind("SUPER + k", hl.dsp.layout("hy3:focustab u"))
+-- hl.bind("SUPER + l", hl.dsp.layout("hy3:focustab right"))
+-- hl.bind("SUPER + SHIFT + l", hl.dsp.layout("hy3:movewindow right"))
+
+-- Toggle Tabbed Group
+-- hl.bind("SUPER + ALT + T", hl.dsp.layout("hy3:changegroup toggletab"))
+-- hl.bind("SUPER + SHIFT + T", hl.dsp.layout("hy3:makegroup v toggle"))
+-- hl.bind("SUPER + CTRL + T", hl.dsp.layout("hy3:makegroup h toggle"))

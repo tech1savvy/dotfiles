@@ -1,0 +1,8 @@
+-- hl.define_submap("mod", function()
+--   hl.bind("Return", hl.dsp.exec_cmd(terminal))
+--   hl.bind("Return", hl.dsp.submap("reset"))
+--   hl.bind("E", hl.dsp.exec_cmd(fileManager))
+--   hl.bind("E", hl.dsp.submap("reset"))
+--   hl.bind("ESCAPE", hl.dsp.submap("reset"))
+-- end)
+-- hl.bind("SUPER + $mainMod_L", hl.dsp.submap("mod"))

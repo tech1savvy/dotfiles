@@ -1,0 +1,19 @@
+hl.on("hyprland.start", function()
+  hl.exec_cmd("hyprctl plugin load \"$HYPR_PLUGIN_DIR/lib/libhyprexpo.so\"")
+
+  hl.config({
+    plugin = {
+      hyprexpo = {
+        columns = 2,
+        gap_size = 0,
+        bg_col = "rgb(111111)",
+        workspace_method = "center current", -- [center/first] [workspace] e.g. first 1 or center m+1
+
+        gesture_distance = 300, -- how far is the "max" for the gesture
+        skip_empty = true,
+      },
+    },
+  })
+end)
+
+hl.bind("SUPER + Z", hl.dsp.layout("hyprexpo:expo toggle"))

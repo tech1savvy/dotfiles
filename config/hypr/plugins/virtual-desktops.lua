@@ -1,0 +1,18 @@
+-- stickyrule = class:^(kittysticky)$,3
+-- stickyrule = title:thunderbird,mail
+
+-- hl.on("hyprland.start", function()
+--   hl.exec_cmd("hyprctl plugin load \"$HYPR_PLUGIN_DIR/lib/libvirtual-desktops.so\"")
+--
+--   hl.config({
+--     plugin = {
+--       ["virtual-desktops"] = {
+--         names = "1:coding, 2:internet, 3:mail and chats",
+--         cycleworkspaces = 1,
+--         rememberlayout = "size",
+--         notifyinit = 0,
+--         verbose_logging = 0,
+--       },
+--     },
+--   })
+-- end)
