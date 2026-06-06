@@ -5,7 +5,6 @@
     ./json
     ./terminal.nix
     ./neovim.nix
-    ./python
     ./go.nix
     ./rust.nix
     #     ./php.nix
