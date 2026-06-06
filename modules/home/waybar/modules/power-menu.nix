@@ -1,6 +1,7 @@
 {
   ...
-}: {
+}:
+{
   settings = { };
   style = "";
   home.file.".config/waybar/power_menu.xml".text = ''

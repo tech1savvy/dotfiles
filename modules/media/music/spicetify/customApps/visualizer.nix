@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   spicetify.customApps.visualizer = {
     src = pkgs.fetchFromGitHub {
       owner = "Konsl";

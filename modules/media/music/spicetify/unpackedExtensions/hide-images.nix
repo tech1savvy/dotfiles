@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   spicetify.unpackedExtensions.hideImages = {
     src = pkgs.fetchFromGitHub {
       owner = "adventuretc";

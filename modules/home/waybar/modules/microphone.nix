@@ -1,4 +1,5 @@
-{ c, ... }: {
+{ c, ... }:
+{
   settings."pulseaudio#microphone" = {
     format = "{format_source}";
     "format-source" = "{volume}% 󰍬";
