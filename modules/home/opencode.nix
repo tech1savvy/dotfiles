@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
   cfg = "${config.home.homeDirectory}/dotfiles/config/opencode";
 in
@@ -42,5 +42,8 @@ in
       recursive = true;
     };
   };
+
+  # MCPs
+  home.packages = [ pkgs.mcp-nixos ];
 
 }
