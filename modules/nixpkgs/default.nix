@@ -29,8 +29,6 @@
     #     nixos-anywhere
     #     turso
     #     turso-cli
-    #     vagrant
-
     # COMMUNICATION
     discord
     #     localsend
