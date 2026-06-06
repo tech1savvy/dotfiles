@@ -6,7 +6,6 @@ require("modules.aesthetics.gaps")
 
 -- Windows
 require("modules.layouts")
-require("modules.layouts.main")
 require("modules.app")
 require("modules.scratchpads")
 
