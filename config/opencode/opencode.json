@@ -27,6 +27,10 @@
       "wakatime-cli --config-read api_key": "deny",
       "wakafetch *": "allow"
     },
+    "context7_resolve-library-id": "allow",
+    "context7_query-docs": "allow",
+    "nixos_nix": "allow",
+    "nixos_nix_versions": "allow",
     "external_directory": {
       "~/.config/opencode/*": "allow",
       "~/.agents/skills/*": "allow",
