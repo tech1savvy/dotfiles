@@ -32,8 +32,10 @@ application/pdf=zathura.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-3.desktop;
 
 # Images
-image/png=vimiv-3.desktop;
-image/jpeg=vimiv.desktop;
+image/png=imv.desktop;
+image/jpg=imv.desktop;
+image/jpeg=imv.desktop;
+image/webp=imv.desktop;
 
 # Web
 text/html=vivaldi-stable.desktop
