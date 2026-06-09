@@ -2,7 +2,10 @@
   programs.lazydocker = {
     enable = true;
 
-    # config
-    # settings = {};
+    settings = {
+      gui = {
+        returnImmediately = true;
+      };
+    };
   };
 }
