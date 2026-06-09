@@ -1,6 +1,6 @@
 {
   services.komga = {
-    enable = true;
+    enable = false;
 
     openFirewall = true;
 

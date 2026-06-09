@@ -1,6 +1,6 @@
 {
   services.suwayomi-server = {
-    enable = true;
+    enable = false;
     openFirewall = true;
     user = "suwayomi";
     group = "media";
