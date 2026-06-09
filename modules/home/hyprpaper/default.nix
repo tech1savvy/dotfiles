@@ -5,7 +5,7 @@
     settings = {
       wallpaper = {
         monitor = "";
-        path = "~/wallpapers/solarized/crane.jpg";
+        path = "~/wallpapers/solarized/japanese-pedestrian-street.png";
         fit_mode = "cover";
         # If path is DIR
         timeout = 30;
