@@ -3,6 +3,7 @@
     ./boot
     ./networking
     ./bluetooth.nix
+    ./power.nix
 
     ./fonts.nix
     ./language.nix
