@@ -49,10 +49,10 @@ $DIFF
 # Generate candidates using opencode
 TMP_PROMPT=$(mktemp)
 TMP_RESPONSE=$(mktemp)
-echo "$PROMPT" > "$TMP_PROMPT"
+echo "$PROMPT" >"$TMP_PROMPT"
 
 gum spin --spinner dot --title "Generating candidates..." -- \
-  bash -c "opencode run --model opencode-go/deepseek-v4-flash \"\$(cat \"$TMP_PROMPT\")\" > \"$TMP_RESPONSE\" 2>/dev/null"
+  bash -c "opencode run --model opencode/deepseek-v4-flash-free \"\$(cat \"$TMP_PROMPT\")\" > \"$TMP_RESPONSE\" 2>/dev/null"
 
 CANDIDATES=$(cat "$TMP_RESPONSE")
 rm -f "$TMP_PROMPT" "$TMP_RESPONSE"
