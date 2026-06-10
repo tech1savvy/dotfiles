@@ -1,0 +1,32 @@
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    permissions:
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@v16
+        with:
+          determinate: true
+
+      - uses: DeterminateSystems/flake-checker-action@v9
+
+      - name: Evaluate legion
+        run: nix eval .#nixosConfigurations.legion
+
+      - name: Evaluate vm
+        run: nix eval .#nixosConfigurations.vm
