@@ -20,7 +20,7 @@
 
     # DEVELOPMENT
     ./dev
-    ./agents
+    ./agents.nix
 
     # DATABASES
     # ./databases
