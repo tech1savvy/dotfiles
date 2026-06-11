@@ -5,13 +5,11 @@
 }:
 with lib;
 {
-  options.splash.plymouth.enable = mkEnableOption "";
+  options.boot.splash.plymouth.enable = mkEnableOption "";
 
-  config = mkIf config.splash.plymouth.enable {
+  config = mkIf config.boot.splash.plymouth.enable {
     boot = {
-      plymouth = {
-        enable = true;
-      };
+      plymouth.enable = true;
 
       kernelParams = [
         "splash"

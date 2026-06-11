@@ -3,17 +3,20 @@
   imports = [
     ./limine.nix
     ./plymouth.nix
+    ./silent.nix
   ];
 
-  splash.plymouth.enable = false;
+  boot.silent.enable = true;
+  boot.splash.plymouth.enable = true;
+  boot.limine.enable = false;
 
   boot = {
     tmp.cleanOnBoot = true;
     supportedFilesystems = [ "ntfs" ];
     loader = {
-      systemd-boot.enable = false;
+      systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
-      timeout = 1;
+      timeout = 0;
     };
   };
 }
