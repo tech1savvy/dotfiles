@@ -22,7 +22,7 @@
       "map ctrl+backspace" = "send_text all \\x17";
       "map ctrl+shift+enter" = "new_window_with_cwd";
       "map ctrl+shift+n" = "new_os_window_with_cwd";
-      # FIX: Not Working (maybe collding with vim mode)
+
       "map ctrl+shift+c" = "copy_selection_or_last_command_output";
 
       # CURSOR ANIMATIONS
