@@ -82,6 +82,7 @@
     ./obs-studio
     ./vesktop.nix
     ./easyeffects
+    ./zen
   ];
 
   home.stateVersion = "24.11"; # Presever after update as fallback if breaking changes
