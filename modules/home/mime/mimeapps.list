@@ -1,5 +1,3 @@
-[Added Associations]
-
 [Default Applications]
 # Text / Code
 application/octet-stream=org.kde.kate.desktop;
@@ -31,3 +29,6 @@ x-scheme-handler/beeper=beepertexts.desktop
 x-scheme-handler/magnet=motrix.desktop
 x-scheme-handler/mo=motrix.desktop
 x-scheme-handler/motrix=motrix.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-UXVHQ3.desktop
+message/rfc822=userapp-Thunderbird-UXVHQ3.desktop
+x-scheme-handler/mid=userapp-Thunderbird-UXVHQ3.desktop

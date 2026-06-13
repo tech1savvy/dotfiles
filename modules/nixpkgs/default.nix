@@ -38,6 +38,7 @@
     # materialgram
     # rustdesk
     # signal-desktop
+    thunderbird
     # webcord
     # webcord-vencord
 
