@@ -2,6 +2,6 @@
 {
   environment.systemPackages = with inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}; [
     opencode
-    gemini-cli
+    antigravity-cli
   ];
 }
