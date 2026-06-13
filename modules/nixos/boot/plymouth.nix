@@ -10,10 +10,6 @@ with lib;
   config = mkIf config.boot.splash.plymouth.enable {
     boot = {
       plymouth.enable = true;
-
-      kernelParams = [
-        "splash"
-      ];
     };
     stylix.targets.plymouth = {
       enable = true;

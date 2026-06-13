@@ -7,7 +7,7 @@
   ];
 
   boot.silent.enable = true;
-  boot.splash.plymouth.enable = true;
+  boot.splash.plymouth.enable = false;
   boot.limine.enable = false;
 
   boot = {
