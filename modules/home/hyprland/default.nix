@@ -9,8 +9,8 @@
     enable = true;
     configType = "lua";
     plugins = with pkgs.hyprlandPlugins; [
-      # inputs.hyprland-virtual-desktops.packages.${pkgs.system}.virtual-desktops
-      # inputs.hyprtasking.packages.${pkgs.system}.hyprtasking
+      # inputs.hyprland-virtual-desktops.packages.${pkgs.stdenv.hostPlatform.system}.virtual-desktops
+      # inputs.hyprtasking.packages.${pkgs.stdenv.hostPlatform.system}.hyprtasking
     ];
 
     extraConfig = builtins.readFile ./hyprland.lua;
