@@ -5,10 +5,16 @@
     # or inputs.zen-browser.homeModules.twilight
     # or inputs.zen-browser.homeModules.twilight-official
 
-    ./policies.nix
-    ./search.nix
+    ./config
+    ./keyboard-shortcuts.nix
+
+    ./search-engines.nix
+    ./containers.nix
     ./extensions.nix
     ./mods.nix
+
+    ./userChromeCSS.nix
+    ./native-messaging.nix
   ];
 
   programs.zen-browser = {
