@@ -22,7 +22,6 @@
         "{fef652df-dd80-450e-b64a-567abeb3aa4b}" = "youtube-cards";
         "wappalyzer@crunchlabz.com" = "wappalyzer";
         "@searchengineadremover" = "searchengineadremover";
-        "firefox-extension@steamdb.info" = "steam-database";
         "github-no-more@ihatereality.space" = "github-no-more";
         "github-repository-size@pranavmangal" = "gh-repo-size";
         "jid1-BoFifL9Vbdl2zQ@jetpack" = "decentraleyes";
