@@ -15,7 +15,6 @@
       p = "https://www.perplexity.ai/search?q={}";
       gpt = "https://chatgpt.com/?q={}&hints=search";
       hmo = "https://home-manager-options.extranix.com/?query={}+&release=master";
-      npm = "https://www.npmjs.com/search?q={}";
     };
 
     # Define bookmarks for quick access
