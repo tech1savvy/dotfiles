@@ -13,6 +13,10 @@ let
       font-size: 9px;
       min-height: 0;
     }
+    window#waybar {
+      background-color: rgba(0, 0, 0, 0.2);
+      border: none;
+    }
   ''
   + builtins.concatStringsSep "\n" (builtins.map (m: m.style) mods);
 in
