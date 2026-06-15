@@ -4,11 +4,11 @@
   style = "";
   home.packages = [
     (pkgs.writeShellScriptBin "waybar-wakatime" ''
-      output=$(wakatime-cli --today 2>/dev/null)
+      output=$(wakatime-cli --today --today-hide-categories false 2>/dev/null)
       status=$?
 
       if [ $status -ne 0 ] || [ -z "$output" ]; then
-        echo '{"text": "💤", "tooltip": "WakaTime offline or No data available for toaday"}'
+        echo '{"text": "💤", "tooltip": "WakaTime offline or No data available for today"}'
         exit 0
       fi
 
