@@ -17,7 +17,61 @@
           }
         ];
         icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-        definedAliases = [ "@nx" ];
+        definedAliases = [ "nx" ];
+      };
+      google = {
+        name = "Google";
+        urls = [
+          {
+            template = "https://www.google.com/search?q={searchTerms}";
+          }
+        ];
+        definedAliases = [ "g" ];
+      };
+      nixos-packages = {
+        name = "NixOS Packages";
+        urls = [
+          {
+            template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}";
+          }
+        ];
+        definedAliases = [ "np" ];
+      };
+      nixos-options = {
+        name = "NixOS Options";
+        urls = [
+          {
+            template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";
+          }
+        ];
+        definedAliases = [ "no" ];
+      };
+      perplexity = {
+        name = "Perplexity";
+        urls = [
+          {
+            template = "https://www.perplexity.ai/search?q={searchTerms}";
+          }
+        ];
+        definedAliases = [ "p" ];
+      };
+      chatgpt = {
+        name = "ChatGPT";
+        urls = [
+          {
+            template = "https://chatgpt.com/?q={searchTerms}&hints=search";
+          }
+        ];
+        definedAliases = [ "gpt" ];
+      };
+      home-manager-options = {
+        name = "Home Manager Options";
+        urls = [
+          {
+            template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
+          }
+        ];
+        definedAliases = [ "hmo" ];
       };
       github = {
         name = "GitHub Search";
@@ -26,7 +80,7 @@
             template = "https://github.com/search?q={searchTerms}";
           }
         ];
-        definedAliases = [ "@gh" ];
+        definedAliases = [ "gh" ];
       };
     };
   };
