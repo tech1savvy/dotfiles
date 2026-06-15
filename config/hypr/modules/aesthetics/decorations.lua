@@ -3,8 +3,8 @@ hl.config({
     rounding = 0,
 
     -- Change transparency of focused and unfocused windows
-    active_opacity = 1,
-    inactive_opacity = 1,
+    active_opacity = 0.95,
+    inactive_opacity = 0.85,
     shadow = {
       enabled = true,
       range = 4,
@@ -13,7 +13,7 @@ hl.config({
     },
     -- https://wiki.hyprland.org/Configuring/Variables/#blur
     blur = {
-      enabled = false,
+      enabled = true,
       size = 1,
       passes = 3,
       ignore_opacity = false,
