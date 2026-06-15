@@ -17,7 +17,6 @@
     # ./paperless.nix
 
     # SECURITY & NETWORK
-    # ./blocky.nix
     # ./freenet.nix
     # ./traefik.nix
 

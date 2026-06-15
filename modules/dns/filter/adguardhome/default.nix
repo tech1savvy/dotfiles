@@ -2,6 +2,7 @@
 with lib;
 let
   cfg = config.dns.filter.adguardhome;
+  adguardSettings = import ./settings.nix;
 in
 {
   options.dns.filter.adguardhome = {
@@ -21,7 +22,9 @@ in
       openFirewall = false;
 
       allowDHCP = config.services.adguardhome.settings.dhcp.enabled or false;
-      mutableSettings = true;
+      mutableSettings = false;
+
+      settings = adguardSettings;
     };
   };
 }
