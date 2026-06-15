@@ -10,6 +10,7 @@
     #     ./php.nix
     ../version-control/git.nix
     # ./dotnet.nix
+    ./terraform.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -36,7 +37,6 @@
     eksctl
     kubectl
     minikube
-    terraform # infrastructure as code
     # act # Github Actions Locally
     # aws-nuke
 
