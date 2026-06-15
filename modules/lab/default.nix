@@ -17,10 +17,8 @@
     # ./paperless.nix
 
     # SECURITY & NETWORK
-    # ./adguardhome.nix
     # ./blocky.nix
     # ./freenet.nix
-    # ./pihole.nix
     # ./traefik.nix
 
     # MONITORING

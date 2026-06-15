@@ -51,6 +51,7 @@
 
     # SELF-HOSTING
     ./lab
+    ./dns
     #     ./ansible
     # ./nginx
 
