@@ -294,13 +294,13 @@
       }
       {
         on = "z";
-        run = "plugin zoxide";
-        desc = "Jump to a directory via zoxide";
+        run = "plugin fzf";
+        desc = "Jump to a file/directory via fzf";
       }
       {
         on = "Z";
-        run = "plugin fzf";
-        desc = "Jump to a file/directory via fzf";
+        run = "plugin zoxide";
+        desc = "Jump to a directory via zoxide";
       }
       {
         on = [
