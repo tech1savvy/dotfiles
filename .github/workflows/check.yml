@@ -1,32 +1,37 @@
-name: Check
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+name: Nix flake
+on: [push, pull_request]
 
 jobs:
-  check:
-    permissions:
-      id-token: write
-      contents: read
+  check-flake:
+    name: Evaluate flake
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Code checkout
+        uses: actions/checkout@v6
 
-      - uses: DeterminateSystems/nix-installer-action@v16
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Check Nix flake inputs
+        uses: DeterminateSystems/flake-checker-action@v12
         with:
-          determinate: true
+          fail-mode: true
 
-      - uses: DeterminateSystems/flake-checker-action@v9
+      - name: Add Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
 
-      - name: Evaluate legion
-        run: nix eval .#nixosConfigurations.legion
+      - name: Check the flake
+        run: nix flake check
 
-      - name: Evaluate vm
-        run: nix eval .#nixosConfigurations.vm
+  check-lock:
+    name: Check Lock
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+
+      - name: Check flake.lock
+        run: nix run github:tgirlcloud/locker
