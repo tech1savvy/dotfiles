@@ -7,7 +7,8 @@
         Status = "locked";
       })
       {
-        "browser.startup.homepage" = "about:blank";
+        "browser.startup.homepage" = "about:newtab";
+        "browser.startup.page" = 1;
         "browser.tabs.warnOnClose" = true;
       };
 }
