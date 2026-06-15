@@ -8,19 +8,13 @@
         urls = [
           {
             template = "https://mynixos.com/search?q={searchTerms}";
-            params = [
-              {
-                name = "query";
-                value = "searchTerms";
-              }
-            ];
           }
         ];
         icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
         definedAliases = [ "nx" ];
       };
       google = {
-        name = "Google";
+        name = "Google Search"; # 'Search' suffix to not collide with pre-defined one
         urls = [
           {
             template = "https://www.google.com/search?q={searchTerms}";
@@ -47,7 +41,7 @@
         definedAliases = [ "no" ];
       };
       perplexity = {
-        name = "Perplexity";
+        name = "Perplexity Search"; # 'Search' suffix to not collide with pre-defined one
         urls = [
           {
             template = "https://www.perplexity.ai/search?q={searchTerms}";
@@ -63,6 +57,7 @@
           }
         ];
         definedAliases = [ "gpt" ];
+        icon = "https://chatgpt.com/cdn/assets/favicon-eex17e9e.ico";
       };
       home-manager-options = {
         name = "Home Manager Options";
@@ -82,6 +77,9 @@
         ];
         definedAliases = [ "gh" ];
       };
+
+      bing.metaData.hidden = "true";
+      wikipedia.metaData.hidden = "true";
     };
   };
 }
