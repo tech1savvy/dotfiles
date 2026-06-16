@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 with lib;
 let
   cfg = config.dns.filter.blocky;
@@ -9,10 +14,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    networking.nameservers = [
-      "127.0.0.1"
-    ];
-
     environment.systemPackages = [
       pkgs.blocky
     ];
@@ -52,7 +53,15 @@ in
           # e.g., the blocklist is ACTIVE from 21:00 to 17:00 (blocked), and INACTIVE from 17:00 to 21:00 (allowed)
           schedules = {
             blocked-youtube-hours = {
-              weekdays = [ "sun" "mon" "tue" "wed" "thu" "fri" "sat" ];
+              weekdays = [
+                "sun"
+                "mon"
+                "tue"
+                "wed"
+                "thu"
+                "fri"
+                "sat"
+              ];
               start = "21:00";
               end = "17:00";
             };
