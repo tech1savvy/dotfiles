@@ -5,8 +5,11 @@ with lib;
 
   config = mkIf config.boot.silent.enable {
     boot = {
+      consoleLogLevel = 0;
+      initrd.verbose = false;
       kernelParams = [
         "quiet"
+        "udev.log_level=3"
       ];
     };
   };
