@@ -136,6 +136,7 @@
     #workspaces {
       background: @base01;
       color: @base06;
+      border: 1px solid @base02;
       margin: 2px 1px 2px 1px;
       padding: 1px 6px;
     }
