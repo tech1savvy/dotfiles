@@ -16,8 +16,8 @@
     "tooltip-format-ethernet" = "{ifname} 󰌘";
     "tooltip-format-disconnected" = "";
 
-    "min-length" = 20;
-    "max-length" = 24;
+    "min-length" = 25;
+    "max-length" = 30;
   };
 
   style = ''
