@@ -1,7 +1,6 @@
 ---
 description: Create a conventional commit
 agent: general
-model: opencode-go/deepseek-v4-flash
 ---
 
 Load and execute the conventional-commit skill to create a standardized commit message
