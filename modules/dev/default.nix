@@ -6,6 +6,7 @@
     ./terminal.nix
     ./neovim.nix
     ./go.nix
+    ./ruby.nix
     ./rust.nix
     #     ./php.nix
     ../version-control/git.nix
