@@ -41,11 +41,17 @@ in
                 youtu.be
               ''
             ];
+
+            # Custom local blocklist from a file managed via Nix
+            local = [
+              (builtins.readFile ./blocklist.txt)
+            ];
           };
 
           clientGroupsBlock = {
             default = [
               "youtube"
+              "local"
             ];
           };
 

@@ -1,0 +1,5 @@
+*.startpage.com
+*.startpage.de
+*.startpage.fr
+*.startpage.info
+*.startpage.nl
