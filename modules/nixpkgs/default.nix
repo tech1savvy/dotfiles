@@ -49,7 +49,7 @@
     #     opencommit
     #     zed-editor
     # idescriptor
-    # bootdev-cli
+    bootdev-cli
     # gemini-cli
 
     # MEDIA & GRAPHICS
