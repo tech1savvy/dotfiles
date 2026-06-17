@@ -159,5 +159,26 @@
       color: @base09;
     }
 
+    window#waybar .modules-left #workspaces button,
+    window#waybar .modules-center #workspaces button,
+    window#waybar .modules-right #workspaces button {
+      border-bottom: 1px solid transparent;
+    }
+
+    window#waybar .modules-left #workspaces button.focused,
+    window#waybar .modules-left #workspaces button.active,
+    window#waybar .modules-center #workspaces button.focused,
+    window#waybar .modules-center #workspaces button.active,
+    window#waybar .modules-right #workspaces button.focused,
+    window#waybar .modules-right #workspaces button.active {
+      border-bottom: 1px solid @base05;
+    }
+
+    window#waybar .modules-left #workspaces button.urgent,
+    window#waybar .modules-center #workspaces button.urgent,
+    window#waybar .modules-right #workspaces button.urgent {
+      border-bottom: 1px solid @base08;
+    }
+
   '';
 }
