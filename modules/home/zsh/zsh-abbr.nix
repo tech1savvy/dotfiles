@@ -1,6 +1,6 @@
-{ lib, ... }:
+{ ... }:
 {
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "zsh-abbr" ];
+  nixpkgs.allowedUnfreePackages = [ "zsh-abbr" ];
   programs.zsh.zsh-abbr = {
     enable = true;
 

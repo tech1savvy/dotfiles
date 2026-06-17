@@ -1,6 +1,4 @@
-{
-  ...
-}:
+{ lib, config, ... }:
 {
   imports = [
     ./file.nix
@@ -85,8 +83,18 @@
     ./zen
   ];
 
-  home.stateVersion = "24.11"; # Presever after update as fallback if breaking changes
+  options.nixpkgs.allowedUnfreePackages = lib.mkOption {
+    type = lib.types.listOf lib.types.str;
+    default = [ ];
+    description = "List of unfree packages to allow.";
+  };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  config = {
+    home.stateVersion = "24.11"; # Presever after update as fallback if breaking changes
+
+    # Let Home Manager install and manage itself.
+    programs.home-manager.enable = true;
+
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) config.nixpkgs.allowedUnfreePackages;
+  };
 }
