@@ -19,6 +19,9 @@ hl.window_rule({ match = { class = "^(org.qutebrowser.qutebrowser)$" }, workspac
 -- SPOTIFY
 hl.window_rule({ match = { class = "^(Spotify)$" }, workspace = "name:spotify" })
 
+-- THUNDERBIRD
+hl.window_rule({ match = { class = "^(thunderbird)$" }, workspace = "name:thunderbird" })
+
 -- WHATSAPP
 hl.window_rule({
   match = { class = "^(chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default)$" },
