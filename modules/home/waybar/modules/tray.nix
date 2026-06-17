@@ -1,5 +1,6 @@
 {
   settings.tray = {
+    icon-size = 12;
     spacing = 10;
   };
 
