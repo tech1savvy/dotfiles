@@ -23,7 +23,7 @@ in
         {
           layer = "top";
           position = "bottom";
-          height = 8;
+          height = 18;
           spacing = 1;
           "fixed-center" = false;
           "margin-top" = 0;
