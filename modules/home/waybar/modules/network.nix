@@ -1,9 +1,9 @@
 {
   settings.network = {
     interval = 1;
-    format = " {bandwidthUpBytes}  {bandwidthDownBytes}";
-    "format-wifi" = " {bandwidthUpBytes}  {bandwidthDownBytes}";
-    "format-ethernet" = " {bandwidthUpBytes}  {bandwidthDownBytes}";
+    format = "  {bandwidthUpBytes}   {bandwidthDownBytes}";
+    "format-wifi" = "  {bandwidthUpBytes}   {bandwidthDownBytes}";
+    "format-ethernet" = "  {bandwidthUpBytes}   {bandwidthDownBytes}";
     "format-disconnected" = "󰌙 ";
     "format-linked" = "󰈁 {ifname}";
 
