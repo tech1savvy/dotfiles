@@ -8,30 +8,8 @@ let
   c = config.lib.stylix.colors;
   mods = (import ./modules) { inherit c pkgs; };
   mergedSettings = builtins.foldl' (acc: m: acc // m.settings) { } mods;
-  mergedStyle = ''
-    * {
-      font-size: 8px;
-      font-weight: bold;
-      min-height: 0;
-    }
-    window#waybar {
-      background-color: rgba(0, 0, 0, 0.2);
-      border: none;
-    }
-    #workspaces button {
-      padding: 0px 4px;
-      margin: 0px;
-      min-height: 0;
-      min-width: 0;
-    }
-    #waybar widget > * {
-      margin-top: 1px;
-      margin-bottom: 1px;
-      padding-top: 0px;
-      padding-bottom: 0px;
-    }
-  ''
-  + builtins.concatStringsSep "\n" (builtins.map (m: m.style) mods);
+  mergedStyle =
+    (builtins.readFile ./style.css) + builtins.concatStringsSep "\n" (builtins.map (m: m.style) mods);
 in
 {
   home.file = builtins.foldl' (acc: m: acc // (m.home.file or { })) { } mods;
@@ -44,7 +22,7 @@ in
       (
         {
           layer = "top";
-          position = "top";
+          position = "bottom";
           height = 8;
           spacing = 1;
           "fixed-center" = false;

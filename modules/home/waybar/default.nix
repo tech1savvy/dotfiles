@@ -1,6 +1,6 @@
 {
   imports = [
-    ./waybar.nix
+    ./config.nix
     ./tomat-service.nix
   ];
 

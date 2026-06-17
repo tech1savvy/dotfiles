@@ -1,0 +1,21 @@
+* {
+  font-size: 8px;
+  font-weight: bold;
+  min-height: 0;
+}
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+}
+#workspaces button {
+  padding: 0px 4px;
+  margin: 0px;
+  min-height: 0;
+  min-width: 0;
+}
+#waybar widget > * {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
