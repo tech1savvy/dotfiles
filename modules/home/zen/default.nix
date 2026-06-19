@@ -18,7 +18,7 @@
   ];
 
   programs.zen-browser = {
-    enable = true;
+    enable = false;
     setAsDefaultBrowser = false;
   };
 

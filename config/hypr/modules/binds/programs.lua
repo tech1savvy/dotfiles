@@ -3,7 +3,7 @@
 -- Programs
 local terminal = "kitty"
 local fileManager = "thunar"
-local browser = "zen-beta"
+local browser = "vivaldi"
 local menu = "rofi"
 
 -- APPLICATIONS
