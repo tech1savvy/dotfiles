@@ -1,25 +1,17 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 with lib;
 let
   cfg = config.dns.filter.blocky;
 
-  streaming = import ./denylists/streaming.nix;
   local = import ./denylists/localBlocklist.nix;
 
   blocking = {
-    denylists = (streaming.denylists or {}) // (local.denylists or {});
-    clientGroupsBlock.default =
-      (streaming.clientGroupsBlock.default or [])
-      ++ (local.clientGroupsBlock.default or []);
-    listSchedules =
-      (streaming.listSchedules or {})
-      // (local.listSchedules or {});
-    schedules = import ./schedules/working-hours.nix;
+    denylists = local.denylists or { };
+    clientGroupsBlock.default = local.clientGroupsBlock.default or [ ];
   };
 in
 {
@@ -28,9 +20,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [
-      pkgs.blocky
-    ];
 
     services.blocky = {
       enable = true;
