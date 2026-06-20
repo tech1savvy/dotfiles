@@ -3,16 +3,24 @@
   imports = [
     ./nix
     ./json
-    ./terminal.nix
-    ./neovim.nix
     ./go.nix
     ./ruby.nix
     ./rust.nix
-    #     ./php.nix
-    ../version-control/git.nix
-    # ./dotnet.nix
+    ./php.nix
+    ./dotnet.nix
     ./terraform.nix
   ];
+
+  development = {
+    go.enable = true;
+    ruby.enable = true;
+    rust.enable = true;
+    nix.enable = true;
+    json.enable = true;
+    terraform.enable = true;
+    php.enable = false;
+    dotnet.enable = false;
+  };
 
   environment.systemPackages = with pkgs; [
     # API TESTING

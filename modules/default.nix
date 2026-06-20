@@ -19,8 +19,13 @@
     # ./flatpak.nix
 
     # DEVELOPMENT
-    ./dev
+    ./development
+    ./neovim.nix
+    ./terminal.nix
     ./agents.nix
+
+    # VERSION CONTROL
+    ./version-control/git.nix
 
     # DATABASES
     # ./databases
