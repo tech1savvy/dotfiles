@@ -6,6 +6,7 @@
     ./go.nix
     ./ruby.nix
     ./rust.nix
+    ./python
     ./php.nix
     ./dotnet.nix
     ./terraform.nix
@@ -17,6 +18,8 @@
     rust.enable = true;
     nix.enable = true;
     json.enable = true;
+    python.enable = true;
+    python.pygame.enable = false;
     terraform.enable = true;
     php.enable = false;
     dotnet.enable = false;
