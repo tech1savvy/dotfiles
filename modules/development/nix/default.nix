@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 let
   cfg = config.development.nix;
 in
@@ -14,9 +19,5 @@ in
       nvd
       nixfmt
     ];
-
-    environment.sessionVariables = {
-      NH_FLAKE = "\${HOME}/dotfiles";
-    };
   };
 }
