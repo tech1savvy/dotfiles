@@ -2,7 +2,7 @@
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
 
 -- Integrated Laptop Display
-hl.monitor({ output = "eDP-1", mode = "preferred", position = "auto", scale = 2 })
+hl.monitor({ output = "eDP-1", mode = "preferred", position = "auto", scale = 1.6 })
 
 -- Mirror Laptop Display to HDMI Port
 hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "auto", scale = 2, mirror = "eDP-1" })
