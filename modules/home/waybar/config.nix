@@ -22,7 +22,7 @@ in
       (
         {
           layer = "top";
-          position = "bottom";
+          position = "top";
           height = 18;
           spacing = 1;
           "fixed-center" = false;
