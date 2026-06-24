@@ -8,6 +8,11 @@ in
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       go
+      gotools # goimports
+      gopls # lsp
+      delve # debugger
+      gofumpt # formatter
+      golangci-lint # linter
     ];
   };
 }
