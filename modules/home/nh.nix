@@ -5,7 +5,6 @@
     clean = {
       enable = true;
       dates = "weekly";
-      extraArgs = "--no-gc --no-gcroots";
     };
   };
 }
