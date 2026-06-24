@@ -8,6 +8,7 @@
     ./stylix.nix
     ./nix-ld.nix
     ./home-manager.nix
+    ./nh.nix
 
     # SYSTEM UTILITIES
     ./utils/zram.nix

@@ -25,7 +25,6 @@
     ./bat.nix
     ./btop.nix
     ./eza.nix
-    ./nh.nix
     #     ./htop.nix
     # ./glance.nix
     ./yazi
