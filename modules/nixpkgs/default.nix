@@ -50,6 +50,8 @@
     #     zed-editor
     # idescriptor
     bootdev-cli
+    codecrafters-cli
+    aws-nuke
     # gemini-cli
 
     # MEDIA & GRAPHICS
