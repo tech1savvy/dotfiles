@@ -9,7 +9,7 @@
 
   peripherals.kanata = {
     internalKeyboard.enable = true;
-    rightUSBKeyboard.enable = false;
-    leftUSBKeyboard.enable = false;
+    rightUSBKeyboard.enable = true;
+    leftUSBKeyboard.enable = true;
   };
 }
