@@ -6,3 +6,5 @@ hl.bind("SUPER + ALT + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + P", hl.dsp.window.pin())
 -- Window Fullscreen
 hl.bind("SUPER + ALT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind("SUPER + O", hl.dsp.window.tag({ tag = "opaque" }))
+hl.window_rule({ match = { tag = "opaque" }, opacity = "1 override" })
