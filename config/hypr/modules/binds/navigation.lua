@@ -63,9 +63,12 @@ hl.bind("SUPER + SHIFT + COMMA", hl.dsp.layout("swapcol l"))
 -- resize
 hl.bind("SUPER + SHIFT + EQUAL", hl.dsp.layout("colresize +conf"))
 hl.bind("SUPER + MINUS", hl.dsp.layout("colresize -conf"))
--- col fullscreen
-hl.bind("SUPER + F", hl.dsp.layout("colresize 1"))
-hl.bind("SUPER + SHIFT + F", hl.dsp.layout("colresize 0.5"))
+-- col fullscreen toggle
+local col_full = false
+hl.bind("SUPER + F", function()
+    col_full = not col_full
+    hl.dispatch(hl.dsp.layout(col_full and "colresize 1" or "colresize 0.5"))
+end)
 
 -- Move/resize windows with SUPER + LMB/RMB and dragging
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
