@@ -14,7 +14,7 @@ let
 in
 {
   services.easyeffects = {
-    enable = true;
+    enable = false;
     preset = "";
     extraPresets = {
       "Advanced Auto Gain" = advancedAutoGain;
