@@ -14,8 +14,6 @@
       "uinput"
       "media"
     ];
-    packages = with pkgs; [
-    ];
     shell = pkgs.zsh;
   };
 }
