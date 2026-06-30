@@ -11,6 +11,8 @@ let
 
   blocking = {
     denylists = local.denylists or { };
+    schedules = local.schedules or { };
+    listSchedules = local.listSchedules or { };
     clientGroupsBlock.default = local.clientGroupsBlock.default or [ ];
   };
 in
