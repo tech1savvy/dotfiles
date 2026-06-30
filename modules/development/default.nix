@@ -10,6 +10,7 @@
     ./php.nix
     ./dotnet.nix
     ./terraform.nix
+    ./android.nix
   ];
 
   development = {
@@ -21,6 +22,7 @@
     python.enable = true;
     python.pygame.enable = false;
     terraform.enable = true;
+    android.enable = true;
     php.enable = false;
     dotnet.enable = false;
   };
