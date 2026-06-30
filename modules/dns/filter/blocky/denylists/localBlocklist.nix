@@ -7,7 +7,14 @@
       (builtins.readFile ./streamingBlocklist.txt)
     ];
     animanga = [
+      (builtins.readFile ./animangaBlocklist.txt)
       "https://raw.githubusercontent.com/newedgex/ani-manga-blocklist/main/refined-blacklist.txt"
+    ];
+  };
+
+  allowlists = {
+    streaming = [
+      "music.youtube.com"
     ];
   };
 

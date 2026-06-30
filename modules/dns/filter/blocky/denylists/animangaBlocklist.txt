@@ -1,0 +1,14 @@
+# custom keyword-based patterns
+# combined with remote list from newedgex/ani-manga-blocklist
+/^(?:.*\.)?anime.+\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz|moe|online|live|site|sx|li|ru|de|fr)$/
+/^(?:.*\.)?manga.+\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz|moe|online|live|site|sx|li|ru|de|fr)$/
+/^(?:.*\.)?manhwa.+\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz|moe|online|live|site)$/
+/^(?:.*\.)?manhua.+\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz|moe|online|live|site)$/
+/^(?:.*\.)?(?:scanlation|scantrad).+\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz|moe|online|live|site)$/
+/^(?:.*\.)?(?:fansub|fandub).+\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz)$/
+/^(?:.*\.)?webtoon.+\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz|moe|online|live|site)$/
+/^(?:.*\.)?doujin.+\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz|moe)$/
+/^(?:.*\.)?otaku.+\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz|moe|online|live|site)$/
+/^(?:.*\.)?.*raw.*\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz|moe|online|live|site|sx|li|ru|de|fr)$/
+/^(?:.*\.)?.*scan.*\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz|moe|online|live|site|sx|li|ru|de|fr)$/
+/^(?:.*\.)?.*toon.+\.(?:com|net|org|io|tv|to|me|co|cc|app|fun|xyz|moe|online|live|site|sx|li|ru|de|fr)$/
