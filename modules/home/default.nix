@@ -80,6 +80,7 @@
     ./vesktop.nix
     ./easyeffects
     ./zen
+    ./blanket.nix
   ];
 
   options.nixpkgs.allowedUnfreePackages = lib.mkOption {

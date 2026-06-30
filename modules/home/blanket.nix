@@ -1,0 +1,5 @@
+{
+  services.blanket = {
+    enable = true;
+  };
+}
