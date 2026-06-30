@@ -15,7 +15,7 @@
     spice
     spice-gtk
     spice-protocol
-    virtio-win
+    # virtio-win  # only needed when running Windows VMs
     win-spice
   ];
 
