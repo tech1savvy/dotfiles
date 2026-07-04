@@ -22,7 +22,7 @@
       title_format = "Yazi: {cwd}";
     };
     preview = {
-      wrap = "no";
+      wrap = "yes";
       tab_size = 2;
       max_width = 600;
       max_height = 900;
