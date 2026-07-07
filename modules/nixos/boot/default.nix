@@ -6,7 +6,7 @@
     ./silent.nix
   ];
 
-  boot.silent.enable = true;
+  boot.silent.enable = false;
   boot.splash.plymouth.enable = false;
   boot.limine.enable = false;
 
