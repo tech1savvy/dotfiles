@@ -13,6 +13,8 @@ in
       delve # debugger
       gofumpt # formatter
       golangci-lint # linter
+      goose # migration tool
+      sqlc # genereate go code from sql queries
     ];
   };
 }
