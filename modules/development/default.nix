@@ -11,6 +11,7 @@
     ./dotnet.nix
     ./terraform.nix
     ./android.nix
+    ./sql.nix
   ];
 
   development = {
@@ -25,6 +26,7 @@
     android.enable = true;
     php.enable = false;
     dotnet.enable = false;
+    sql.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
