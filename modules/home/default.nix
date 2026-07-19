@@ -81,6 +81,7 @@
     ./easyeffects
     ./zen
     ./blanket.nix
+    ./retroarch.nix
   ];
 
   options.nixpkgs.allowedUnfreePackages = lib.mkOption {
