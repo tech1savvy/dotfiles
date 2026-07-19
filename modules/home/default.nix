@@ -43,6 +43,7 @@
     ./stylix.nix
     ./xdg.nix
     ./mime
+    ./qt.nix
     # ./gtk.nix
     # ./pointer.nix
 
@@ -96,6 +97,7 @@
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
 
-    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) config.nixpkgs.allowedUnfreePackages;
+    nixpkgs.config.allowUnfreePredicate =
+      pkg: builtins.elem (lib.getName pkg) config.nixpkgs.allowedUnfreePackages;
   };
 }
