@@ -20,7 +20,10 @@ in
         "127.0.0.1"
       ]
     else
-      [ ];
+      [
+        "185.228.168.10"
+        "185.228.169.11"
+      ];
 
   networking.networkmanager.insertNameservers =
     if anyFilterEnabled then
