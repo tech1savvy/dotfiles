@@ -22,6 +22,9 @@
       "firefly-iii/app-key" = {
         owner = "tech1savvy";
       };
+      "opencode/go/api-key" = {
+        owner = "tech1savvy";
+      };
     };
   };
 
