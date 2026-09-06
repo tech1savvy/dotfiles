@@ -22,16 +22,18 @@
     };
 
     # HYPRLAND
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/v0.56.0";
     hyprtasking = {
       url = "github:raybbian/hyprtasking";
-      inputs.nixpkgs.follows = "hyprland";
+      inputs.hyprland.follows = "hyprland";
     };
-
-    # LOGITECH
-    solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
+    hyprexpo = {
+      url = "github:sandwichfarm/hyprexpo";
+      inputs.hyprland.follows = "hyprland";
+    };
+    scrolloverview = {
+      url = "github:yayuuu/hyprland-scroll-overview";
+      inputs.hyprland.follows = "hyprland";
     };
 
     # INFRA
@@ -106,7 +108,6 @@
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
-          inputs.solaar.nixosModules.default
           inputs.spicetify-nix.nixosModules.default
           inputs.nix-index-database.nixosModules.default
         ];
