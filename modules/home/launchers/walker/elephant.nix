@@ -1,0 +1,3 @@
+{
+  services.elephant.enable = true;
+}

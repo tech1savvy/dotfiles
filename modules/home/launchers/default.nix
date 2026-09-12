@@ -5,5 +5,6 @@
     # ./bemenu
     # ./fuzzel
     ./tofi
+    ./walker
   ];
 }
