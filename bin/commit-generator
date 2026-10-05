@@ -52,7 +52,7 @@ TMP_RESPONSE=$(mktemp)
 echo "$PROMPT" >"$TMP_PROMPT"
 
 gum spin --spinner dot --title "Generating candidates..." -- \
-  bash -c "opencode run --model opencode/deepseek-v4-flash-free \"\$(cat \"$TMP_PROMPT\")\" > \"$TMP_RESPONSE\" 2>/dev/null"
+  bash -c "opencode run --model opencode/big-pickle \"\$(cat \"$TMP_PROMPT\")\" > \"$TMP_RESPONSE\" 2>/dev/null"
 
 CANDIDATES=$(cat "$TMP_RESPONSE")
 rm -f "$TMP_PROMPT" "$TMP_RESPONSE"
