@@ -370,7 +370,7 @@
   @mouseless a @s-esc @d-esc f g  h j @k-ret @l-ret ; ' ret ;; HOME ROW
   z    x c v b C-spc n m , . / rsft ;; BOTTOM ROW
   @__  @__  @sft @mod @sft @__ ;; MODIFIERS
-  @__  @__  @__   @__ ;; ARROW KEYS
+  left down right up ;; ARROW KEYS
 )
 ;; ==================
 ;; EXTEND LAYER
