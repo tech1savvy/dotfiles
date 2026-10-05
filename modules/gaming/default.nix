@@ -7,6 +7,7 @@
   imports = [
     ./minecraft/luncher.nix
     ./minecraft/server.nix
+    ./steam.nix
     # ./streaming.nix
     # ./emulation.nix
   ];
@@ -22,26 +23,4 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.modesetting.enable = true;
-
-  programs.steam.enable = false;
-  # better sandbox for games
-  programs.steam.gamescopeSession.enable = true;
-
-  # better optimisation for game processes
-  programs.gamemode.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    mangohud
-
-    # proton GE
-    # protonup # 'protonup' has been renamed to/replaced by 'protonup-ng'
-    protonup-ng
-  ];
-
-  # protonup download dir
-  environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-  };
-
-  # run protonup cmd once to download required files
 }
