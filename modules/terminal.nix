@@ -15,7 +15,7 @@
 
     # NETWORKING
     curlie # curl
-    tmate # terminal screen-sharing and access
+    # tmate # terminal screen-sharing and access (moved to insecure pkgs)
     wget # download files from the web
 
     # SYSTEM UTILITIES
