@@ -1,3 +1,3 @@
 {
-  programs.kdeconnect.enable = false;
+  programs.kdeconnect.enable = true;
 }
