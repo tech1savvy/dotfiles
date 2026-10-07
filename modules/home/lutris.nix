@@ -1,7 +1,7 @@
 { osConfig, pkgs, ... }:
 {
   programs.lutris = {
-    enable = true;
+    enable = false;
 
     steamPackage = osConfig.programs.steam.package;
 

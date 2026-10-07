@@ -1,19 +1,13 @@
 {
-  config,
-  pkgs,
-  ...
-}:
-{
   imports = [
     ./minecraft/luncher.nix
     ./minecraft/server.nix
-    ./steam.nix
+    # ./steam.nix
     # ./streaming.nix
     # ./emulation.nix
   ];
 
-  # Enable Prism Launcher (Minecraft launcher)
-  minecraft.prismlauncher.enable = true;
+  minecraft.prismlauncher.enable = false;
 
   # OpenGL
   hardware.graphics = {
