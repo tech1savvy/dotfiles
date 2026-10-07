@@ -12,7 +12,7 @@ in
 
   dns.filter.adguardhome.enable = false;
   dns.filter.pihole.enable = false;
-  dns.filter.blocky.enable = true;
+  dns.filter.blocky.enable = false;
 
   networking.nameservers =
     if anyFilterEnabled then
